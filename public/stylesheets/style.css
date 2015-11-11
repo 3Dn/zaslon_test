@@ -1,0 +1,34 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#logo {
+    background: url("/images/header-logo_red.png") no-repeat;
+    width: 92px;
+    height: 85px;
+}
+
+#u_menu {
+    background: #f3f3f3;
+    margin-top: 10px;
+    height: 100px;
+    width: 1200px;
+    border: thin solid #dfe4e6;
+
+}
+
+#workspace {
+  background: #f3f3f3;
+  height: 600px;
+  width: 1200px;
+  margin-top: 10px;
+  border: thin solid #dfe4e6;
+}
+
+#window {
+
+}
+
+a {
+  color: #00B7FF;
+}
