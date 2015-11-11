@@ -3,12 +3,25 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+      $(function() {
+        $(".draggable").draggable({
+          contaiment: 'parent',
+          cursor: 'move',
+          snap: '#workspace'
+        });
+      });
+    </script>
   </head>
   <body>
   <div id="logo"></div>
   <div id="u_menu" class="work_style"></div>
   <div id="workspace" class="work_style">
-
+    <div id="window" class="draggable work_style">
+      <p></p>
+    </div>
   </div>
   </body>
 </html>
