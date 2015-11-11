@@ -3,30 +3,30 @@ body {
 }
 
 #logo {
-    background: url("/images/header-logo_red.png") no-repeat;
+    background: url('/images/header-logo_red.png') no-repeat;
     width: 92px;
     height: 85px;
 }
 
 #u_menu {
-    background: #f3f3f3;
     margin-top: 10px;
     height: 100px;
     width: 1200px;
-    border: thin solid #dfe4e6;
-
 }
 
 #workspace {
-  background: #f3f3f3;
   height: 600px;
   width: 1200px;
   margin-top: 10px;
-  border: thin solid #dfe4e6;
 }
 
 #window {
 
+}
+
+.work_style {
+    background: #f3f3f3;
+    border: thin solid #dfe4e6;
 }
 
 a {
