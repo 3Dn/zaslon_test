@@ -37,7 +37,6 @@ body {
 }
 
 
-
 .work_style {
     background: #f3f3f3;
     border: thin solid #dfe4e6;
@@ -49,11 +48,6 @@ body {
 }
 .box-header-label {
     font-family: Consolas, sans-serif;
-}
-
-.box-inner-label {
-    font-family: Consolas, sans-serif;
-    font-size: 8pt;
 }
 
 .box-header-hr {
@@ -71,8 +65,22 @@ body {
     margin-left: 25px;
 }
 
+.box-inner-label {
+    font-family: Consolas, sans-serif;
+    font-size: 8pt;
+    margin-top: 3px;
+}
+
+.box-inner-block {
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 2px;
+    height: 25px;
+}
+
 .box-inner-text {
     float: left;
+    width: 60px;
 }
 
 .box-inner-switches {
