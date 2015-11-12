@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 #logo {
@@ -15,18 +16,26 @@ body {
     clear: both;
 }
 
+#wrapper{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
 #workspace {
-    height: 600px;
+    height: 727px;
     width: 900px;
     margin-top: 10px;
     float: left;
+    display: inline-block;
 }
 
 #io-status-box {
-    height: 600px;
+    height: auto;
     width: 300px;
     margin: 10px;
     float: left;
+    display: inline-block;
 }
 
 #window {
@@ -38,8 +47,10 @@ body {
 
 
 .work_style {
-    background: #f3f3f3;
-    border: thin solid #dfe4e6;
+    background: #f3f3f3 none repeat scroll 0 0;
+    border: thin solid #a0a0a0;
+    border-radius: 7px;
+    box-shadow: 4px 0 20px #a9a9a9;
 }
 
 .box-header {

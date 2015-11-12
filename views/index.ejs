@@ -21,18 +21,19 @@
   <body>
   <div id="logo"></div>
   <div id="u_menu" class="work_style"></div>
-  <div id="workspace" class="work_style">
-    <div id="window" class="draggable work_style">
-      <p></p>
+  <div id="wrapper">
+    <div id="workspace" class="work_style">
+      <div id="window" class="draggable work_style">
+        <p></p>
+      </div>
     </div>
-  </div>
-  <div id="io-status-box" class="work_style">
-    <div class="box-header">
-      <label class="box-header-label">IO Status</label>
-      <hr class="box-header-hr">
-    </div>
-    <div>
-      <%for(var i=1; i<=20; i++){ %>
+    <div id="io-status-box" class="work_style">
+      <div class="box-header">
+        <label class="box-header-label">IO Status</label>
+        <hr class="box-header-hr">
+      </div>
+      <div>
+        <%for(var i=1; i<=20; i++){ %>
         <div class="box-inner">
           <div class="box-inner-block">
             <div class="box-inner-text">
@@ -46,10 +47,11 @@
             </div>
           </div>
         </div>
-      <%}%>
+        <%}%>
 
       </div>
     </div>
   </div>
+
   </body>
 </html>
