@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a556fb1-10e5-48b2-b9d3-142e62888e2f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../zaslon_test/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../zaslon_test/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../zaslon_test/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/../zaslon_test/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../zaslon_test/views/index.ejs" afterPath="$PROJECT_DIR$/../zaslon_test/views/index.ejs" />
     </list>
     <ignored path="zaslon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -371,7 +369,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447250675512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="IO box fix">
+      <created>1447252447609</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1447252447609</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
