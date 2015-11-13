@@ -160,6 +160,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 .switch{
     display: inline-block;
 }
+
 .led{
     width:16px;
     height:16px;
@@ -169,8 +170,16 @@ input.cmn-toggle-round-flat:checked + label:after {
     border: 2px solid #ddd;
     float: right;
     margin-left: 10px;
-    transition: background 0.4s;
 }
 .led_on{
     background: #8ce196;
+
+}
+.led_light{
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 50%;
+    transition: background 0.4s;
+    margin: 2px;
 }
