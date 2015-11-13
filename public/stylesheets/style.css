@@ -38,6 +38,8 @@ body {
     display: inline-block;
 }
 
+
+
 #window {
     margin: 10px;
     width: 30px;
@@ -154,4 +156,21 @@ input.cmn-toggle-round-flat:checked + label {
 input.cmn-toggle-round-flat:checked + label:after {
     margin-left: 40px;
     background-color: #8ce196;
+}
+.switch{
+    display: inline-block;
+}
+.led{
+    width:16px;
+    height:16px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #fff;
+    border: 2px solid #ddd;
+    float: right;
+    margin-left: 10px;
+    transition: background 0.4s;
+}
+.led_on{
+    background: #8ce196;
 }
