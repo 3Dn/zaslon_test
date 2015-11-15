@@ -3,30 +3,29 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/jquery-ui.css' />
     <link rel="icon" type="image/x-icon"  href="/images/favicon.png">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/js/jq-ui.min.js"></script>
     <script type="text/javascript" src="/js/handle.js"></script>
-    <script>
-      $(function() {
-        $(".draggable").draggable({
-          contaiment: 'parent',
-          cursor: 'move',
-          snap: '#workspace'
-        });
-      });
-    </script>
+
   </head>
 
 
   <body>
   <div id="logo"></div>
-  <div id="u_menu" class="work_style"></div>
+  <div id="u_menu" class="work_style">
+    <input type="button" class="u_button" id="button_home" ws="1">
+    <input type="button" class="u_button" id="button_table" ws="2">
+  </div>
   <div id="wrapper">
-    <div id="workspace" class="work_style">
-      <div id="window" class="draggable work_style">
+    <div id="workspace_1" class="work_style">
+     <!-- <div id="window" class="draggable work_style">
         <p></p>
-      </div>
+      </div>-->
+    </div>
+    <div id="workspace_2" class="work_style">
     </div>
     <div id="io-status-box" class="work_style">
       <div class="box-header">
