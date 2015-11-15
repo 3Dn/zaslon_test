@@ -9,7 +9,7 @@ $(document).ready(function(){
         snap: '#workspace_1'
     });*/
 
-    $(".u_button").button();
+    $(".u_button").button().tooltip();
 
     $(".cmn-toggle").on("click", function(){ //включаем-выключаем лампочки
         var state = $(this).prop("checked"),
