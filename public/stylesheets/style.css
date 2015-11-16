@@ -30,7 +30,7 @@ body {
     float: left;
     display: inline-block;
 }
-#workspace_2{
+#workspace_2, #workspace_3{
     display: none;
 }
 
