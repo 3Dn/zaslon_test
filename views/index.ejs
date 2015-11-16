@@ -18,6 +18,7 @@
   <div id="u_menu" class="work_style">
     <input type="button" class="u_button" id="button_home" ws="1" title="Логи">
     <input type="button" class="u_button" id="button_table" ws="2" title="Бизнес-статистика">
+    <input type="button" class="u_button" id="button_camera" ws="3" title="Камеры наблюдения">
   </div>
   <div id="wrapper">
     <div id="workspace_1" class="work_style">
@@ -29,22 +30,25 @@
     <div id="workspace_2" class="work_style">
       <div id="charts">а тут буду графики-хуяфики</div>
     </div>
+    <div id="workspace_3" class="work_style">
+      <div id="videos">а тут будет порнуха</div>
+    </div>
     <div id="io-status-box" class="work_style">
       <div class="box-header">
         <label class="box-header-label">IO Status</label>
         <hr class="box-header-hr">
       </div>
       <div>
-        <%for(var i=1; i<=20; i++){ %>
+        <% for(var i = 1; i <= 20; i++){ %>
         <div class="box-inner">
           <div class="box-inner-block">
             <div class="box-inner-text">
-              <label class="box-inner-label">I/O-<%=i%>: </label>
+              <label class="box-inner-label">I/O-<%= i %>: </label>
             </div>
             <div class="box-inner-switches">
               <div class="switch">
-                <input id="cmn-toggle-<%=i%>" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-                <label for="cmn-toggle-<%=i%>"></label>
+                <input id="cmn-toggle-<%= i %>" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-<%= i %>"></label>
               </div>
               <div class="led">
                 <div class="led_light"></div>
@@ -52,8 +56,7 @@
             </div>
           </div>
         </div>
-        <%}%>
-
+        <% } %>
       </div>
     </div>
   </div>

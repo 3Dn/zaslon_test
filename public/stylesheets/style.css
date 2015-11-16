@@ -22,7 +22,8 @@ body {
     display:block;
 }
 
-#workspace_1, #workspace_2 {
+#workspace_1, #workspace_2,
+#workspace_3{
     height: 727px;
     width: 900px;
     margin-top: 10px;
@@ -202,7 +203,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_home{
     background:url('/images/icon_house.png') no-repeat center center;
 }
-#logs, #charts{
+#button_camera{
+    background:url('/images/icon_camera.png') no-repeat center center;
+}
+#logs, #charts, #videos{
     margin:5%;
     padding: 2%;
     height: 86%;
