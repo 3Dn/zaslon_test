@@ -22,12 +22,16 @@ body {
     display:block;
 }
 
-#workspace {
+#workspace_1, #workspace_2,
+#workspace_3{
     height: 727px;
     width: 900px;
     margin-top: 10px;
     float: left;
     display: inline-block;
+}
+#workspace_2{
+    display: none;
 }
 
 #io-status-box {
@@ -182,4 +186,32 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 50%;
     transition: background 0.4s;
     margin: 2px;
+}
+.u_button{
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 3px 3px 11px #999;
+}
+.u_button:active{
+    box-shadow: none;
+}
+#button_table{
+    background:url('/images/icon_table.png') no-repeat center center;
+}
+#button_home{
+    background:url('/images/icon_house.png') no-repeat center center;
+}
+#button_camera{
+    background:url('/images/icon_camera.png') no-repeat center center;
+}
+#logs, #charts, #videos{
+    margin:5%;
+    padding: 2%;
+    height: 86%;
+    width: 86%;
+    border: 1px dashed #606060;
+    border-radius: 10px;
+    font-family: Consolas, sans-serif;
 }
