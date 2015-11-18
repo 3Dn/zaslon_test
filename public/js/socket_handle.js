@@ -3,8 +3,8 @@
  */
 var socket = io.connect();
 
-socket.on('news', function (data) {
+
+socket.on('send', function (data) {
     console.log(data);
-//        $("#workspace_1").append("<br/> а сервака у нас вот чо приходит: " +data.hello);
-    socket.emit('my other event', { my: 'data' });
+    socket.emit('recive', { hello: 'world' });
 });
