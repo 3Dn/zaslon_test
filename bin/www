@@ -44,6 +44,26 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
+
+/**
+ * Listen i2c
+ */
+
+var i2c = require('i2c');
+var address = 0x04;
+var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
+
+//wire.writeByte("11", function(err) {});
+//console.log("Ok!");
+
+wire.read(32, function(err, res){
+  console.log(res);
+  var buff_bytes = new Buffer(res);
+  console.log(buff_bytes.toString('utf8'));
+});
+
+
+
 /**
  * Normalize a port into a number, string, or false.
  */
