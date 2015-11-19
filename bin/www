@@ -31,13 +31,25 @@ server.on('listening', onListening);
 
 
 /**
- * Listen sockets
+ * Listen i2c and sockets
  */
+var i2c = require('i2c');
+var address = 0x04;
+var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
+
+var tmp_buff;
+wire.read(32, function(err, res){
+  console.log(res);
+  var buff_bytes = new Buffer(res);
+  tmp_buff = buff_bytes.toString('utf8');
+  console.log(tmp_buff);
+//  console.log(buff_bytes.toString('utf8'));
+});
 
 var io = require('socket.io').listen(server);
-
 io.sockets.on('connection', function (socket) {
-  socket.emit('send', { hello: 'world' });
+  socket.emit('send', tmp_buff);
+//  socket.emit('send', { hello: 'world' });
 
   socket.on('recive', function (data) {
     console.log(data);
@@ -45,22 +57,6 @@ io.sockets.on('connection', function (socket) {
 });
 
 
-/**
- * Listen i2c
- */
-
-var i2c = require('i2c');
-var address = 0x04;
-var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
-
-//wire.writeByte("11", function(err) {});
-//console.log("Ok!");
-
-wire.read(32, function(err, res){
-  console.log(res);
-  var buff_bytes = new Buffer(res);
-  console.log(buff_bytes.toString('utf8'));
-});
 
 
 
