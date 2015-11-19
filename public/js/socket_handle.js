@@ -7,7 +7,7 @@ var socket = io.connect();
 socket.on('send', function (data) {
     //console.log(data);
     //socket.emit('recive', { hello: 'world' });
-    var len = data.length || 5,
+    var len = data.length,
         j =data.substring(0, (len-5));
     var info = {};
     info = JSON.parse(j);

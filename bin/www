@@ -49,8 +49,9 @@ var io = require('socket.io').listen(server);
         tmp_buff = buff_bytes.toString('utf8');
         console.log(tmp_buff);
       });
+      socket.emit('send', tmp_buff);
     }, 1000)
-    socket.emit('send', tmp_buff);
+
 
   });
 
