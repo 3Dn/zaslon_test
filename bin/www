@@ -39,7 +39,7 @@ var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c addres
 var io = require('socket.io').listen(server);
 
 var tmp_buff;
-window.setInterval(function(){
+setInterval(function(){
   wire.read(32, function(err, res){
     var buff_bytes = new Buffer(res);
     tmp_buff = buff_bytes.toString('utf8');
