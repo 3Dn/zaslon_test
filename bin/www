@@ -45,9 +45,9 @@ setInterval(function(){
     tmp_buff = buff_bytes.toString('utf8');
   });
 
-  io.sockets.on('connection', function (socket) {
+  //io.sockets.on('connection', function (socket) {
     socket.emit('send', tmp_buff);
-  });
+  //});
 }, 1000);
 
 
