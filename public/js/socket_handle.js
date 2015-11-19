@@ -15,7 +15,7 @@ socket.on('send', function (data) {
     $.each(info.d, function(key, value){
        if(value == '1'){
            $("#cmn-toggle-"+key).prop("checked", true);
-           $(this).parents(".box-inner-block").find('.ledlight').addClass('led_on');
+           $(this).parents(".box-inner-block").find('.led_light').addClass('led_on');
        }
     });
 
