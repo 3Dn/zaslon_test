@@ -13,10 +13,11 @@ socket.on('send', function (data) {
     info = JSON.parse(j);
     console.log(info);
     $.each(info.d, function(key, value){
-       if(value == '1'){
-           $("#cmn-toggle-"+key).prop("checked", true);
-           $("#cmn-toggle-"+key).parents(".box-inner-block").find('.led_light').addClass('led_on');
-       }
+        if(value == '1'){
+            $("#cmn-toggle-"+key).prop("checked", true);
+            $("#cmn-toggle-"+key).parents(".box-inner-block").find('.led_light').addClass('led_on');
+        }
     });
+
 
 });
