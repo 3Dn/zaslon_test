@@ -38,19 +38,22 @@ var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 var io = require('socket.io').listen(server);
 
-var tmp_buff;
-setInterval(function(){
-  wire.read(32, function(err, res){
 
-    var buff_bytes = new Buffer(res);
-    tmp_buff = buff_bytes.toString('utf8');
-    console.log(tmp_buff);
+
+  io.sockets.on('connection', function (socket) {
+
+    var tmp_buff;
+    setInterval(function(){
+      wire.read(32, function(err, res){
+        var buff_bytes = new Buffer(res);
+        tmp_buff = buff_bytes.toString('utf8');
+        console.log(tmp_buff);
+      });
+    }, 1000)
+    socket.emit('send', tmp_buff);
+
   });
-  res.end(tmp_buff);
-  //io.sockets.on('connection', function (socket) {
-  //  socket.emit('send', tmp_buff);
-  //});
-}, 1000);
+
 
 
 
