@@ -46,7 +46,7 @@ setInterval(function(){
   });
 
   //io.sockets.on('connection', function (socket) {
-    socket.emit('send', tmp_buff);
+    io.socket.emit('send', tmp_buff);
   //});
 }, 1000);
 
