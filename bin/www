@@ -41,12 +41,14 @@ var io = require('socket.io').listen(server);
 var tmp_buff;
 setInterval(function(){
   wire.read(32, function(err, res){
+
     var buff_bytes = new Buffer(res);
     tmp_buff = buff_bytes.toString('utf8');
+    console.log(tmp_buff);
   });
-
+  res.end(tmp_buff);
   //io.sockets.on('connection', function (socket) {
-    io.socket.emit('send', tmp_buff);
+  //  socket.emit('send', tmp_buff);
   //});
 }, 1000);
 
