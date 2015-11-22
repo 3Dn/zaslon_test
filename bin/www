@@ -59,7 +59,7 @@ var io = require('socket.io').listen(server);
       try {
         if (current_state != info.t[0]) {
           current_state = info.t[0];
-          socket.emit('send', tmp_buff);
+          socket.emit('send', JSON.stringify(tmp_buff));
         }
       }
       catch (err){
