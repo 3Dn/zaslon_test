@@ -47,8 +47,8 @@ var io = require('socket.io').listen(server);
       wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
         tmp_buff = buff_bytes.toString('utf8');
-        console.log(buff_bytes);
-        //console.log(tmp_buff);
+        //console.log(buff_bytes);
+        console.log(tmp_buff);
       });
       socket.emit('send', tmp_buff);
     }, 1000)
