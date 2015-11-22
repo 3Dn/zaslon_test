@@ -23,14 +23,14 @@ body {
 }
 
 #workspace_1, #workspace_2,
-#workspace_3{
+#workspace_3, #workspace_4{
     height: 727px;
     width: 900px;
     margin-top: 10px;
     float: left;
     display: inline-block;
 }
-#workspace_2, #workspace_3{
+#workspace_2, #workspace_3, #workspace_4{
     display: none;
 }
 
@@ -206,7 +206,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_camera{
     background:url('/images/icon_camera.png') no-repeat center center;
 }
-#logs, #charts, #videos{
+#button_weight{
+    background:url('/images/icon_weight.png') no-repeat center center;
+}
+#logs, #charts, #videos, #linemap{
     margin:5%;
     padding: 2%;
     height: 86%;
