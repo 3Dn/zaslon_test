@@ -56,15 +56,16 @@ var io = require('socket.io').listen(server);
         console.log(tmp_buff);
       });
       var info = JSON.stringify(tmp_buff);
-      try {
+      console.log(info);
+      /*try {
         if (current_state != info.t[0]) {
           current_state = info.t[0];
-          socket.emit('send', JSON.stringify(tmp_buff));
+          socket.emit('send', info);
         }
       }
       catch (err){
         console.log(err);
-      }
+      }*/
     }, 1000)
 
 
