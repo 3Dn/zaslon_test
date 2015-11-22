@@ -63,7 +63,7 @@ var io = require('socket.io').listen(server);
         }
       }
       catch (err){
-
+        console.log(err);
       }
     }, 1000)
 
