@@ -8,8 +8,10 @@ socket.on('send', function (data) {
     //console.log(data);
     //socket.emit('recive', { hello: 'world' });
     try{
-        var len = data.length,
-            j =data.substring(0, (len-5));
+        //var len = data.length,
+        //    j =data.substring(0, (len-5));
+        var pos = data.lastIndexOf(']}'),
+            j = data.substring(0, pos+2);
         var info = {};
         info = JSON.parse(j);
         console.log(info);
