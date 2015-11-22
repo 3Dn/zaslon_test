@@ -28,7 +28,7 @@ $(document).ready(function(){
             $("#workspace_2, #workspace_3, #workspace_4").hide();
         }else if(ws == '2'){
             $("#workspace_2").show();
-            $("#workspace_1, #workspace_3", #workspace_4).hide();
+            $("#workspace_1, #workspace_3, #workspace_4").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
             $("#workspace_1, #workspace_2, #workspace_4").hide();
