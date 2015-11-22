@@ -55,15 +55,15 @@ var io = require('socket.io').listen(server);
         //console.log(buff_bytes);
         console.log(tmp_buff);
       });
-      //var info = JSON.stringify(tmp_buff);
+      var info = JSON.stringify(tmp_buff);
       try {
-        if (current_state != tmp_buff["t"][0]) {
+        if (current_state != info.t[0]) {
           current_state = info.t[0];
-          socket.emit('send', tmp_buff);
+          socket.emit('send', JSON.stringify(tmp_buff));
         }
       }
       catch (err){
-
+        console.log(err);
       }
     }, 1000)
 
