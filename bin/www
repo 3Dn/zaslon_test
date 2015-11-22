@@ -41,7 +41,7 @@ var io = require('socket.io').listen(server);
 
 
   io.sockets.on('connection', function (socket) {
-
+    var current_state='';
     var tmp_buff;
     setInterval(function(){
       wire.read(32, function(err, res){
@@ -52,7 +52,11 @@ var io = require('socket.io').listen(server);
         //console.log(buff_bytes);
         console.log(tmp_buff);
       });
-      socket.emit('send', tmp_buff);
+      var info = JSON.parse(tmp_buff);
+      if(current_state != info.t[0]) {
+        current_state = info.t[0];
+        socket.emit('send', tmp_buff);
+      }
     }, 1000)
 
 
