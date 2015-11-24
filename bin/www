@@ -33,6 +33,46 @@ server.on('listening', onListening);
 /**
  * Listen i2c and sockets
  */
+
+function str_replace( search, replace, subject ) {	// Replace all occurrences of the search string with the replacement string
+  //
+  // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+  // +   improved by: Gabriel Paderni
+
+  if(!(replace instanceof Array)){
+    replace=new Array(replace);
+    if(search instanceof Array){//If search	is an array and replace	is a string, then this replacement string is used for every value of search
+      while(search.length>replace.length){
+        replace[replace.length]=replace[0];
+      }
+    }
+  }
+
+  if(!(search instanceof Array))search=new Array(search);
+  while(search.length>replace.length){//If replace	has fewer values than search , then an empty string is used for the rest of replacement values
+    replace[replace.length]='';
+  }
+
+  if(subject instanceof Array){//If subject is an array, then the search and replace is performed with every entry of subject , and the return value is an array as well.
+    for(k in subject){
+      subject[k]=str_replace(search,replace,subject[k]);
+    }
+    return subject;
+  }
+
+  for(var k=0; k<search.length; k++){
+    var i = subject.indexOf(search[k]);
+    while(i>-1){
+      subject = subject.replace(search[k], replace[k]);
+      i = subject.indexOf(search[k],i);
+    }
+  }
+
+  return subject;
+
+}
+
+
 var i2c = require('i2c');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
@@ -49,9 +89,10 @@ var io = require('socket.io').listen(server);
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
         var obj = tmp_buff.substring(0, pos+2);
+        obj = str_replace(']}]}', ']}', obj);
         console.log("Obj: "+obj);
-        var info = JSON.stringify(obj);
-        console.log("info: "+ info);
+        //var info = JSON.stringify(obj);
+        //console.log("info: "+ info);
         try {
           if (current_state != obj.t[0]) {
             console.log("curr: "+current_state);
