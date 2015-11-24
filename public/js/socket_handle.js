@@ -14,13 +14,13 @@ socket.on('send', function (data) {
         //var info = {};
         //info = JSON.parse(data);
         console.log(data);
-        $.each(info.t, function(key, value){
+        $.each(data.t, function(key, value){
             console.log("t = "+ value);
 
             $("#logs").append("<p> t = "+ value + "</p>");
 
         });
-        $.each(info.d, function(key, value){
+        $.each(data.d, function(key, value){
             if(value == '1'){
                 $("#cmn-toggle-"+key).prop("checked", true);
                 $("#cmn-toggle-"+key).parents(".box-inner-block").find('.led_light').addClass('led_on');
