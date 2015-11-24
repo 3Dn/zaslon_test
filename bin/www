@@ -48,16 +48,10 @@ var io = require('socket.io').listen(server);
         var buff_bytes = new Buffer(res);
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
-        tmp_buff = tmp_buff.substring(0, pos+2);
-        //var obj = {};
-        //obj = tmp_buff;
-        //tmp_buff = obj;
-        //console.log(buff_bytes);
-        console.log(tmp_buff);
-
-
-        var info = JSON.stringify(tmp_buff);
-        //console.log("info: "+ info);
+        var obj = tmp_buff.substring(0, pos+2);
+        console.log("Obj: "+obj);
+        var info = JSON.stringify(obj);
+        console.log("info: "+ info);
         try {
           if (current_state != info.t[0]) {
             current_state = tmp_buff.t[0];
@@ -65,7 +59,7 @@ var io = require('socket.io').listen(server);
           }
         }
         catch (err){
-          console.log(err);
+          console.log("Error:   "+err);
         }
 
 
