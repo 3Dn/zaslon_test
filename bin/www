@@ -51,16 +51,12 @@ var io = require('socket.io').listen(server);
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
         var obj = tmp_buff.substring(0, pos+2);
-        //console.log("Obj: "+obj);
-        console.log(typeof(obj));
-        obj = JSON.parse(obj);
-        console.log(typeof(obj));
-        //var info = JSON.stringify(obj);
-        //console.log("info: "+ info);
         try {
-          if (current_state != obj['t'][0]) {
+          obj = JSON.parse(obj);
+          console.log(obj);
+          if (current_state != obj.t[0]) {
             //console.log("curr: "+current_state);
-            current_state = obj['t'][0];
+            current_state = obj.t[0];
             socket.emit('send', obj);
             //console.log("new_curr: "+current_state);
           }
