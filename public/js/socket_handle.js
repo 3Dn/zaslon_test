@@ -13,7 +13,6 @@ socket.on('send', function (data) {
         //    j = data.substring(0, pos+2);
         var info = {};
         info = JSON.parse(data);
-        console.clear();
         console.log(info);
         $.each(info.t, function(key, value){
             console.log("t = "+ value);
