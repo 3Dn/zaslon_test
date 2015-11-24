@@ -11,9 +11,9 @@ socket.on('send', function (data) {
         //console.log(data);
         //var pos = data.lastIndexOf(']}'),
         //    j = data.substring(0, pos+2);
-        var info = {};
-        info = JSON.parse(data);
-        console.log(info);
+        //var info = {};
+        //info = JSON.parse(data);
+        console.log(data);
         $.each(info.t, function(key, value){
             console.log("t = "+ value);
 
