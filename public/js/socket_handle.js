@@ -26,6 +26,8 @@ socket.on('send', function (data) {
                 $("#cmn-toggle-"+key).parents(".box-inner-block").find('.led_light').addClass('led_on');
             }
         });
-    }catch(err){}
+    }catch(err){
+        console.log(err.name + ":" + err.message + "\n" + err.stack);
+    }
 
 });
