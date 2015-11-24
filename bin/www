@@ -63,11 +63,6 @@ var io = require('socket.io').listen(server);
         }
         catch (err){
           console.log("Error:   "+err);
-          console.log("_____________________________________________________________");
-          for (var prop in err){
-            console.log(prop);
-          }
-          console.log("_____________________________________________________________");
         }
       });
     }, 1000)
