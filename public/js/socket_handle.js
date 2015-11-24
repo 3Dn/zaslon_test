@@ -27,6 +27,7 @@ socket.on('send', function (data) {
             }
         });
     }catch(err){
+        console.log(data);
         console.log(err.name + ":" + err.message + "\n" + err.stack);
     }
 
