@@ -54,6 +54,7 @@ var io = require('socket.io').listen(server);
 
         try {
           obj = JSON.parse(obj);
+          console.log(obj);
           if (current_state != obj.t[0]) {
             //console.log("curr: "+current_state);
             current_state = obj.t[0];
@@ -62,10 +63,10 @@ var io = require('socket.io').listen(server);
           }
         }
         catch (err){
-          console.log("Error:   " + err.name + ":" + err.message + "\n" + err.stack);
+          console.log(err.name + ":" + err.message + "\n" + err.stack);
         }
       });
-    }, 1000)
+    }, 3000)
   });
 
 
