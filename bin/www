@@ -63,6 +63,7 @@ var current_state='';
           }
         }
         catch (err){
+          console.log("obj: "+obj);
           console.log(err.name + ":" + err.message + "\n" + err.stack);
         }
       });
