@@ -8,14 +8,16 @@ socket.on('send', function (data) {
     //console.log(data);
     //socket.emit('recive', { hello: 'world' });
     try{
-        console.log(data);
+        //console.log(data);
         //var pos = data.lastIndexOf(']}'),
         //    j = data.substring(0, pos+2);
         var info = {};
         info = JSON.parse(data);
         //console.log(info);
         $.each(info.t, function(key, value){
-            console.log("t = "+ value);
+            //console.log("t = "+ value);
+            $("#logs").append("<p> t = "+ value + "</p>");
+
         });
         $.each(info.d, function(key, value){
             if(value == '1'){

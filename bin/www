@@ -55,10 +55,10 @@ var io = require('socket.io').listen(server);
           obj = JSON.parse(obj);
           console.log(obj);
           if (current_state != obj.t[0]) {
-            //console.log("curr: "+current_state);
+            console.log("curr: "+current_state);
             current_state = obj.t[0];
             socket.emit('send', obj);
-            //console.log("new_curr: "+current_state);
+            console.log("new_curr: "+current_state);
           }
         }
         catch (err){
