@@ -53,7 +53,6 @@ var io = require('socket.io').listen(server);
         var obj = tmp_buff.substring(0, pos+2);
         try {
           obj = JSON.parse(obj);
-          console.log(obj);
           if (current_state != obj.t[0]) {
             console.log("curr: "+current_state);
             current_state = obj.t[0];
