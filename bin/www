@@ -41,7 +41,7 @@ server.on('listening', onListening);
 var io = require('socket.io').listen(server);
 var logs = require('./logs.js');
 
-var logger = new logs.logs();
+var logger = new logs();
 
 //var current_state='';
 
