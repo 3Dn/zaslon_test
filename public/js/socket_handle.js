@@ -5,7 +5,7 @@ var socket = io.connect();
 
 
 socket.on('send', function (data) {
-    //console.log(data);
+    console.log(data);
     //socket.emit('recive', { hello: 'world' });
     if(data) {
         try {
