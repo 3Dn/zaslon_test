@@ -40,9 +40,8 @@ server.on('listening', onListening);
 //var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
-//var logger = new logs();
 
-var logger = new Logs();
+Logs.Logs();
 
 //var current_state='';
 
@@ -51,7 +50,7 @@ io.sockets.on('connection', function (socket) {
   //var tmp_buff;
 
   var log_getter = setTimeout(function getter(){
-    logger.getLogs();
+
 
     //wire.read(32, function(err, res){
     //  var buff_bytes = new Buffer(res);
