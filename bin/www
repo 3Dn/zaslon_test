@@ -49,6 +49,7 @@ var logger = new logs();
 io.sockets.on('connection', function (userId, socket) {
 
   //var tmp_buff;
+  var logger = new logs();
   var log_getter = setTimeout(function getter(){
     logger.getLogs();
 
