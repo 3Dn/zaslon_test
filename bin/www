@@ -46,7 +46,7 @@ var Logs = require('./logs.js');
 
 //var current_state='';
 
-io.sockets.on('connection', function (userId, socket) {
+io.sockets.on('connection', function (socket) {
 
   //var tmp_buff;
   var logger = new Logs();
