@@ -68,7 +68,7 @@ io.sockets.on('connection', function (socket) {
       }
     });
 
-    setTimeout(getter, 2499);
+    setTimeout(getter, 5000);
 
   }, 1);
   log_getter.unref();
