@@ -67,8 +67,9 @@ io.sockets.on('connection', function (socket) {
         console.log(err.name + ":" + err.message + "\n" + err.stack);
       }
     });
-    log_getter.unref();
+
   }, 7000);
+  log_getter.unref();
 });
 
 
