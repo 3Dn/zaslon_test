@@ -36,7 +36,7 @@ var Logs = function(){
     };
 
 
-    if(logs.caller != logs.getInstance){
+    if(Logs.caller != Logs.getInstance){
         throw new Error("This object cannot be instanciated");
     }
 };
