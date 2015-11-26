@@ -42,33 +42,36 @@ var io = require('socket.io').listen(server);
 
 
 var current_state='';
-  io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (socket) {
 
-    var tmp_buff;
-    setInterval(function(){
-      wire.read(32, function(err, res){
-        var buff_bytes = new Buffer(res);
-        tmp_buff = buff_bytes.toString('utf8');
-        var pos = tmp_buff.lastIndexOf(']}');
-        var obj = tmp_buff.substring(0, pos+2);
+  var tmp_buff;
+  var log_getter = setInterval(function(){
+    wire.read(32, function(err, res){
+      var buff_bytes = new Buffer(res);
+      tmp_buff = buff_bytes.toString('utf8');
+      var pos = tmp_buff.lastIndexOf(']}');
+      var obj = tmp_buff.substring(0, pos+2);
 
-        try {
-          obj = JSON.parse(obj);
-          console.log(obj);
-          if (current_state != obj.t[0]) {
-            console.log("curr: "+current_state);
-            current_state = obj.t[0];
-            socket.emit('send', obj);
-            console.log("new_curr: "+current_state);
-          }
+      try {
+        obj = JSON.parse(obj);
+        console.log(obj);
+        if (current_state != obj.t[0]) {
+          console.log("curr: "+current_state);
+          current_state = obj.t[0];
+          socket.emit('send', obj);
+          console.log("new_curr: "+current_state);
         }
-        catch (err){
-          console.log("obj: "+obj);
-          console.log(err.name + ":" + err.message + "\n" + err.stack);
-        }
-      });
-    }, 7000)
-  });
+      }
+      catch (err){
+        console.log("obj: "+obj);
+        console.log(err.name + ":" + err.message + "\n" + err.stack);
+      }
+    });
+    log_getter.unref();
+  }, 7000);
+});
+
+
 
 
 
