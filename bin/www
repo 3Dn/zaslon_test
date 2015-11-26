@@ -42,7 +42,12 @@ var io = require('socket.io').listen(server);
 
 
 var current_state='';
-io.sockets.on('connection', function (socket) {
+var socketList = {};
+
+io.sockets.on('connection', function (userId, socket) {
+  if (!socketList[userId]) {
+    socketList[userId] = socket;
+  }
 
   var tmp_buff;
   var log_getter = setTimeout(function getter(){
