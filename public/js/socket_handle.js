@@ -21,12 +21,12 @@ socket.on('send', function (data) {
                 $("#logs").append("<p> t = " + value + "</p>");
 
             });
-            $.each(data.d, function (key, value) {
-                if (value == '1') {
-                    $("#cmn-toggle-" + key).prop("checked", true);
-                    $("#cmn-toggle-" + key).parents(".box-inner-block").find('.led_light').addClass('led_on');
-                }
-            });
+            //$.each(data.d, function (key, value) {
+            //    if (value == '1') {
+            //        $("#cmn-toggle-" + key).prop("checked", true);
+            //        $("#cmn-toggle-" + key).parents(".box-inner-block").find('.led_light').addClass('led_on');
+            //    }
+            //});
         } catch (err) {
             console.log(data);
             console.log(err.name + ":" + err.message + "\n" + err.stack);
