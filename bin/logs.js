@@ -54,5 +54,5 @@ logs.getInstance = function(){
     return this.instance;
 }
 
-module.exports.logs = logs.getInstance();
+global.logs = logs.getInstance();
 
