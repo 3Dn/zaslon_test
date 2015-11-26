@@ -41,13 +41,16 @@ server.on('listening', onListening);
 var io = require('socket.io').listen(server);
 var logs = require('./logs.js');
 
-var current_state='';
+var logger = new logs.logs();
+
+//var current_state='';
 
 io.sockets.on('connection', function (userId, socket) {
 
   var tmp_buff;
   var log_getter = setTimeout(function getter(){
-    logs.getLogs();
+    logger.getLogs();
+
     //wire.read(32, function(err, res){
     //  var buff_bytes = new Buffer(res);
     //  tmp_buff = buff_bytes.toString('utf8');
