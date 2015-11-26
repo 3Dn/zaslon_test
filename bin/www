@@ -45,7 +45,7 @@ var current_state='';
 io.sockets.on('connection', function (socket) {
 
   var tmp_buff;
-  var log_getter = setInterval(function(){
+  var log_getter = setTimeout(function getter(){
     wire.read(32, function(err, res){
       var buff_bytes = new Buffer(res);
       tmp_buff = buff_bytes.toString('utf8');
@@ -58,7 +58,7 @@ io.sockets.on('connection', function (socket) {
         if (current_state != obj.t[0]) {
           console.log("curr: "+current_state);
           current_state = obj.t[0];
-          socket.emit('send', obj);
+          socket.broadcast.emit('send', obj);
           console.log("new_curr: "+current_state);
         }
       }
@@ -68,7 +68,9 @@ io.sockets.on('connection', function (socket) {
       }
     });
 
-  }, 7000);
+    setTiemout(getter, 2499);
+
+  }, 1);
   log_getter.unref();
 });
 
