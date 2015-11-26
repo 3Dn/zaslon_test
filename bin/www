@@ -50,9 +50,9 @@ io.sockets.on('connection', function (socket) {
   //var tmp_buff;
 
   var log_getter = setTimeout(function getter(){
-
-    socket.broadcast.emit('send', Logs.getLogs());
-
+    var tmp_obj = Logs.getLogs();
+    socket.broadcast.emit('send', tmp_obj);
+    console.log(tmp_obj);
     //wire.read(32, function(err, res){
     //  var buff_bytes = new Buffer(res);
     //  tmp_buff = buff_bytes.toString('utf8');
