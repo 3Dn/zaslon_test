@@ -6,7 +6,7 @@ var i2c = require('i2c');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
-var logs = function logs(){
+var logs = function Logs(){
     //defining a var instead of this (works for variable & function) will create a private definition
 
     this.current_state='';
@@ -47,12 +47,12 @@ logs.instance = null;
  * Singleton getInstance definition
  * @return logs class
  */
-logs.getInstance = function(){
+Logs.getInstance = function(){
     if(this.instance === null){
-        this.instance = new logs();
+        this.instance = new Logs();
     }
     return this.instance;
 }
 
-exports.logs = logs.getInstance();
+exports.Logs = Logs.getInstance();
 

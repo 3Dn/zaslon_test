@@ -49,7 +49,7 @@ var logs = require('./logs.js');
 io.sockets.on('connection', function (userId, socket) {
 
   //var tmp_buff;
-  var logger = new logs();
+  var logger = new Logs();
   var log_getter = setTimeout(function getter(){
     logger.getLogs();
 
