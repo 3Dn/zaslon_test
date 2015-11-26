@@ -6,7 +6,7 @@ var i2c = require('i2c');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
-var logs = function Logs(){
+var Logs = function(){
     //defining a var instead of this (works for variable & function) will create a private definition
 
     this.current_state='';
@@ -36,12 +36,12 @@ var logs = function Logs(){
     };
 
 
-    if(logs.caller != logs.getInstance){
+    if(Logs.caller != Logs.getInstance){
         throw new Error("This object cannot be instanciated");
     }
 };
 
-logs.instance = null;
+Logs.instance = null;
 
 /**
  * Singleton getInstance definition
@@ -52,7 +52,7 @@ Logs.getInstance = function(){
         this.instance = new Logs();
     }
     return this.instance;
-}
+};
 
 exports.Logs = Logs.getInstance();
 
