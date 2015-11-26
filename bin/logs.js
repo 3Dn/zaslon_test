@@ -5,7 +5,6 @@
 var i2c = require('i2c');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
-var io = require('socket.io').listen(server);
 
 var Logs = function(){
     //defining a var instead of this (works for variable & function) will create a private definition
@@ -21,12 +20,13 @@ var Logs = function(){
 
             try {
                 obj = JSON.parse(obj);
-                console.log(obj);
+                //console.log(obj);
                 if (this.current_state != obj.t[0]) {
                     console.log("curr: "+this.current_state);
                     this.current_state = obj.t[0];
-                    socket.broadcast.emit('send', obj);
+                //    socket.broadcast.emit('send', obj);
                     console.log("new_curr: "+this.current_state);
+                    return obj;
                 }
             }
             catch (err){
@@ -34,6 +34,8 @@ var Logs = function(){
                 console.log(err.name + ":" + err.message + "\n" + err.stack);
             }
         });
+
+
     };
 
 
