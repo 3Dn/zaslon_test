@@ -26,7 +26,7 @@ var Logs = function(){
                     this.current_state = obj.t[0];
                 //    socket.broadcast.emit('send', obj);
                     console.log("new_curr: "+this.current_state);
-                    return obj;
+                    return this.current_state;
                 }
             }
             catch (err){
