@@ -5,6 +5,7 @@
 var i2c = require('i2c');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
+var io = require('socket.io').listen(server);
 
 var Logs = function(){
     //defining a var instead of this (works for variable & function) will create a private definition
