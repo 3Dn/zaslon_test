@@ -17,10 +17,10 @@ var Logs = function(){
             this.tmp_buff = buff_bytes.toString('utf8');
             var pos = this.tmp_buff.lastIndexOf(']}');
             var obj = this.tmp_buff.substring(0, pos+2);
-
+            console.log("Obj before parse: "+obj);
             try {
                 obj = JSON.parse(obj);
-                //console.log(obj);
+                console.log(obj);
                 if (this.current_state != obj.t[0]) {
                     console.log("curr: "+this.current_state);
                     this.current_state = obj.t[0];
