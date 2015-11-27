@@ -55,6 +55,7 @@ io.sockets.on('connection', function (socket) {
         delete allClients[i];
         clearTimeout(log_getter);
         console.log("total connections: "+ allClients.length);
+
     });
 });
 
