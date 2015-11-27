@@ -51,8 +51,8 @@ io.sockets.on('connection', function (socket) {
         console.log("Got disconnect!");
         var i = allClients.indexOf(socket);
         delete allClients[i];
+        log_getter.unref();
     });
-    log_getter.unref();
 });
 
 /**
