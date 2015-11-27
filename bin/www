@@ -38,18 +38,17 @@ var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
 
 var connectionsArray = [];
-var tmp_obj = Logs.getLogs();
 
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     if (!connectionsArray.length) {
-/*        var log_getter = setTimeout(function getter(){
+        var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
             socket.broadcast.emit('send', tmp_obj);
             console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
-        log_getter.unref();*/
+        log_getter.unref();
     }
     socket.on('disconnect', function(socket){
         var socketIndex = connectionsArray.indexOf(socket);
@@ -62,11 +61,6 @@ io.sockets.on('connection', function (socket) {
     console.log("A new socket is connected!");
     connectionsArray.push(socket);
 });
-
-function send_socket(){
-    socket.broadcast.emit('send', tmp_obj);
-    console.log("Get logs: " + tmp_obj);
-};
 
 /**
  * Normalize a port into a number, string, or false.
