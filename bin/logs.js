@@ -31,7 +31,7 @@ var wire_loop = setInterval(function(){
         console.log("obj: " + obj);
         //console.log(err.name + ":" + err.message + "\n" + err.stack);
     }
-},1000);
+},4000);
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
