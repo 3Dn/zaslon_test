@@ -56,6 +56,9 @@ io.sockets.on('connection', function (socket) {
         allClients.splice(allClients.indexOf(socket), 1);
         clearTimeout(log_getter);
         console.log("total connections: "+ allClients.length);
+        if(!allClients.length){
+          process.kill();
+        }
 
     });
 });
