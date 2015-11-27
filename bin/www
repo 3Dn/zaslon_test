@@ -46,12 +46,14 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('send', tmp_obj);
         console.log("Get logs: "+tmp_obj);
         setTimeout(getter, 5000);
-        }, 1);
+    }, 1);
+    log_getter.unref();
+
     socket.on('disconnect', function(){
         console.log("Got disconnect!");
         var i = allClients.indexOf(socket);
         delete allClients[i];
-        log_getter.unref();
+        clearTimeout(log_getter);
     });
 });
 
