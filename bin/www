@@ -37,16 +37,22 @@ server.on('listening', onListening);
 var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
 
+var allClients = [];
+
 io.sockets.on('connection', function (socket) {
-
-  var log_getter = setTimeout(function getter(){
-    var tmp_obj = Logs.getLogs();
-    socket.broadcast.emit('send', tmp_obj);
-    console.log("Get logs: "+tmp_obj);
-    setTimeout(getter, 5000);
-
-  }, 1);
-  log_getter.unref();
+    allClients.push(socket);
+    var log_getter = setTimeout(function getter(){
+        var tmp_obj = Logs.getLogs();
+        socket.broadcast.emit('send', tmp_obj);
+        console.log("Get logs: "+tmp_obj);
+        setTimeout(getter, 5000);
+        }, 1);
+    socket.on('disconnect', function(){
+        console.log("Got disconnect!");
+        var i = allClients.indexOf(socket);
+        delete allClients[i];
+    });
+    log_getter.unref();
 });
 
 /**
