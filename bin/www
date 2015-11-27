@@ -54,6 +54,7 @@ io.sockets.on('connection', function (socket) {
         var i = allClients.indexOf(socket);
         delete allClients[i];
         clearTimeout(log_getter);
+        console.log("total connections: "+ allClients.length);
     });
 });
 
