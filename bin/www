@@ -44,7 +44,7 @@ io.sockets.on('connection', function (socket) {
     var log_getter = setTimeout(function getter(){
         var tmp_obj = Logs.getLogs();
         socket.broadcast.emit('send', tmp_obj);
-        console.log("Get logs: "+tmp_obj);
+        console.log("Get logs: " + tmp_obj);
         setTimeout(getter, 5000);
     }, 1);
     log_getter.unref();
@@ -55,7 +55,7 @@ io.sockets.on('connection', function (socket) {
         //delete allClients[i];
         allClients.splice(allClients.indexOf(socket), 1);
         clearTimeout(log_getter);
-        console.log("total connections: "+ allClients.length);
+        console.log("total connections: " + allClients.length);
         if(!allClients.length){
           process.exit();
         }
