@@ -212,10 +212,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 #logs, #charts, #videos, #linemap{
     margin:5%;
     padding: 2%;
-    height: 625px;
-    width: 810px;
+    height: 86%;
+    width: 86%;
     border: 1px dashed #606060;
     border-radius: 10px;
     font-family: Consolas, sans-serif;
-    /*overflow: hidden;*/
+    overflow: auto;
 }

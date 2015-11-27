@@ -22,7 +22,7 @@ socket.on('send', function (data) {
                 console.log("t = " + value);
 
                 $("#logs").append("<p> t = " + value + "</p>");
-                $("#logs").jScrollPane();
+                //$("#logs").jScrollPane();
 
             });
             //$.each(data.d, function (key, value) {
