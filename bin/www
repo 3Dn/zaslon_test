@@ -39,7 +39,7 @@ var Logs = require('./logs.js');
 
 var allClients = [];
 
-io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (socket, next) {
     allClients.push(socket);
     var log_getter = setTimeout(function getter(){
         var tmp_obj = Logs.getLogs();
@@ -57,6 +57,7 @@ io.sockets.on('connection', function (socket) {
         console.log("total connections: "+ allClients.length);
 
     });
+    next();
 });
 
 /**
