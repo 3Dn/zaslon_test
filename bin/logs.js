@@ -18,7 +18,7 @@ var wire_loop = setInterval(function(){
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
-        console.log("Obj from wire: " + obj);
+        //console.log("Obj from wire: " + obj);
     });
     try {
         obj = JSON.parse(obj);
@@ -26,7 +26,7 @@ var wire_loop = setInterval(function(){
             console.log("curr: " + current_state);
             current_state = obj.t[0];
             console.log("new_curr: " + current_state);
-            return ret_obj;
+            ret_obj = obj;
         }
     }
     catch (err) {
