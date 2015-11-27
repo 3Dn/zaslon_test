@@ -51,7 +51,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(socket){
         console.log("Got disconnect!");
-        var i = allClients.indexOf(socket);
+        //var i = allClients.indexOf(socket);
         //delete allClients[i];
         allClients.splice(allClients.indexOf(socket), 1);
         clearTimeout(log_getter);
