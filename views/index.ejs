@@ -6,7 +6,7 @@
     <link rel='stylesheet' href='/stylesheets/jquery-ui.css' />
     <link rel="icon" type="image/x-icon"  href="/images/favicon.png">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/js/1-11-4-jquery-ui.js"></script>
     <script src="/js/jq-ui.min.js"></script>
     <script type="text/javascript" src="/js/handle.js"></script>
     <script src="/socket.io/socket.io.js"></script>
@@ -20,19 +20,20 @@
     <input type="button" class="u_button" id="button_home" ws="1" title="Логи">
     <input type="button" class="u_button" id="button_table" ws="2" title="Бизнес-статистика">
     <input type="button" class="u_button" id="button_camera" ws="3" title="Камеры наблюдения">
+    <input type="button" class="u_button" id="button_weight" ws="4" title="Карта линии">
   </div>
   <div id="wrapper">
     <div id="workspace_1" class="work_style">
-     <!-- <div id="window" class="draggable work_style">
-        <p></p>
-      </div>-->
-      <div id="logs">тут будут логи-хуёги</div>
+      <div id="logs">тут будут логи</div>
     </div>
     <div id="workspace_2" class="work_style">
-      <div id="charts">а тут буду графики-хуяфики</div>
+      <div id="charts">а тут буду графики</div>
     </div>
     <div id="workspace_3" class="work_style">
-      <div id="videos">а тут будет порнуха</div>
+      <div id="videos">а здесь видео с камер</div>
+    </div>
+    <div id="workspace_4" class="work_style">
+      <div id="linemap">а здесь карта линий</div>
     </div>
     <div id="io-status-box" class="work_style">
       <div class="box-header">
@@ -40,7 +41,7 @@
         <hr class="box-header-hr">
       </div>
       <div>
-        <% for(var i = 1; i <= 20; i++){ %>
+        <% for(var i = 0; i < 20; i++){ %>
         <div class="box-inner">
           <div class="box-inner-block">
             <div class="box-inner-text">
