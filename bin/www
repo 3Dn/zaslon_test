@@ -37,30 +37,29 @@ server.on('listening', onListening);
 var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
 
-var allClients = [];
+var connectionsArray = [];
 
 io.sockets.on('connection', function (socket) {
-    allClients.push(socket);
-    var log_getter = setTimeout(function getter(){
-        var tmp_obj = Logs.getLogs();
-        socket.broadcast.emit('send', tmp_obj);
-        console.log("Get logs: " + tmp_obj);
-        setTimeout(getter, 5000);
-    }, 1);
-    log_getter.unref();
-
+    console.log("Number of connections: " + connectionsArray.length);
+    if (!connectionsArray.length) {
+        var log_getter = setTimeout(function getter(){
+            var tmp_obj = Logs.getLogs();
+            socket.broadcast.emit('send', tmp_obj);
+            console.log("Get logs: " + tmp_obj);
+            setTimeout(getter, 5000);
+        }, 1);
+        log_getter.unref();
+    }
     socket.on('disconnect', function(socket){
-        console.log("Got disconnect!");
-        //var i = allClients.indexOf(socket);
-        //delete allClients[i];
-        allClients.splice(allClients.indexOf(socket), 1);
-        clearTimeout(log_getter);
-        console.log("total connections: " + allClients.length);
-        if(!allClients.length){
-          process.exit();
+        var socketIndex = connectionsArray.indexOf(socket);
+        console.log("Socket == " + socketIndex + " disconnected.");
+        if (socketIndex >= 0) {
+            connectionsArray.splice(socketIndex, 1);
         }
-
     });
+
+    console.log("A new socket is connected!");
+    connectionsArray.push(socket);
 });
 
 /**
