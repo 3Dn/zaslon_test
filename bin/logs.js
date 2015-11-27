@@ -8,11 +8,10 @@ var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c addres
 
 var ret_obj = '';
 var obj = '';
+var current_state='';
+var tmp_buff='';
 
 var wire_loop = setInterval(function(){
-    var current_state='';
-    var tmp_buff='';
-
     wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
         tmp_buff = buff_bytes.toString('utf8');
