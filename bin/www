@@ -39,7 +39,7 @@ var Logs = require('./logs.js');
 
 var allClients = [];
 
-io.sockets.on('connection', function (socket, next) {
+io.sockets.on('connection', function (socket) {
     allClients.push(socket);
     var log_getter = setTimeout(function getter(){
         var tmp_obj = Logs.getLogs();
@@ -52,12 +52,12 @@ io.sockets.on('connection', function (socket, next) {
     socket.on('disconnect', function(socket){
         console.log("Got disconnect!");
         var i = allClients.indexOf(socket);
-        delete allClients[i];
+        //delete allClients[i];
+        allClients.splice(allClients.indexOf(socket), 1);
         clearTimeout(log_getter);
         console.log("total connections: "+ allClients.length);
 
     });
-    next();
 });
 
 /**
