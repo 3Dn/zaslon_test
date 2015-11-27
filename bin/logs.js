@@ -7,11 +7,11 @@ var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
 var ret_obj = '';
+var obj = '';
 
 var wire_loop = setInterval(function(){
     var current_state='';
     var tmp_buff='';
-    var obj;
 
     wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
