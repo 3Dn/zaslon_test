@@ -17,7 +17,6 @@ var wire_loop = setInterval(function(){
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
-        //console.log("Obj from wire: " + obj);
     });
     try {
         obj = JSON.parse(obj);
@@ -36,33 +35,9 @@ var wire_loop = setInterval(function(){
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
-/*    var current_state='';
-    var tmp_buff='';
-    var obj;*/
-
     this.getLogs = function(){
- /*       wire.read(32, function(err, res){
-            var buff_bytes = new Buffer(res);
-            tmp_buff = buff_bytes.toString('utf8');
-            var pos = tmp_buff.lastIndexOf(']}');
-            obj = tmp_buff.substring(0, pos+2);
-        });
-            try {
-                obj = JSON.parse(obj);
-                if (current_state != obj.t[0]) {
-                    console.log("curr: " + current_state);
-                    current_state = obj.t[0];
-                    console.log("new_curr: " + current_state);
-                    return obj;
-                }
-            }
-            catch (err) {
-                console.log("obj: " + obj);
-                //console.log(err.name + ":" + err.message + "\n" + err.stack);
-            }*/
         return ret_obj;
-        };
-
+    };
 
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
