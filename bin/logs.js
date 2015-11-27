@@ -19,15 +19,12 @@ var singleton = function singleton(){
             var pos = tmp_buff.lastIndexOf(']}');
             obj = tmp_buff.substring(0, pos+2);
         });
-            //console.log("Obj before parse: "+obj);
             try {
                 obj = JSON.parse(obj);
-                if (this.current_state != obj.t[0]) {
+                if (current_state != obj.t[0]) {
                     console.log("curr: " + current_state);
-                    this.current_state = obj.t[0];
-                //    socket.broadcast.emit('send', obj);
+                    current_state = obj.t[0];
                     console.log("new_curr: " + current_state);
-                    //console.log("Obj after parse: "+obj.t[0]);
                     return obj;
                 }
             }
