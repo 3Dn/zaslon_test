@@ -20,13 +20,13 @@ var Logs = function(){
             console.log("Obj before parse: "+obj);
             try {
                 obj = JSON.parse(obj);
-                console.log(obj);
                 if (this.current_state != obj.t[0]) {
                     console.log("curr: "+this.current_state);
                     this.current_state = obj.t[0];
                 //    socket.broadcast.emit('send', obj);
                     console.log("new_curr: "+this.current_state);
-                    return this.current_state;
+                    console.log("Obj after parse: "+obj);
+                    return obj;
                 }
             }
             catch (err){
