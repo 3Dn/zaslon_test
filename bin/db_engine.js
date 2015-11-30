@@ -19,7 +19,7 @@ var singleton = function singleton(){
         });
     };
     this.query = function(text) {
-        var query = connection.query('');
+        var query = connection.query(text);
     }
 
     if(singleton.caller != singleton.getInstance){
