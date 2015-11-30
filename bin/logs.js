@@ -3,6 +3,7 @@
  * Created by Kriv on 26.11.2015.
  */
 var i2c = require('i2c');
+var db  = require('./db_engine');
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
@@ -24,6 +25,7 @@ var wire_loop = setInterval(function(){
             console.log("curr: " + current_state);
             current_state = obj.t[0];
             console.log("new_curr: " + current_state);
+            db.connect();
             ret_obj = obj;
         }
     }
