@@ -2,8 +2,8 @@
  * Created by adm_korolev on 27.11.2015.
  */
 
-var mysql       = require('mysql'),
-    connection  = mysql.createConnection({
+var mysql       = require('mysql');
+var connection  = mysql.createConnection({
         host        :   '192.168.1.22',
         user        :   'admin_zaslon',
         password    :   'zaslon_Pa$$',
