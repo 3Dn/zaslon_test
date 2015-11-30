@@ -23,7 +23,12 @@ var singleton = function singleton(){
         var query = connection.query(text, function(err, rows, fields){
             if (err) console.log("DB query error: " + err);
         });
-    }
+    };
+    this.sys_log_query = function(zaslon_id, sys_name, level, message) {
+        //if (!zaslon_id) zaslon_id = "0";
+        //if (!sys_name) sys_name = "system";
+        var query = connection.query('INSERT INTO sys_log (zaslon_id, sys_name, level, message) VALUES("' + zaslon_id +'","' + sys_name + '","' + level + '","' + message + '")');
+    };
 
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
