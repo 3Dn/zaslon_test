@@ -9,7 +9,7 @@ var connection  = mysql.createConnection({
         user        :   'admin_zaslon',
         password    :   'zaslon_Pa$$',
         database    :   'admin_zaslon',
-        port        :   3306
+        port        :   '3306'
     });
 
 var singleton = function singleton(){
