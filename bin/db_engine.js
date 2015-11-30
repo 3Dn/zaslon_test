@@ -5,12 +5,12 @@
 
 var mysql       = require('mysql');
 var connection  = mysql.createConnection({
-        host        :   '192.168.1.22',
-        user        :   'admin_zaslon',
-        password    :   'zaslon_Pa$$',
-        database    :   'admin_zaslon',
-        port        :   '3306'
-    });
+    host        :   '192.168.1.22',
+    user        :   'admin_zaslon',
+    password    :   'zaslon_Pa$$',
+    database    :   'admin_zaslon',
+    port        :   '3306'
+});
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
