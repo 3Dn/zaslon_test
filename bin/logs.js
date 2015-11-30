@@ -25,7 +25,7 @@ var wire_loop = setInterval(function(){
             console.log("curr: " + current_state);
             current_state = obj.t[0];
             console.log("new_curr: " + current_state);
-            db.connect();
+            //db.connect();
             ret_obj = obj;
         }
     }
