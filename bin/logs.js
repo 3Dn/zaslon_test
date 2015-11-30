@@ -12,6 +12,8 @@ var obj = '';
 var current_state='';
 var tmp_buff='';
 
+db.connect();
+
 var wire_loop = setInterval(function(){
     wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
@@ -25,7 +27,7 @@ var wire_loop = setInterval(function(){
             console.log("curr: " + current_state);
             current_state = obj.t[0];
             console.log("new_curr: " + current_state);
-            //db.connect();
+            db.query('SELECT * FROM io_log');
             ret_obj = obj;
         }
     }

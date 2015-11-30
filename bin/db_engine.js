@@ -20,7 +20,9 @@ var singleton = function singleton(){
         });
     };
     this.query = function(text) {
-        var query = connection.query(text);
+        var query = connection.query(text, function(err, rows){
+            console.log("DB query error: " + err);
+        });
     }
 
     if(singleton.caller != singleton.getInstance){
