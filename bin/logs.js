@@ -27,7 +27,7 @@ var wire_loop = setInterval(function(){
             console.log("curr: " + current_state);
             current_state = obj.t[0];
             console.log("new_curr: " + current_state);
-            db.query('SELECT * FROM io_log');
+            db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
             ret_obj = obj;
         }
     }
