@@ -18,6 +18,9 @@ var singleton = function singleton(){
         connection.connect(function(err) {
             console.log("Database info: " + err);
         });
+        if(!err){
+            console.log("Connection exists!");
+        }
     };
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
@@ -33,7 +36,7 @@ var singleton = function singleton(){
     };
 
     if(singleton.caller != singleton.getInstance){
-        throw new Error("This object cannot be instanciated");
+        throw new Error("DB cannot be instanciated");
     }
 };
 
