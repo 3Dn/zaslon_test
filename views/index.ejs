@@ -37,7 +37,7 @@
       <div id="charts">
         а тут буду графики<br/>
         <canvas id="myChart" width="400" height="400"></canvas>
-        <script>
+        <%
           var ctx = document.getElementById("myChart").getContext("2d");
 
 
@@ -118,7 +118,7 @@
 
           var myLineChart = new Chart(ctx).Line(chartData, options);
 
-        </script>
+        %>
       </div>
     </div>
     <div id="workspace_3" class="work_style">
