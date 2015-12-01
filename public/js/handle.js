@@ -38,6 +38,7 @@ $(document).ready(function(){
         }
     });
 
+/*
     var ctx = document.getElementById("myChart").getContext("2d");
 
 
@@ -118,6 +119,7 @@ $(document).ready(function(){
 
     var myLineChart = new Chart(ctx).Line(chartData, options);
 
+*/
 
 
 
