@@ -66,8 +66,7 @@ $(document).ready(function(){
     };
     var ctx = document.getElementById("myChart").getContext("2d");
     var myLineChart = new Chart(ctx).Line(chartData);
-    //new Chart(ctx);
-    var myNewChart = new Chart(ctx);
+
 
 
 
