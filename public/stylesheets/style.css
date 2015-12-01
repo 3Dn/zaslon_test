@@ -30,7 +30,7 @@ body {
     float: left;
     display: inline-block;
 }
-#workspace_1, #workspace_3, #workspace_4{
+#workspace_2, #workspace_3, #workspace_4{
     display: none;
 }
 
@@ -209,8 +209,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_weight{
     background:url('/images/icon_weight.png') no-repeat center center;
 }
-#logs, #charts, #videos, #linemap{
-    margin:5%;
+#logs, #charts, #videos, #linemap {
+    margin: 5%;
     padding: 2%;
     height: 86%;
     width: 86%;
@@ -218,9 +218,4 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 10px;
     font-family: Consolas, sans-serif;
     overflow: auto;
-}
-
-#myChart{
-    border-radius: 5px;
-    border: 1px solid #c90c0f;
 }
