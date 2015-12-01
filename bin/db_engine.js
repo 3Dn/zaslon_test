@@ -49,7 +49,7 @@ singleton.getInstance = function(){
     if(this.instance === null){
         this.instance = new singleton();
     }
-    return this.instance;
+    return this.connect;
 };
 
 module.exports = singleton.getInstance();
