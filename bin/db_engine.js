@@ -17,7 +17,7 @@ var connection  = mysql.createConnection({
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.connect = function(){
-        if (connection_state = 0) {
+        if (connection_state == 0) {
             connection.connect(function (err) {
                 console.log("Database info: " + err);
                 connection_state = 1;
