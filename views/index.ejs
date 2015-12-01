@@ -21,16 +21,16 @@
   </head>
 
 
-  <body>
+  <body onLoad="init()">
   <script type="text/javascript">
 
-    window.onLoad = function() {
-      init();
-    };
+//    window.onLoad = function() {
+//      init();
+//    };
 
     function init() {
       var ctx = $("#myChart").get(0).getContext("2d");
-      var myNewChart = new Chart(ctx).Line(data, options);
+
 
       var data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -51,7 +51,9 @@
           }
         ]
       }
-    }
+    };
+
+    var myNewChart = new Chart(ctx).Line(data);
 
   </script>
   <div id="logo"></div>
