@@ -64,8 +64,11 @@ $(document).ready(function(){
             }
         ]
     };
-    var ctx = document.getElementById("myChart").getContext("2d");
-    var myLineChart = new Chart(ctx).Line(chartData);
+    //var ctx = document.getElementById("myChart").getContext("2d");
+    //var myLineChart = new Chart(ctx).Line(chartData);
+
+    var ctx = $("#myChart").get(0).getContext("2d");
+    var myNewChart = new Chart(ctx);
 
 
 
