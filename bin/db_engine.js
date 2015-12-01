@@ -13,14 +13,14 @@ var mysql       = require('mysql');
 //});
 
 var db_connect = function(err){
-    singleton.connect(function(err) {
+    singleton.connection(function(err) {
         console.log("Database info: " + err);
     });
 }
 
 var singleton = function singleton(){
 
-    this.connect  = mysql.createConnection({
+    this.connection  = mysql.createConnection({
         host        :   '192.168.1.22',
         user        :   'admin_zaslon',
         password    :   'zaslonPa$$',
