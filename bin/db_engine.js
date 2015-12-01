@@ -2,7 +2,7 @@
 /**
  * Created by adm_korolev on 27.11.2015.
  */
-
+var connection_state = 0;
 var mysql       = require('mysql');
 var connection  = mysql.createConnection({
     host        :   '192.168.1.22',
@@ -17,8 +17,10 @@ var connection  = mysql.createConnection({
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.connect = function(){
+        if (connection_state = 0)
         connection.connect(function(err) {
             console.log("Database info: " + err);
+            connection_state = 1;
         });
     };
     this.query = function(text) {
@@ -49,7 +51,7 @@ singleton.getInstance = function(){
     if(this.instance === null){
         this.instance = new singleton();
     }
-    return this.connect;
+    return this.instance;
 };
 
 module.exports = singleton.getInstance();
