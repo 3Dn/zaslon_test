@@ -11,6 +11,8 @@
     <script src="/js/jq-ui.min.js"></script>
     <script type="text/javascript" src="/js/handle.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="Chart.js"></script>
+
     <script src="/js/socket_handle.js"></script>
     <script src="/js/mousewheel.js"></script>
     <script src="/js/scroll.js"></script>
@@ -32,7 +34,10 @@
       <div id="logs">тут будут логи</div>
     </div>
     <div id="workspace_2" class="work_style">
-      <div id="charts">а тут буду графики</div>
+      <div id="charts">
+        а тут буду графики
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
     </div>
     <div id="workspace_3" class="work_style">
       <div id="videos">а здесь видео с камер</div>
