@@ -114,10 +114,12 @@ $(document).ready(function(){
 
 
 
-    var ctx = $("#myChart").get(0).getContext("2d");
+    //var ctx = $("#myChart").getContext("2d");
+    //var myNewChart = new Chart(ctx).Line(chartData);
+
+    var canvas = document.getElementById("myChart");
+    var ctx = canvas.getContext("2d");
     var myNewChart = new Chart(ctx).Line(chartData);
-
-
 
 
 
