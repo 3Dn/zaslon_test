@@ -23,6 +23,7 @@ var singleton = function singleton(){
         var query = connection.query(text, function(err, rows, fields){
             if (err) console.log("DB query error: " + err);
         });
+        return rows[0];
     };
     this.sys_log_query = function(zaslon_id, sys_name, level, message) {
         //if (!zaslon_id) zaslon_id = "0";
