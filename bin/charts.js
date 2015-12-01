@@ -6,4 +6,4 @@
 var db  = require('./db_engine');
 
 var db_data = db.query("SELECT * FROM io_log LIMIT 10");
-console.log(db_data);
+console.log("db_chart_data: "+db_data);

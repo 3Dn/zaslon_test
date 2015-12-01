@@ -33,7 +33,7 @@ server.on('listening', onListening);
 /**
  * Listen i2c and sockets
  */
-var charts = require('./charts.js');
+//var charts = require('./charts.js');
 
 var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
