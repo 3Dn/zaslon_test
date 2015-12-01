@@ -4,24 +4,30 @@
  */
 
 var mysql       = require('mysql');
-var connection  = mysql.createConnection({
-    host        :   '192.168.1.22',
-    user        :   'admin_zaslon',
-    password    :   'zaslonPa$$',
-    database    :   'admin_zaslon',
-    port        :   '3306'
-});
+//var connection  = mysql.createConnection({
+//    host        :   '192.168.1.22',
+//    user        :   'admin_zaslon',
+//    password    :   'zaslonPa$$',
+//    database    :   'admin_zaslon',
+//    port        :   '3306'
+//});
+
+var db_connect = function(err){
+    singleton.connect(function(err) {
+        console.log("Database info: " + err);
+    });
+}
 
 var singleton = function singleton(){
-    //defining a var instead of this (works for variable & function) will create a private definition
-    this.connect = function(){
-        connection.connect(function(err) {
-            console.log("Database info: " + err);
-        });
-        if(!err){
-            console.log("Connection exists!");
-        }
-    };
+
+    this.connect  = mysql.createConnection({
+        host        :   '192.168.1.22',
+        user        :   'admin_zaslon',
+        password    :   'zaslonPa$$',
+        database    :   'admin_zaslon',
+        port        :   '3306'
+    });
+
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
             if (err) console.log("DB query error: " + err);
