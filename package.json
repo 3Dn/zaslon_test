@@ -15,6 +15,7 @@
     "serve-favicon": "~2.3.0",
     "socket.io": "~1.0.0",
     "node-rtsp-stream": "~0.0.3",
-    "mysql": "~0.9.x"
+    "mysql": "~0.9.x",
+    "chart.js": "~1.0.x"
   }
 }
