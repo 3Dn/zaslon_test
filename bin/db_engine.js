@@ -15,30 +15,20 @@ var connection  = mysql.createConnection({
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
-/*    this.connect = function(){
-        if (connection_state == 0) {
-            connection.connect(function (err) {
-                console.log("Database info: " + err);
-                connection_state = 1;
-            });
-        }
-    };*/
     this.connection = function(){
         return connection;
     };
-
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
-            if (err)
+/*            if (err)
                 console.log("DB query error: " + err);
             else
                 console.log("DB query: " + rows);
-            return rows;
+            return rows;*/
         });
-
     };
     this.sys_log_query = function(zaslon_id, sys_name, level, message) {
-        var query = connection.query('INSERT INTO sys_log (zaslon_id, sys_name, level, message) VALUES("' + zaslon_id +'","' + sys_name + '","' + level + '","' + message + '")');
+        connection.query('INSERT INTO sys_log (zaslon_id, sys_name, level, message) VALUES("' + zaslon_id +'","' + sys_name + '","' + level + '","' + message + '")');
     };
 
     if(singleton.caller != singleton.getInstance){
