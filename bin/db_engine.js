@@ -23,6 +23,10 @@ var singleton = function singleton(){
             });
         }
     };*/
+    this.connection = function(){
+        return connection;
+    };
+
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
             if (err) console.log("DB query error: " + err);
