@@ -5,10 +5,10 @@
 var connection_state = 0;
 var mysql       = require('mysql');
 var connection  = mysql.createConnection({
-    host        :   '192.168.1.22',
-    user        :   'admin_zaslon',
+    host        :   '192.168.1.28',
+    user        :   'zaslon',
     password    :   'zaslonPa$$',
-    database    :   'admin_zaslon',
+    database    :   'zaslon',
     port        :   '3306'
 });
 
