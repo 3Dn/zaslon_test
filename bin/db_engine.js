@@ -29,7 +29,10 @@ var singleton = function singleton(){
 
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
-            if (err) console.log("DB query error: " + err);
+            if (err)
+                console.log("DB query error: " + err);
+            else
+                console.log("DB query: " + rows);
             return rows;
         });
 
