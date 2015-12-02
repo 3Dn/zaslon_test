@@ -31,8 +31,6 @@ var singleton = function singleton(){
 
     };
     this.sys_log_query = function(zaslon_id, sys_name, level, message) {
-        //if (!zaslon_id) zaslon_id = "0";
-        //if (!sys_name) sys_name = "system";
         var query = connection.query('INSERT INTO sys_log (zaslon_id, sys_name, level, message) VALUES("' + zaslon_id +'","' + sys_name + '","' + level + '","' + message + '")');
     };
 
