@@ -51,10 +51,13 @@ function init() {
         console.log(data);
 
         $.each(data, function(key, value){
-            dates.push(value.date);
+            var t = value.date.split(/[- :]/);
+            var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+            dates.push(d);
             states.push(value.pin_state);
         });
         console.log(dates);
+        console.log(states);
     });
 
     var chart_data = {
