@@ -39,7 +39,7 @@ var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.getCharts = function(){
         //return JSON.parse(chart_obj);
-        return chart_obj;
+        return ret_rows;
     };
 
     if(singleton.caller != singleton.getInstance){
