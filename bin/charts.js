@@ -32,6 +32,7 @@ var chart_loop = setInterval(function(){
         }
     });
 },10000);
+chart_loop.unref();
 
 
 var singleton = function singleton(){

@@ -57,7 +57,7 @@ io.sockets.on('connection', function (socket) {
     socket.on("getCharts", function(socket){
         var chart_obj = charts.getCharts();
         console.log("Got 'getCharts' event!");
-        socket.broadcast.emit("chart_data", chart_obj);
+        socket.broadcast.emit("chart_data", 'qweqwe');
     });
 
     socket.on('disconnect', function(socket){
