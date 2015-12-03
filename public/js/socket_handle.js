@@ -53,7 +53,8 @@ function init() {
         $.each(data, function(key, value){
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            dates.push(value.date);
+            var d = new Date(value.my_date);
+            dates.push(d);
             states.push(value.pin_state);
         });
         console.log(dates);
