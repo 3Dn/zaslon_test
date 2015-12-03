@@ -41,4 +41,9 @@ socket.on('send', function (data) {
 
 socket.on("chart_data", function(data){
    console.log(data);
+    var dates = [];
+    $.each(data, function(key, value){
+        dates.push(value.date);
+    });
+    console.log(dates);
 });
