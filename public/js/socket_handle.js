@@ -44,10 +44,12 @@ function init() {
     socket.emit("getCharts");
     var ctx = $("#myChart").get(0).getContext("2d");
 
+    var dates = [];
+    var states = [];
+
     socket.on("chart_data", function(data){
         console.log(data);
-        var dates = [];
-        var states = [];
+
         $.each(data, function(key, value){
             dates.push(value.date);
             states.push(value.pin_state);
