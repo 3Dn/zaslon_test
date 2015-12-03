@@ -54,7 +54,7 @@ io.sockets.on('connection', function (socket) {
         log_getter.unref();
     }
 
-    socket.on("getCharts", function(socket){
+    socket.on('getCharts', function(socket){
         var chart_obj = charts.getCharts();
         console.log("Got 'getCharts' event!");
         socket.broadcast.emit('chart_data', chart_obj);
@@ -67,11 +67,6 @@ io.sockets.on('connection', function (socket) {
             connectionsArray.splice(socketIndex, 1);
         }
     });
-
-
-
-
-
 
     console.log("A new socket is connected!");
     connectionsArray.push(socket);
