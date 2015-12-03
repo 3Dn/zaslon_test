@@ -59,6 +59,7 @@ $(document).ready(function(){
         }else if(ws == '2'){
             $("#workspace_2").show();
             init();
+            socket.emit("getCharts");
             $("#workspace_1, #workspace_3, #workspace_4").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();

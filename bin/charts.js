@@ -18,18 +18,24 @@ console.log("db_chart_data: "+db_data);*/
         console.log("DB ret error!");
 });*/
 
+var chart_obj;
+
+var chart_loop = setInterval(function(){
+    chart_obj = local_conn.query("SELECT id, date, pin_state FROM io_log ORDER BY id, desc LIMIT 10", function(err, rows, fields) {
+        if (!err){
+            console.log("DB ret: ", rows);
+            return rows;
+        }else {
+            console.log("DB ret error!");
+        }
+    });
+},10000);
+
+
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.getCharts = function(){
-        local_conn.query("SELECT id, date, pin_state FROM io_log LIMIT 10", function(err, rows, fields) {
-            if (!err){
-                console.log("DB ret: ", rows);
-                return rows;
-            }else {
-                console.log("DB ret error!");
-            }
-        });
-
+        return JSON.parse(chart_obj);
     };
 
     if(singleton.caller != singleton.getInstance){
