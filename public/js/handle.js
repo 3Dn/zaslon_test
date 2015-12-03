@@ -27,6 +27,9 @@ function init() {
     }
     var myNewChart = new Chart(ctx).Line(data);
 }
+function update(){
+
+}
 
 $(document).ready(function(){
 

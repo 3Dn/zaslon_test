@@ -38,3 +38,7 @@ socket.on('send', function (data) {
     }
 
 });
+
+socket.on("chart_data", function(data){
+   console.log(data);
+});

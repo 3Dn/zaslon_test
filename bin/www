@@ -33,12 +33,14 @@ server.on('listening', onListening);
 /**
  * Listen i2c and sockets
  */
-var charts = require('./charts.js');
+
 
 var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
 
 var connectionsArray = [];
+
+var charts = require('./charts.js');
 
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
@@ -58,6 +60,7 @@ io.sockets.on('connection', function (socket) {
             connectionsArray.splice(socketIndex, 1);
         }
     });
+
 
     console.log("A new socket is connected!");
     connectionsArray.push(socket);
