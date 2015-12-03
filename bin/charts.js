@@ -21,7 +21,7 @@ console.log("db_chart_data: "+db_data);*/
 var chart_obj;
 
 var chart_loop = setInterval(function(){
-    chart_obj = local_conn.query("SELECT id, date, pin_state FROM io_log ORDER BY id, desc LIMIT 10", function(err, rows, fields) {
+    chart_obj = local_conn.query("SELECT id, date, pin_state FROM io_log ORDER BY id DESC LIMIT 10", function(err, rows, fields) {
         if (!err){
             console.log("DB ret: ", rows);
             return rows;
