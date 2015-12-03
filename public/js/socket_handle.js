@@ -64,11 +64,11 @@ function init() {
                 fillColor: "rgba(220,220,220,0.5)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
+                pointStrokeColor: "#c90c0f",
                 data: states
             }
         ]
-    }
+    };
     var myNewChart = new Chart(ctx).Line(chart_data);
 }
 
