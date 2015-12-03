@@ -51,9 +51,9 @@ function init() {
         console.log(data);
 
         $.each(data, function(key, value){
-            var t = value.date.split(/[- :]/);
-            var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            dates.push(d);
+            //var t = value.date.split(/[- :]/);
+            //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+            dates.push(value.date);
             states.push(value.pin_state);
         });
         console.log(dates);
