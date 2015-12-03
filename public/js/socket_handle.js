@@ -39,11 +39,37 @@ socket.on('send', function (data) {
 
 });
 
-socket.on("chart_data", function(data){
-   console.log(data);
-    var dates = [];
-    $.each(data, function(key, value){
-        dates.push(value.date);
+function init() {
+
+    socket.emit("getCharts");
+    var ctx = $("#myChart").get(0).getContext("2d");
+
+    socket.on("chart_data", function(data){
+        console.log(data);
+        var dates = [];
+        var states = [];
+        $.each(data, function(key, value){
+            dates.push(value.date);
+            states.push(value.pin_state);
+        });
+        console.log(dates);
     });
-    console.log(dates);
-});
+
+    var chart_data = {
+        labels: dates,
+        datasets: [
+            {
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                data: states
+            }
+        ]
+    }
+    var myNewChart = new Chart(ctx).Line(chart_data);
+}
+
+
+
+
