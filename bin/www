@@ -56,7 +56,8 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('getCharts', function(){
         var chart_obj = charts.getCharts();
-        console.log("Got 'getCharts' event!");
+        console.log("www -> Got 'getCharts' event!");
+        console.log("www -> chart_obj: \n" + chart_obj);
         io.sockets.emit('chart_data', chart_obj);
     });
 
