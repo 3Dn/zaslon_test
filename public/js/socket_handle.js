@@ -57,8 +57,8 @@ function init() {
             dates.push(d);
             states.push(value.pin_state);
         });
-        console.log(dates);
-        console.log(states);
+        console.log("socket_handle.js -> dates: \n" + dates + "\n");
+        console.log("socket_handle.js -> states: \n" + states + "\n");
     });
 
     var chart_data = {
