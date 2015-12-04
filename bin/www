@@ -48,13 +48,13 @@ io.sockets.on('connection', function (socket) {
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
             io.sockets.emit('send', tmp_obj);
-            console.log("Get logs: " + tmp_obj);
+            //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
         log_getter.unref();
     }
 
-    socket.on('getCharts', function(){
+    socket.on('getCharts', function(socket){
         var chart_obj = charts.getCharts();
         console.log("www -> Got 'getCharts' event!");
         console.log("www -> chart_obj: \n" + chart_obj);
