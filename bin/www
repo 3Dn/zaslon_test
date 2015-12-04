@@ -55,11 +55,11 @@ io.sockets.on('connection', function (socket) {
         log_getter.unref();
     }
 
-    socket.on('getCharts', function(socket){
+    io.on('getCharts', function(socket){
         var chart_obj = charts.getCharts();
         console.log("www -> Got 'getCharts' event!");
         console.log("www -> chart_obj: \n" + chart_obj);
-        io.sockets.emit('chart_data', chart_obj);
+        socket.broadcast.emit('chart_data', chart_obj);
     });
 
     socket.on('disconnect', function(socket){
