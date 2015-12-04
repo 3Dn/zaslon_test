@@ -37,7 +37,7 @@ server.on('listening', onListening);
 
 //var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
-var io = require('socket.io')(app);
+var io = require('socket.io')(server);
 
 var connectionsArray = [];
 
