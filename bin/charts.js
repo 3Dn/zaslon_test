@@ -26,7 +26,7 @@ var chart_loop = setInterval(function(){
         if (!err){
             console.log("chart.js -> rows:\n", rows);
             ret_rows = rows;
-            return ret_rows;
+            //return ret_rows;
         }else {
             console.log("DB ret error!");
         }
