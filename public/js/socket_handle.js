@@ -74,6 +74,7 @@ function init() {
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
+        console.log("typeof(states): "+typeof(states));
     });
     var chart_data = {
         labels: dates,
@@ -88,7 +89,7 @@ function init() {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 //data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
-                data: [1,0,1,0,1,0,1,0,1,0]
+                data: states
             }
         ]
     };
