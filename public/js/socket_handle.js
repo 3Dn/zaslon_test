@@ -63,7 +63,7 @@ function init() {
         console.log("socket_handle.js -> states: \n" + states + "\n");
     });
     var chart_data = {
-        labels: dates,
+        labels: [dates],
         datasets: [
             {
                 label: "Pin states",
@@ -73,7 +73,7 @@ function init() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: states
+                data: [states]
             }
         ]
     };
