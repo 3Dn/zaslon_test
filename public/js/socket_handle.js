@@ -61,10 +61,9 @@ function init() {
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
-        console.log(typeOf(states));
     });
     var chart_data = {
-        labels: [dates],
+        labels: dates,
         datasets: [
             {
                 label: "Pin states",
