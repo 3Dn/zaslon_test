@@ -88,7 +88,7 @@ function init() {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 //data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
-                data: states
+                data: [1,0,1,0,1,0,1,0,1,0]
             }
         ]
     };
