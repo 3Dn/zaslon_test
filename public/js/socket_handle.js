@@ -91,8 +91,8 @@ function init() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                //data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
-                data: states
+                data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
+                //data: states
             }
         ]
     };
@@ -127,7 +127,7 @@ function init() {
     console.log("AAAAAAAAAAAA!!!!!!!!!!!");
     console.log(chart_data);
 
-    var myNewChart = new Chart(ctx).Line(chart_data, {animation: false});
+    var myNewChart = new Chart(ctx).Bar(chart_data, {animation: false});
 }
 
 
