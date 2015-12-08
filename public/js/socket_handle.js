@@ -56,7 +56,13 @@ function init() {
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             //var d = new Date(value.my_date);
             //dates.push(d);
-            states.push(value.pin_state*1);
+
+            //states.push(value.pin_state);
+            if(value.pin_state == '1'){
+                states.push(10);
+            }else{
+                states.push(5);
+            }
             var unix_timestamp = 1370001284000;
 
             var d = new Date(value.my_date*1000);
