@@ -32,13 +32,15 @@ var chart_loop = setInterval(function(){
         }
     });
 },10000);
-chart_loop.unref();
+//chart_loop.unref();
 
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.getCharts = function(){
         //return JSON.parse(chart_obj);
+        chart_loop();
+        chart_loop.unref();
         console.log("chart.js -> getCharts() -> ok!\nData: " + ret_rows);
         return ret_rows;
     };
