@@ -57,9 +57,8 @@ function init() {
             //var d = new Date(value.my_date);
             //dates.push(d);
 
-            states.push(value.pin_state);
+            states.push(parseInt(value.pin_state));
 
-            var unix_timestamp = 1370001284000;
 
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
