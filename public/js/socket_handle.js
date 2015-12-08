@@ -65,13 +65,13 @@ function init() {
     var chart_data = {
         labels: dates,
         datasets: [
-            {
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#c90c0f",
-                data: states
-            },
+            //{
+            //    fillColor: "rgba(220,220,220,0.5)",
+            //    strokeColor: "rgba(220,220,220,1)",
+            //    pointColor: "rgba(220,220,220,1)",
+            //    pointStrokeColor: "#c90c0f",
+            //    data: states
+            //},
             {
                 fillColor: "rgba(220,220,220,0.5)",
                 strokeColor: "rgba(220,220,220,1)",
@@ -83,7 +83,7 @@ function init() {
     };
     console.log("AAAAAAAAAAAA!!!!!!!!!!!");
     console.log(chart_data);
-    var myNewChart = new Chart(ctx).Bar(chart_data, {barStrokeWidth : 5});
+    var myNewChart = new Chart(ctx).Line(chart_data);
 }
 
 
