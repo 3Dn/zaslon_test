@@ -130,6 +130,8 @@ function init() {
 
     console.log("AAAAAAAAAAAA!!!!!!!!!!!");
     console.log(chart_data);
+    Chart.defaults.global.responsive = true;
+
     var myNewChart = new Chart(ctx).Line(chart_data, {animation: false});
 }
 
