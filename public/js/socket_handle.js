@@ -55,7 +55,10 @@ function init() {
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             var d = new Date(value.my_date);
-            dates.push(d[0]);
+            for(var key in d){
+                dates.push(key[0]);
+            };
+
             states.push(value.pin_state);
         });
 
