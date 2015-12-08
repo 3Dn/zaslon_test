@@ -54,13 +54,22 @@ function init() {
         $.each(data, function(key, value){
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            var d = new Date(value.my_date);
-            dates.push(d);
+            //var d = new Date(value.my_date);
+            //dates.push(d);
             states.push(value.pin_state);
-            for(key in d){
-                console.log(key);
-            }
+            var unix_timestamp = 1370001284000;
+
+            var d = new Date(value.my_date*1000);
+            var hours = date.getHours();
+            var minutes = "0" + date.getMinutes();
+            var seconds = "0" + date.getSeconds();
+            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            dates.push(formattedTime);
+
+            //alert(formattedTime)
         });
+
+
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
