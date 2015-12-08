@@ -56,7 +56,7 @@ function init() {
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             //var d = new Date(value.my_date);
             //dates.push(d);
-            states.push(value.pin_state);
+            states.push(value.pin_state*1);
             var unix_timestamp = 1370001284000;
 
             var d = new Date(value.my_date*1000);
@@ -95,7 +95,8 @@ function init() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
+                //data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
+                data: states
             }
         ]
     };
