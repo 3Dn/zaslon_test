@@ -57,12 +57,8 @@ function init() {
             //var d = new Date(value.my_date);
             //dates.push(d);
 
-            //states.push(value.pin_state);
-            if(value.pin_state == '1'){
-                states.push(10);
-            }else{
-                states.push(5);
-            }
+            states.push(value.pin_state);
+
             var unix_timestamp = 1370001284000;
 
             var d = new Date(value.my_date*1000);
@@ -80,10 +76,10 @@ function init() {
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
     });
-    var chart_data = {
+  /*  var chart_data = {
         labels: dates,
         datasets: [
-           /* {
+           /!* {
                 label: "Pin states",
                 fillColor: "rgba(220,220,220,0.2)",
                 strokeColor: "rgba(220,220,220,1)",
@@ -92,7 +88,7 @@ function init() {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 data: states
-            },*/
+            },*!/
             {
                 label: "Pin states",
                 fillColor: "rgba(220,220,220,0.2)",
@@ -105,20 +101,20 @@ function init() {
                 data: states
             }
         ]
-    };
-    /*var chart_data = {
+    };*/
+    var chart_data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [
-            {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
+            //{
+            //    label: "My First dataset",
+            //    fillColor: "rgba(220,220,220,0.2)",
+            //    strokeColor: "rgba(220,220,220,1)",
+            //    pointColor: "rgba(220,220,220,1)",
+            //    pointStrokeColor: "#fff",
+            //    pointHighlightFill: "#fff",
+            //    pointHighlightStroke: "rgba(220,220,220,1)",
+            //    data: [65, 59, 80, 81, 56, 55, 40]
+            //},
             {
                 label: "My Second dataset",
                 fillColor: "rgba(151,187,205,0.2)",
@@ -130,7 +126,7 @@ function init() {
                 data: [28, 48, 40, 19, 86, 27, 90]
             }
         ]
-    };*/
+    };
 
 
 
