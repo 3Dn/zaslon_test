@@ -44,8 +44,8 @@ function init() {
     socket.emit("getCharts");
     var ctx = $("#myChart").get(0).getContext("2d");
 
-    var dates = [];
-    var states = [];
+    var dates = new Array();
+    var states = new Array();
 
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
