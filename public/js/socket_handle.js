@@ -77,7 +77,7 @@ function init() {
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#c90c0f",
-                data: states
+                data: [1,2,3,4,1,2,3,4,1,2]
             }
         ]
     };
