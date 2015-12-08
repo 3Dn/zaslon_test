@@ -61,27 +61,22 @@ function init() {
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
     });
-/*
     var chart_data = {
         labels: dates,
         datasets: [
-            //{
-            //    fillColor: "rgba(220,220,220,0.5)",
-            //    strokeColor: "rgba(220,220,220,1)",
-            //    pointColor: "rgba(220,220,220,1)",
-            //    pointStrokeColor: "#c90c0f",
-            //    data: states
-            //},
             {
-                fillColor: "rgba(220,220,220,0.5)",
+                label: "Pin states",
+                fillColor: "rgba(220,220,220,0.2)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#c90c0f",
-                data: [1,2,3,4,1,2,3,4,1,2]
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: states
             }
         ]
-    };*/
-    var chart_data = {
+    };
+    /*var chart_data = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [
             {
@@ -105,7 +100,7 @@ function init() {
                 data: [28, 48, 40, 19, 86, 27, 90]
             }
         ]
-    };
+    };*/
 
     console.log("AAAAAAAAAAAA!!!!!!!!!!!");
     console.log(chart_data);
