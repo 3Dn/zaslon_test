@@ -61,8 +61,8 @@ function init() {
 
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
-            var minutes = "0" + date.getMinutes();
-            var seconds = "0" + date.getSeconds();
+            var minutes = "0" + d.getMinutes();
+            var seconds = "0" + d.getSeconds();
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
             dates.push(formattedTime);
 
