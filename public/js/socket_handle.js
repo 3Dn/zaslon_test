@@ -1,6 +1,8 @@
+var $ = require('../jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/external/jquery/jquery.js');
 /**
  * Created by Kriv on 16.11.2015.
  */
+
 var socket = io.connect();
 //
 //$(document).ready(function(){
@@ -69,6 +71,7 @@ function init() {
 
             //alert(formattedTime)
         });
+
 
 
 
