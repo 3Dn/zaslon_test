@@ -1,4 +1,3 @@
-var $ = require('../jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/external/jquery/jquery.js');
 /**
  * Created by Kriv on 16.11.2015.
  */
@@ -53,7 +52,8 @@ function init() {
         //console.log("socket_handle.js -> ok!\nData: " + data);
         //data = JSON.parse(data);
         console.log(data.length);
-        $.each(data, function(key, value){
+        //arr.forEach(function(item, i, arr)
+        data.forEach(function(value, key, data){
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             //var d = new Date(value.my_date);
