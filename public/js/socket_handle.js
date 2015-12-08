@@ -60,7 +60,7 @@ function init() {
             var unix_timestamp = 1370001284000;
 
             var d = new Date(value.my_date*1000);
-            var hours = date.getHours();
+            var hours = d.getHours();
             var minutes = "0" + date.getMinutes();
             var seconds = "0" + date.getSeconds();
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
