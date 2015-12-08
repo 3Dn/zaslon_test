@@ -63,7 +63,7 @@ function init() {
             var hours = d.getHours();
             var minutes = "0" + d.getMinutes();
             var seconds = "0" + d.getSeconds();
-            var formattedTime = '"'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'"';
+            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
             dates.push(formattedTime);
 
             //alert(formattedTime)
@@ -95,7 +95,7 @@ function init() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: states
+                data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
             }
         ]
     };
