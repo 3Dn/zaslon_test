@@ -48,8 +48,8 @@ function init() {
     var states = [];
 
     socket.on("chart_data", function(data){
-        console.log("socket_handle.js -> ok!\nData: " + data);
-        data = JSON.parse(data);
+        //console.log("socket_handle.js -> ok!\nData: " + data);
+        //data = JSON.parse(data);
         console.log(data);
         $.each(data, function(key, value){
             //var t = value.date.split(/[- :]/);
