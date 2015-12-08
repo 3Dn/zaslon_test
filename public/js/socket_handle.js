@@ -74,6 +74,7 @@ function init() {
             }
         ]
     };
+    console.log(chart_data);
     var myNewChart = new Chart(ctx).Line(chart_data);
 }
 
