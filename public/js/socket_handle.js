@@ -55,12 +55,11 @@ function init() {
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             var d = new Date(value.my_date);
-            dates.push(JSON.parse(d));
-            //for(var key in d){
-            //    //dates.push(key[0]);
-            //};
-
+            dates.push(d);
             states.push(value.pin_state);
+            for(key in d){
+                console.log(key);
+            }
         });
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
