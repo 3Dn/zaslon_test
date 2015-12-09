@@ -79,7 +79,8 @@ function init() {
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
-        labels : ["January","February","March","April","May","June","July"],
+        //labels : ["January","February","March","April","May","June","July"],
+        labels : [dates],
         datasets : [
             {
                 label: "My First dataset",
