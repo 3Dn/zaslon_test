@@ -115,6 +115,10 @@ function init() {
             bezierCurve: false
         });*/
 
+    dates = null;
+    states = null;
+    test_lables = null;
+
 }
 
 
