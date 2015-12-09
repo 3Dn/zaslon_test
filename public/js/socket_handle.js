@@ -6,6 +6,7 @@ var socket = io.connect();
 var dates = [];
 var states = [];
 var test_lables = [];
+var ret_mass;
 
 //
 //$(document).ready(function(){
@@ -67,6 +68,7 @@ function init() {
             test_lables.push("Mar");
 
             states.push(value.pin_state);
+            ret_mass.states.push(value.pin_state);
 
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
@@ -74,8 +76,10 @@ function init() {
             var seconds = "0" + d.getSeconds();
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
             dates.push(formattedTime);
+            ret_mass.dates.push(formattedTime);
 
         });
+        return ret_mass;
 
         //console.log("typeof(states): " + typeof(states));
     });
@@ -83,6 +87,7 @@ function init() {
     console.log("socket_handle.js -> dates: \n" + dates + "\n");
     console.log("socket_handle.js -> states: \n" + states + "\n");
     console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
+    console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
