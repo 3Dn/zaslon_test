@@ -72,39 +72,40 @@ function init() {
 
         });
 
-        console.log("socket_handle.js -> dates: \n" + dates + "\n");
-        console.log("socket_handle.js -> states: \n" + states + "\n");
-
-        var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-        var lineChartData = {
-            labels : ["January","February","March","April","May","June","July"],
-            //labels : dates,
-            datasets : [
-                {
-                    label: "My First dataset",
-                    fillColor : "rgba(220,220,220,0.2)",
-                    strokeColor : "rgba(220,220,220,1)",
-                    pointColor : "rgba(220,220,220,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(220,220,220,1)",
-                    data : [1,0,1,0,1,0,1,0,1,0]
-                },
-                {
-                    label: "My Second dataset",
-                    fillColor : "rgba(151,187,205,0.2)",
-                    strokeColor : "rgba(151,187,205,1)",
-                    pointColor : "rgba(151,187,205,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(151,187,205,1)",
-                    data : [1,0,1,0,1,0,1,0,1,0]
-                }
-            ]
-        };
-
         //console.log("typeof(states): " + typeof(states));
     });
+
+    console.log("socket_handle.js -> dates: \n" + dates + "\n");
+    console.log("socket_handle.js -> states: \n" + states + "\n");
+    console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
+
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var lineChartData = {
+        labels : ["January","February","March","April","May","June","July"],
+        //labels : dates,
+        datasets : [
+            {
+                label: "My First dataset",
+                fillColor : "rgba(220,220,220,0.2)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(220,220,220,1)",
+                data : [1,0,1,0,1,0,1,0,1,0]
+            },
+            {
+                label: "My Second dataset",
+                fillColor : "rgba(151,187,205,0.2)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(151,187,205,1)",
+                data : [1,0,1,0,1,0,1,0,1,0]
+            }
+        ]
+    };
 
         var ctx = document.getElementById("myChart").getContext("2d");
         window.myLine = new Chart(ctx).Line(lineChartData, {
