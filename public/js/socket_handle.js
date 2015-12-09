@@ -106,6 +106,10 @@ function init() {
         ]
     };
 
+    dates.length = 0;
+    states.length = 0;
+    test_lables.length = 0;
+
         var ctx = document.getElementById("myChart").getContext("2d");
         window.myLine = new Chart(ctx).Line(lineChartData, {
            // responsive: true
@@ -117,12 +121,7 @@ function init() {
             animation: false,
             bezierCurve: false
         });*/
-
 }
-
-dates = [];
-states = [];
-test_lables = [];
 
 
 
