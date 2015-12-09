@@ -72,15 +72,13 @@ function init() {
             //alert(formattedTime)
         });
 
-
-
-
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
         console.log("typeof(states): "+typeof(states));
     });
+
     var chart_data = {
-        labels: dates,
+        labels: [dates],
         datasets:
         [
             {
@@ -92,7 +90,7 @@ function init() {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 data: [65, 59, 80, 81, 56, 55, 40, 47, 97, 21]
-                //data: states
+                data: [states]
             }
         ]
     };
@@ -122,16 +120,20 @@ function init() {
         ]
     };*/
 
-
-
-    console.log("AAAAAAAAAAAA!!!!!!!!!!!");
     console.log(chart_data);
 
-    var myNewChart = new Chart(ctx).Line(chart_data,
+/*    var myNewChart = new Chart(ctx).Line(chart_data,
         {
             animation: false,
             bezierCurve: false
+        });*/
+
+    window.onload = function(){
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myLine = new Chart(ctx).Line(chart_data, {
+            responsive: true
         });
+    }
 }
 
 
