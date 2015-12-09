@@ -122,6 +122,9 @@ function init() {
     states = null;
     test_lables = null;*/
 
+    dates = null;
+    states = null;
+    test_lables = null;
 }
 
 
