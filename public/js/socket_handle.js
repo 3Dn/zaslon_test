@@ -43,7 +43,7 @@ socket.on('send', function (data) {
 function init() {
 
     socket.emit("getCharts");
-    var ctx = $("#myChart").get(0).getContext("2d");
+    //var ctx = $("#myChart").get(0).getContext("2d");
 
     var dates = new Array();
     var states = new Array();
@@ -122,18 +122,19 @@ function init() {
 
     console.log(chart_data);
 
+    window.onload = function(){
+        var ctx = document.getElementById("myChart").getContext("2d");
+        window.myLine = new Chart(ctx).Line(chart_data, {
+            responsive: true
+        });
+    }
+
 /*    var myNewChart = new Chart(ctx).Line(chart_data,
         {
             animation: false,
             bezierCurve: false
         });*/
 
-    window.onload = function(){
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myLine = new Chart(ctx).Line(chart_data, {
-            responsive: true
-        });
-    }
 }
 
 
