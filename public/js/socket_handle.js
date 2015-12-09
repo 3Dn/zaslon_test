@@ -82,7 +82,7 @@ function init() {
 
         });
         return ret_mass;
-
+        arr_clean();
         //console.log("typeof(states): " + typeof(states));
     });
 
