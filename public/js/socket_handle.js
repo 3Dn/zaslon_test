@@ -125,7 +125,7 @@ function init() {
            // responsive: true
         });
 
-
+arr_clean();
 /*    var myNewChart = new Chart(ctx).Line(chart_data,
         {
             animation: false,
