@@ -118,11 +118,11 @@ function init() {
             bezierCurve: false
         });*/
 
-    dates = [];
-    states = [];
-    test_lables = [];
 }
 
+dates = [];
+states = [];
+test_lables = [];
 
 
 
