@@ -49,10 +49,8 @@ function init() {
 
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
-        //data = JSON.parse(data);
-        console.log(data.length);
-        //arr.forEach(function(item, i, arr)
         data.forEach(function(value, key, data){
+
             //var t = value.date.split(/[- :]/);
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             //var d = new Date(value.my_date);
@@ -71,13 +69,13 @@ function init() {
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
-        console.log("typeof(states): " + typeof(states));
+        //console.log("typeof(states): " + typeof(states));
     });
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
         //labels : ["January","February","March","April","May","June","July"],
-        labels : dates,
+        labels : [dates],
         datasets : [
             {
                 label: "My First dataset",
