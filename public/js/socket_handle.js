@@ -106,7 +106,7 @@ function init() {
 
         var ctx = document.getElementById("myChart").getContext("2d");
         window.myLine = new Chart(ctx).Line(lineChartData, {
-            responsive: true
+           // responsive: true
         });
 
 
