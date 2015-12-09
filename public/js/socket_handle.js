@@ -3,9 +3,6 @@
  */
 
 var socket = io.connect();
-var dates = new Array();
-var states = new Array();
-var test_lables = new Array();
 
 //
 //$(document).ready(function(){
@@ -47,6 +44,9 @@ function init() {
 
     socket.emit("getCharts");
     //var ctx = $("#myChart").get(0).getContext("2d");
+    var dates = [];
+    var states = [];
+    var test_lables = [];
 
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
@@ -117,10 +117,6 @@ function init() {
             animation: false,
             bezierCurve: false
         });*/
-
-/*    dates = null;
-    states = null;
-    test_lables = null;*/
 
     dates = null;
     states = null;
