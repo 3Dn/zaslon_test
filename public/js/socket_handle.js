@@ -80,7 +80,7 @@ function init() {
     var lineChartData = {
         //labels : ["January","February","March","April","May","June","July"],
         labels : dates,
-        datasets : [
+        datasets :
             {
                 label: "My Second dataset",
                 fillColor : "rgba(151,187,205,0.2)",
@@ -91,7 +91,6 @@ function init() {
                 pointHighlightStroke : "rgba(151,187,205,1)",
                 data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
             }
-        ]
     };
 
         var ctx = document.getElementById("myChart").getContext("2d");
