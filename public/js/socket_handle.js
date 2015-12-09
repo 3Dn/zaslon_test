@@ -3,6 +3,8 @@
  */
 
 var socket = io.connect();
+var dates = new Array();
+var states = new Array();
 //
 //$(document).ready(function(){
 //    $("#logs").jScrollPane();
@@ -45,9 +47,6 @@ function init() {
     socket.emit("getCharts");
     //var ctx = $("#myChart").get(0).getContext("2d");
 
-    var dates = new Array();
-    var states = new Array();
-
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
         //data = JSON.parse(data);
@@ -61,7 +60,6 @@ function init() {
 
             states.push(parseInt(value.pin_state));
 
-
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
             var minutes = "0" + d.getMinutes();
@@ -69,12 +67,11 @@ function init() {
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
             dates.push(formattedTime);
 
-            //alert(formattedTime)
         });
 
         console.log("socket_handle.js -> dates: \n" + dates + "\n");
         console.log("socket_handle.js -> states: \n" + states + "\n");
-        console.log("typeof(states): "+typeof(states));
+        console.log("typeof(states): " + typeof(states));
     });
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
