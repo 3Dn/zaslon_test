@@ -4,6 +4,10 @@
 
 var socket = io.connect();
 
+var dates = new Array();
+var states = new Array();
+var test_lables = new Array();
+
 //
 //$(document).ready(function(){
 //    $("#logs").jScrollPane();
@@ -41,10 +45,6 @@ socket.on('send', function (data) {
 });
 
 function init() {
-
-    var dates = new Array();
-    var states = new Array();
-    var test_lables = new Array();
 
     socket.emit("getCharts");
     //var ctx = $("#myChart").get(0).getContext("2d");
