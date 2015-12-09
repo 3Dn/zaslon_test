@@ -6,7 +6,9 @@ var socket = io.connect();
 var dates = [];
 var states = [];
 var test_lables = [];
-var ret_mass;
+var ret_mass = new Object();
+ret_mass.dates = [];
+ret_mass.states = [];
 
 //
 //$(document).ready(function(){
