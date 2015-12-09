@@ -60,7 +60,7 @@ function init() {
             test_lables.push("Feb");
             test_lables.push("Mar");
 
-            states.push(parseInt(value.pin_state));
+            states.push(value.pin_state);
 
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
