@@ -3,6 +3,7 @@
  */
 
 var socket = io.connect();
+
 //
 //$(document).ready(function(){
 //    $("#logs").jScrollPane();
@@ -71,10 +72,11 @@ function init() {
 
         });
 
-        console.log("socket_handle.js -> dates: \n" + dates + "\n");
-        console.log("socket_handle.js -> states: \n" + states + "\n");
         //console.log("typeof(states): " + typeof(states));
     });
+
+    console.log("socket_handle.js -> dates: \n" + dates + "\n");
+    console.log("socket_handle.js -> states: \n" + states + "\n");
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
