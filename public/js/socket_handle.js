@@ -5,6 +5,7 @@
 var socket = io.connect();
 var dates = new Array();
 var states = new Array();
+var test_lables = new Array();
 //
 //$(document).ready(function(){
 //    $("#logs").jScrollPane();
@@ -39,7 +40,6 @@ socket.on('send', function (data) {
             console.log(err.name + ":" + err.message + "\n" + err.stack);
         }
     }
-
 });
 
 function init() {
@@ -55,6 +55,9 @@ function init() {
             //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
             //var d = new Date(value.my_date);
             //dates.push(d);
+            test_lables.push("Jan");
+            test_lables.push("Feb");
+            test_lables.push("Mar");
 
             states.push(parseInt(value.pin_state));
 
@@ -75,7 +78,7 @@ function init() {
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
         //labels : ["January","February","March","April","May","June","July"],
-        labels : [dates],
+        labels : test_lables,
         datasets : [
             {
                 label: "My First dataset",

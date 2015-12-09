@@ -32,8 +32,6 @@ var chart_loop = setInterval(function(){
         }
     });
 },10000);
-//chart_loop.unref();
-
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
