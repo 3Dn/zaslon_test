@@ -89,7 +89,7 @@ function init() {
                 pointStrokeColor : "#fff",
                 pointHighlightFill : "#fff",
                 pointHighlightStroke : "rgba(220,220,220,1)",
-                data : states
+                data : [1,0,1,0,1,0,1,0,1,0]
             },
             {
                 label: "My Second dataset",
