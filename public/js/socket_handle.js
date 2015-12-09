@@ -102,13 +102,12 @@ function init() {
                 data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
             }
         ]
-    }
-    window.onload = function(){
+    };
+
         var ctx = document.getElementById("myChart").getContext("2d");
         window.myLine = new Chart(ctx).Line(lineChartData, {
             responsive: true
         });
-    }
 
 
 /*    var myNewChart = new Chart(ctx).Line(chart_data,
