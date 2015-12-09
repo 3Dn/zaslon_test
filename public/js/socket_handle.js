@@ -123,7 +123,7 @@ function init() {
     console.log(chart_data);
 
         var ctx = document.getElementById("myChart").getContext("2d");
-        window.myLine = new Chart(ctx).Line(chart_data);
+        var myNewChart = new Chart(ctx).Line(chart_data);
 
 
 /*    var myNewChart = new Chart(ctx).Line(chart_data,
