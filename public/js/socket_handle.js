@@ -122,12 +122,9 @@ function init() {
 
     console.log(chart_data);
 
-    window.onload = function(){
         var ctx = document.getElementById("myChart").getContext("2d");
-        window.myLine = new Chart(ctx).Line(chart_data, {
-            responsive: true
-        });
-    }
+        window.myLine = new Chart(ctx).Line(chart_data);
+
 
 /*    var myNewChart = new Chart(ctx).Line(chart_data,
         {
