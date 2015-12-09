@@ -99,7 +99,7 @@ function init() {
                 pointStrokeColor : "#fff",
                 pointHighlightFill : "#fff",
                 pointHighlightStroke : "rgba(151,187,205,1)",
-                data : states
+                data : [1,0,1,0,1,0,1,0,1,0]
             }
         ]
     };
