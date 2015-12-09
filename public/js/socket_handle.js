@@ -6,9 +6,6 @@ var socket = io.connect();
 var dates = [];
 var states = [];
 var test_lables = [];
-var ret_mass = new Object();
-ret_mass.dates = [];
-ret_mass.states = [];
 
 //
 //$(document).ready(function(){
@@ -56,6 +53,9 @@ function init() {
 
     socket.emit("getCharts");
     //var ctx = $("#myChart").get(0).getContext("2d");
+    var ret_mass = new Object();
+    ret_mass.dates = [];
+    ret_mass.states = [];
 
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
