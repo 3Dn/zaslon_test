@@ -90,7 +90,7 @@ function init() {
                 pointHighlightFill : "#fff",
                 pointHighlightStroke : "rgba(220,220,220,1)",
                 data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-            },
+            }/*,
             {
                 label: "My Second dataset",
                 fillColor : "rgba(151,187,205,0.2)",
@@ -100,7 +100,7 @@ function init() {
                 pointHighlightFill : "#fff",
                 pointHighlightStroke : "rgba(151,187,205,1)",
                 data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-            }
+            }*/
         ]
     };
 
