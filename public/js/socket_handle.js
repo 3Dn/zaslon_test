@@ -3,6 +3,9 @@
  */
 
 var socket = io.connect();
+var dates = [];
+var states = [];
+var test_lables = [];
 
 //
 //$(document).ready(function(){
@@ -44,9 +47,6 @@ function init() {
 
     socket.emit("getCharts");
     //var ctx = $("#myChart").get(0).getContext("2d");
-    var c_dates = [];
-    var c_states = [];
-    var test_lables = [];
 
     socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
@@ -60,22 +60,22 @@ function init() {
             test_lables.push("Feb");
             test_lables.push("Mar");
 
-            c_states.push(value.pin_state);
+            states.push(value.pin_state);
 
             var d = new Date(value.my_date*1000);
             var hours = d.getHours();
             var minutes = "0" + d.getMinutes();
             var seconds = "0" + d.getSeconds();
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-            c_dates.push(formattedTime);
+            dates.push(formattedTime);
 
         });
 
         //console.log("typeof(states): " + typeof(states));
     });
 
-    console.log("socket_handle.js -> dates: \n" + c_dates + "\n");
-    console.log("socket_handle.js -> states: \n" + c_states + "\n");
+    console.log("socket_handle.js -> dates: \n" + dates + "\n");
+    console.log("socket_handle.js -> states: \n" + states + "\n");
     console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
 
     var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
@@ -118,9 +118,9 @@ function init() {
             bezierCurve: false
         });*/
 
-/*    dates = null;
-    states = null;
-    test_lables = null;*/
+    dates = [];
+    states = [];
+    test_lables = [];
 }
 
 
