@@ -126,6 +126,13 @@ function arr_clean() {
         });
 
         socket.on('pushdata', function (data) {
+            $("#myChart").replaceWith('<canvas id="myChart" width="744" height="625">');
+            var ctx = document.getElementById("myChart").getContext("2d");
+            window.myLine = new Chart(ctx).Line(lineChartData, {
+                bezierCurve : false,
+                animation: false
+            });
+
             console.log("Got new data: "+data);
             window.myLine.datasets[0].data.shift();
             window.myLine.datasets[0].data.push(data);
