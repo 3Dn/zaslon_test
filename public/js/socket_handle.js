@@ -109,13 +109,11 @@ function init() {
     arr_clean();
 }
 */
-var canvas = document.getElementById("myChart");
-
 function MainViewModel(data) {
     var self = this;
-    //var socket = io.connect('http://localhost:8070');
+    var socket = io.connect('http://localhost:8070');
 
-    self.lineChartData = {
+    self.lineChartData = ko.observable({
         labels : ["January","February","March","April","May","June","July"],
         datasets : [
             {
@@ -126,11 +124,11 @@ function MainViewModel(data) {
                 data : [65,59,90,81,56,55,40]
             }
         ]
-    };
+    });
 
     socket.on('pushdata', function (data) {
-        self.lineChartData.datasets[0].data.shift();
-        self.lineChartData.datasets[0].data.push(data);
+        self.lineChartData().datasets[0].data.shift();
+        self.lineChartData().datasets[0].data.push(data);
 
         self.initLine();
     });
@@ -144,13 +142,8 @@ function MainViewModel(data) {
             scaleStartValue : 10//Number - The scale starting value
         };
 
-        var ctx = canvas.get(0).getContext("2d");
-        var myLine = new Chart(ctx).Line( self.lineChartData, options );
+        var ctx = $("#myChart").get(0).getContext("2d");
+        var myLine = new Chart(ctx).Line( vm.lineChartData(), options );
     }
 
 }
-
-//var vm = new MainViewModel();
-//ko.applyBindings(vm);
-//vm.initLine();
-

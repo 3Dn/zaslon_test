@@ -31,9 +31,8 @@ $(document).ready(function(){
             $("#workspace_2, #workspace_3, #workspace_4").hide();
         }else if(ws == '2'){
             $("#workspace_2").show();
-            //init();
-            //arr_clean();
             var vm = new MainViewModel();
+            ko.applyBindings(vm);
             vm.initLine();
             $("#workspace_1, #workspace_3, #workspace_4").hide();
         }else if(ws == '3'){
