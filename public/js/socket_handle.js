@@ -149,6 +149,7 @@ $(document).ready(function(){
     }
     var vm = new MainViewModel();
     ko.applyBindings(vm);
+    vm.initLine();
 });
 
 

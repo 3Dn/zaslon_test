@@ -13,7 +13,7 @@ $(document).ready(function(){
     });*/
 
 
-    vm.initLine();
+
 
     $(".u_button").button().tooltip();
 
