@@ -120,16 +120,16 @@ function arr_clean() {
 
 
         var ctx = document.getElementById("myChart").getContext("2d");
-        var myLine = new Chart(ctx).Line(lineChartData, {
+        window.myLine = new Chart(ctx).Line(lineChartData, {
             bezierCurve : false,
             animation: false
         });
 
         socket.on('pushdata', function (data) {
             console.log("Got new data: "+data);
-            myLine.data.datasets[0].data.shift();
-            myLine.data.datasets[0].data.push(data);
-            myLine.update();
+            window.myLine.datasets[0].data.shift();
+            window.myLine.datasets[0].data.push(data);
+            window.myLine.update();
         });
 
         //arr_clean();
