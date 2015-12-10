@@ -126,28 +126,9 @@ function arr_clean() {
         });
 
         socket.on('pushdata', function (data) {
-            var lineChartData = {
-                labels : ["January","February","March","April","May","June","July"],
-                datasets : [
-                    {
-                        fillColor : "rgba(151,187,205,0.5)",
-                        strokeColor : "rgba(151,187,205,1)",
-                        pointColor : "rgba(151,187,205,1)",
-                        pointStrokeColor : "#fff",
-                        data : [65,59,90,81,56,55,40]
-                    }
-                ]
-            };
-
-
-
-            var ctx = document.getElementById("myChart").getContext("2d");
-            var myLine = new Chart(ctx).Line(lineChartData, {
-                bezierCurve : false,
-                animation: false
-            });
-            lineChartData.datasets[0].data.shift();
-            lineChartData.datasets[0].data.push(data);
+            console.log("Got new data: "+data);
+            myLine.datasets[0].data.shift();
+            myLine.datasets[0].data.push(data);
             myLine.update();
         });
 
