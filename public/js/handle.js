@@ -12,6 +12,10 @@ $(document).ready(function(){
         snap: '#workspace_1'
     });*/
 
+    var vm = new MainViewModel();
+    ko.applyBindings(vm);
+    vm.initLine();
+
     $(".u_button").button().tooltip();
 
     $(".cmn-toggle").on("click", function(){ //включаем-выключаем лампочки
@@ -31,7 +35,7 @@ $(document).ready(function(){
             $("#workspace_2, #workspace_3, #workspace_4").hide();
         }else if(ws == '2'){
             $("#workspace_2").show();
-            vm.initLine();
+
             $("#workspace_1, #workspace_3, #workspace_4").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
