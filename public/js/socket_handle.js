@@ -120,6 +120,7 @@ function arr_clean() {
         socket.on('pushdata', function (data) {
             lineChartData.datasets[0].data.shift();
             lineChartData.datasets[0].data.push(data);
+            lineChartData.update();
         });
 
         var ctx = document.getElementById("myChart").getContext("2d");
