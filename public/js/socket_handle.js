@@ -14,7 +14,6 @@ var test_lables = [];
 
 socket.on('send', function (data) {
     console.log(data);
-    //socket.emit('recive', { hello: 'world' });
     if(data) {
         try {
             //console.log(data);
@@ -52,7 +51,6 @@ function arr_clean() {
 function init() {
 
     socket.emit("getCharts");
-    //var ctx = $("#myChart").get(0).getContext("2d");
     var ret_mass = new Object();
     ret_mass.dates = [];
     ret_mass.states = [];
@@ -61,13 +59,6 @@ function init() {
         //console.log("socket_handle.js -> ok!\nData: " + data);
         data.forEach(function(value, key, data){
 
-            //var t = value.date.split(/[- :]/);
-            //var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
-            //var d = new Date(value.my_date);
-            //dates.push(d);
-            test_lables.push("Jan");
-            test_lables.push("Feb");
-            test_lables.push("Mar");
 
             states.push(value.pin_state);
             ret_mass.states.push(value.pin_state);
@@ -83,7 +74,6 @@ function init() {
         });
         return ret_mass;
         arr_clean();
-        //console.log("typeof(states): " + typeof(states));
     });
 
     console.log("socket_handle.js -> dates: \n" + dates + "\n");
@@ -91,23 +81,11 @@ function init() {
     console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
     console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
 
-    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
     var lineChartData = {
-        //labels : ["January","February","March","April","May","June","July"],
         labels : dates,
         datasets : [
-/*            {
-                label: "My First dataset",
-                fillColor : "rgba(220,220,220,0.2)",
-                strokeColor : "rgba(220,220,220,1)",
-                pointColor : "rgba(220,220,220,1)",
-                pointStrokeColor : "#fff",
-                pointHighlightFill : "#fff",
-                pointHighlightStroke : "rgba(220,220,220,1)",
-                data : [1,0,1,0,1,0,1,0,1,0]
-            },*/
             {
-                label: "My Second dataset",
+                label: "test",
                 fillColor : "rgba(151,187,205,0.2)",
                 strokeColor : "rgba(151,187,205,1)",
                 pointColor : "rgba(151,187,205,1)",
@@ -126,12 +104,7 @@ function init() {
             animation: false
         });
 
-arr_clean();
-/*    var myNewChart = new Chart(ctx).Line(chart_data,
-        {
-            animation: false,
-            bezierCurve: false
-        });*/
+    arr_clean();
 }
 
 
