@@ -109,7 +109,7 @@ function init() {
     arr_clean();
 }
 */
-var doc = document;
+var canvas = document.getElementById("myChart");
 
 function MainViewModel(data) {
     var self = this;
@@ -144,7 +144,7 @@ function MainViewModel(data) {
             scaleStartValue : 10//Number - The scale starting value
         };
 
-        var ctx = doc.getElementById("myChart").get(0).getContext("2d");
+        var ctx = canvas.get(0).getContext("2d");
         var myLine = new Chart(ctx).Line( self.lineChartData, options );
     }
 
