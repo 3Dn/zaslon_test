@@ -111,7 +111,6 @@ function init() {
 */
 function MainViewModel(data) {
     var self = this;
-    var socket = io.connect('http://localhost:8070');
 
     self.lineChartData = ko.observable({
         labels : ["January","February","March","April","May","June","July"],
