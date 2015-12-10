@@ -143,7 +143,7 @@ function MainViewModel(data) {
         };
 
         var ctx = $("#myChart").get(0).getContext("2d");
-        var myLine = new Chart(ctx).Line( vm.lineChartData(), options );
+        var myLine = new Chart(ctx).Line( self.lineChartData(), options );
     }
 
 }
