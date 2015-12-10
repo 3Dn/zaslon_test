@@ -127,8 +127,8 @@ function arr_clean() {
 
         socket.on('pushdata', function (data) {
             console.log("Got new data: "+data);
-            myLine.datasets[0].data.shift();
-            myLine.datasets[0].data.push(data);
+            myLine.data.datasets[0].data.shift();
+            myLine.data.datasets[0].data.push(data);
             myLine.update();
         });
 
