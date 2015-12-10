@@ -114,7 +114,7 @@ function MainViewModel(data) {
     var self = this;
     //var socket = io.connect('http://localhost:8070');
 
-    self.lineChartData = ({
+    self.lineChartData = {
         labels : ["January","February","March","April","May","June","July"],
         datasets : [
             {
@@ -125,7 +125,7 @@ function MainViewModel(data) {
                 data : [65,59,90,81,56,55,40]
             }
         ]
-    });
+    };
 
     socket.on('pushdata', function (data) {
         self.lineChartData().datasets[0].data.shift();
