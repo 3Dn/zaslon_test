@@ -143,13 +143,13 @@ function MainViewModel(data) {
             scaleStartValue : 10//Number - The scale starting value
         };
 
-        var ctx = $("#myChart").get(0).getContext("2d");
+        var ctx = document.getElementById("#myChart").get(0).getContext("2d");
         var myLine = new Chart(ctx).Line( vm.lineChartData(), options );
     }
 
 }
 
-var vm = new MainViewModel();
+//var vm = new MainViewModel();
 //ko.applyBindings(vm);
-vm.initLine();
+//vm.initLine();
 
