@@ -53,7 +53,7 @@ function arr_clean() {
 
 
 
-$(document).ready(function(){
+//$(document).ready(function(){
     function init() {
 
         socket.emit("getCharts");
@@ -130,7 +130,7 @@ $(document).ready(function(){
 
         //arr_clean();
     }
-});
+//});
 
 
 
