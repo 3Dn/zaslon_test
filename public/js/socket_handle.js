@@ -150,6 +150,6 @@ function MainViewModel(data) {
 }
 
 var vm = new MainViewModel();
-ko.applyBindings(vm);
+//ko.applyBindings(vm);
 vm.initLine();
 
