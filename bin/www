@@ -43,6 +43,12 @@ var connectionsArray = [];
 
 var charts = require('./charts.js');
 
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     if (!connectionsArray.length) {
@@ -55,12 +61,20 @@ io.sockets.on('connection', function (socket) {
         log_getter.unref();
     }
 
-    socket.on('getCharts', function(socket){
+
+    setInterval(function(){
+        var chart_obj = getRandomInt(0,100);
+        console.log("random obj = "+ chart_obj);
+        io.sockets.emit('pushdata', chart_obj);
+    },2000);
+
+
+   /* socket.on('getCharts', function(socket){
         var chart_obj = charts.getCharts();
         console.log("www -> Got 'getCharts' event!");
         console.log("www -> chart_obj: \n" + chart_obj);
         io.sockets.emit('chart_data', chart_obj);
-    });
+    });*/
 
     socket.on('disconnect', function(socket){
         var socketIndex = connectionsArray.indexOf(socket);
