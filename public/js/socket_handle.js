@@ -128,8 +128,8 @@ function MainViewModel(data) {
     };
 
     socket.on('pushdata', function (data) {
-        self.lineChartData().datasets[0].data.shift();
-        self.lineChartData().datasets[0].data.push(data);
+        self.lineChartData.datasets[0].data.shift();
+        self.lineChartData.datasets[0].data.push(data);
 
         self.initLine();
     });
@@ -144,7 +144,7 @@ function MainViewModel(data) {
         };
 
         var ctx = document.getElementById("myChart").get(0).getContext("2d");
-        var myLine = new Chart(ctx).Line( vm.lineChartData(), options );
+        var myLine = new Chart(ctx).Line( self.lineChartData, options );
     }
 
 }
