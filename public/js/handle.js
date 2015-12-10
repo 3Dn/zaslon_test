@@ -12,8 +12,7 @@ $(document).ready(function(){
         snap: '#workspace_1'
     });*/
 
-    var vm = new MainViewModel();
-    ko.applyBindings(vm);
+
     vm.initLine();
 
     $(".u_button").button().tooltip();
