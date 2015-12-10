@@ -48,72 +48,63 @@ function arr_clean() {
     test_lables.length = 0;
 }
 
-/*
-
-function init() {
-
-    socket.emit("getCharts");
-    var ret_mass = new Object();
-    ret_mass.dates = [];
-    ret_mass.states = [];
-
-    socket.on("chart_data", function(data){
-        //console.log("socket_handle.js -> ok!\nData: " + data);
-        data.forEach(function(value, key, data){
 
 
-            states.push(value.pin_state);
-            ret_mass.states.push(value.pin_state);
 
-            var d = new Date(value.my_date*1000);
-            var hours = d.getHours();
-            var minutes = "0" + d.getMinutes();
-            var seconds = "0" + d.getSeconds();
-            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-            dates.push(formattedTime);
-            ret_mass.dates.push(formattedTime);
 
-        });
-        return ret_mass;
-        arr_clean();
-    });
 
-    console.log("socket_handle.js -> dates: \n" + dates + "\n");
-    console.log("socket_handle.js -> states: \n" + states + "\n");
-    console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
-    console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
-
-    var lineChartData = {
-        labels : dates,
-        datasets : [
-            {
-                label: "test",
-                fillColor : "rgba(151,187,205,0.2)",
-                strokeColor : "rgba(151,187,205,1)",
-                pointColor : "rgba(151,187,205,1)",
-                pointStrokeColor : "#fff",
-                pointHighlightFill : "#fff",
-                pointHighlightStroke : "rgba(151,187,205,1)",
-                //data : [1,0,1,0,1,0,1,0,1,0]
-                data : states
-            }
-        ]
-    };
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-        window.myLine = new Chart(ctx).Line(lineChartData, {
-            bezierCurve : false,
-            animation: false
-        });
-
-    arr_clean();
-}
-*/
 $(document).ready(function(){
-    function MainViewModel(data) {
-        var self = this;
+    function init() {
 
-        self.lineChartData = ko.observable({
+        socket.emit("getCharts");
+        var ret_mass = new Object();
+        ret_mass.dates = [];
+        ret_mass.states = [];
+
+        /*socket.on("chart_data", function(data){
+            //console.log("socket_handle.js -> ok!\nData: " + data);
+            data.forEach(function(value, key, data){
+
+
+                states.push(value.pin_state);
+                ret_mass.states.push(value.pin_state);
+
+                var d = new Date(value.my_date*1000);
+                var hours = d.getHours();
+                var minutes = "0" + d.getMinutes();
+                var seconds = "0" + d.getSeconds();
+                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                dates.push(formattedTime);
+                ret_mass.dates.push(formattedTime);
+
+            });
+            return ret_mass;
+            arr_clean();
+        });*/
+
+        //console.log("socket_handle.js -> dates: \n" + dates + "\n");
+        //console.log("socket_handle.js -> states: \n" + states + "\n");
+        //console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
+        //console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
+
+        /*var lineChartData = {
+            labels : dates,
+            datasets : [
+                {
+                    label: "test",
+                    fillColor : "rgba(151,187,205,0.2)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    pointColor : "rgba(151,187,205,1)",
+                    pointStrokeColor : "#fff",
+                    pointHighlightFill : "#fff",
+                    pointHighlightStroke : "rgba(151,187,205,1)",
+                    //data : [1,0,1,0,1,0,1,0,1,0]
+                    data : states
+                }
+            ]
+        };*/
+
+        var lineChartData = {
             labels : ["January","February","March","April","May","June","July"],
             datasets : [
                 {
@@ -124,32 +115,21 @@ $(document).ready(function(){
                     data : [65,59,90,81,56,55,40]
                 }
             ]
-        });
+        };
 
         socket.on('pushdata', function (data) {
-            self.lineChartData().datasets[0].data.shift();
-            self.lineChartData().datasets[0].data.push(data);
-
-            self.initLine();
+            lineChartData.datasets[0].data.shift();
+            lineChartData.datasets[0].data.push(data);
         });
 
-        self.initLine = function() {
-            var options = {
-                animation : false,
-                scaleOverride : true,
-                scaleSteps : 10,//Number - The number of steps in a hard coded scale
-                scaleStepWidth : 10,//Number - The value jump in the hard coded scale
-                scaleStartValue : 10//Number - The scale starting value
-            };
+        var ctx = document.getElementById("myChart").getContext("2d");
+        window.myLine = new Chart(ctx).Line(lineChartData, {
+            bezierCurve : false,
+            animation: false
+        });
 
-            var ctx = $("#myChart").get(0).getContext("2d");
-            var myLine = new Chart(ctx).Line( vm.lineChartData(), options );
-        }
-
+        //arr_clean();
     }
-    var vm = new MainViewModel();
-    ko.applyBindings(vm);
-    vm.initLine();
 });
 
 
