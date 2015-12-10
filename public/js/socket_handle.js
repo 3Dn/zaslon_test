@@ -56,10 +56,10 @@ function arr_clean() {
 //$(document).ready(function(){
     function init() {
 
-        socket.emit("getCharts");
-        var ret_mass = new Object();
-        ret_mass.dates = [];
-        ret_mass.states = [];
+        //socket.emit("getCharts");
+        //var ret_mass = new Object();
+        //ret_mass.dates = [];
+        //ret_mass.states = [];
 
         /*socket.on("chart_data", function(data){
             //console.log("socket_handle.js -> ok!\nData: " + data);
