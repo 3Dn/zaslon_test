@@ -147,3 +147,6 @@ function MainViewModel(data) {
     }
 
 }
+var vm = new MainViewModel();
+ko.applyBindings(vm);
+vm.initLine();
