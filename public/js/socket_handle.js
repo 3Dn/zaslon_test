@@ -117,16 +117,18 @@ function arr_clean() {
             ]
         };
 
+
+
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myLine = new Chart(ctx).Line(lineChartData, {
+            bezierCurve : false,
+            animation: false
+        });
+
         socket.on('pushdata', function (data) {
             lineChartData.datasets[0].data.shift();
             lineChartData.datasets[0].data.push(data);
-            lineChartData.update();
-        });
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-        window.myLine = new Chart(ctx).Line(lineChartData, {
-            bezierCurve : false,
-            animation: false
+            myLine.update();
         });
 
         //arr_clean();
