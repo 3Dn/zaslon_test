@@ -117,7 +117,7 @@ function init() {
 
 
     var ctx = document.getElementById("myChart").getContext("2d");
-    window.myLine = new Chart(ctx).Line(lineChartData, {
+    var myLine = new Chart(ctx).Line(lineChartData, {
         bezierCurve : false,
         animation: false
     });
