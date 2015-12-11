@@ -123,8 +123,8 @@ function init() {
     });
     setInterval(function() {
         var qwe =  Math.floor(Math.random() * 100);
-        myLine.datasets[0].data.shift();
-        myLine.datasets[0].data.push(qwe);
+        lineChartData.datasets[0].data.shift();
+        lineChartData.datasets[0].data.push(qwe);
         myLine.update();
     }, 2000);
     //socket.on('pushdata', function (data, chart) {
