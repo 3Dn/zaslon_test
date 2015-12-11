@@ -49,95 +49,101 @@ function arr_clean() {
 }
 
 
+
+
+function init() {
+
+    //socket.emit("getCharts");
+    //var ret_mass = new Object();
+    //ret_mass.dates = [];
+    //ret_mass.states = [];
+
+    /*socket.on("chart_data", function(data){
+        //console.log("socket_handle.js -> ok!\nData: " + data);
+        data.forEach(function(value, key, data){
+
+
+            states.push(value.pin_state);
+            ret_mass.states.push(value.pin_state);
+
+            var d = new Date(value.my_date*1000);
+            var hours = d.getHours();
+            var minutes = "0" + d.getMinutes();
+            var seconds = "0" + d.getSeconds();
+            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            dates.push(formattedTime);
+            ret_mass.dates.push(formattedTime);
+
+        });
+        return ret_mass;
+        arr_clean();
+    });*/
+
+    //console.log("socket_handle.js -> dates: \n" + dates + "\n");
+    //console.log("socket_handle.js -> states: \n" + states + "\n");
+    //console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
+    //console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
+
+    /*var lineChartData = {
+        labels : dates,
+        datasets : [
+            {
+                label: "test",
+                fillColor : "rgba(151,187,205,0.2)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(151,187,205,1)",
+                //data : [1,0,1,0,1,0,1,0,1,0]
+                data : states
+            }
+        ]
+    };*/
+
+    var lineChartData = {
+        labels : ["January","February","March","April","May","June","July"],
+        datasets : [
+            {
+                fillColor : "rgba(151,187,205,0.5)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                data : [65,59,90,81,56,55,40]
+            }
+        ]
+    };
+
+
+
+    var ctx = document.getElementById("myChart").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+        bezierCurve : false,
+        animation: false
+    });
+    setInterval(function() {
+        var qwe =  Math.floor(Math.random() * (max - min + 1)) + min;
+        myLine.datasets[0].data.shift();
+        myLine.datasets[0].data.push(new_data);
+        myLine.update();
+    }, 2000);
+    //socket.on('pushdata', function (data, chart) {
+        console.log("Got new data: "+data);
+        //updateChart(myLine, data);
+        chart.datasets[0].data.shift();
+        chart.datasets[0].data.push(new_data);
+        chart.update();
+    //});
+
+    //arr_clean();
+}
+
+
+
+
+
 function  updateChart(obj, new_data){
     obj.datasets[0].data.shift();
     obj.datasets[0].data.push(new_data);
     obj.update();
 }
-
-
-
-//$(document).ready(function(){
-    function init() {
-
-        //socket.emit("getCharts");
-        //var ret_mass = new Object();
-        //ret_mass.dates = [];
-        //ret_mass.states = [];
-
-        /*socket.on("chart_data", function(data){
-            //console.log("socket_handle.js -> ok!\nData: " + data);
-            data.forEach(function(value, key, data){
-
-
-                states.push(value.pin_state);
-                ret_mass.states.push(value.pin_state);
-
-                var d = new Date(value.my_date*1000);
-                var hours = d.getHours();
-                var minutes = "0" + d.getMinutes();
-                var seconds = "0" + d.getSeconds();
-                var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-                dates.push(formattedTime);
-                ret_mass.dates.push(formattedTime);
-
-            });
-            return ret_mass;
-            arr_clean();
-        });*/
-
-        //console.log("socket_handle.js -> dates: \n" + dates + "\n");
-        //console.log("socket_handle.js -> states: \n" + states + "\n");
-        //console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
-        //console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
-
-        /*var lineChartData = {
-            labels : dates,
-            datasets : [
-                {
-                    label: "test",
-                    fillColor : "rgba(151,187,205,0.2)",
-                    strokeColor : "rgba(151,187,205,1)",
-                    pointColor : "rgba(151,187,205,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(151,187,205,1)",
-                    //data : [1,0,1,0,1,0,1,0,1,0]
-                    data : states
-                }
-            ]
-        };*/
-
-        var lineChartData = {
-            labels : ["January","February","March","April","May","June","July"],
-            datasets : [
-                {
-                    fillColor : "rgba(151,187,205,0.5)",
-                    strokeColor : "rgba(151,187,205,1)",
-                    pointColor : "rgba(151,187,205,1)",
-                    pointStrokeColor : "#fff",
-                    data : [65,59,90,81,56,55,40]
-                }
-            ]
-        };
-
-
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-        window.myLine = new Chart(ctx).Line(lineChartData, {
-            bezierCurve : false,
-            animation: false
-        });
-
-        socket.on('pushdata', function (data) {
-            console.log("Got new data: "+data);
-            updateChart(myLine, data);
-        });
-
-        //arr_clean();
-    }
-//});
-
-
-
-
