@@ -124,7 +124,7 @@ function init() {
     setInterval(function() {
         var qwe =  Math.floor(Math.random() * (max - min + 1)) + min;
         myLine.datasets[0].data.shift();
-        myLine.datasets[0].data.push(new_data);
+        myLine.datasets[0].data.push(qwe);
         myLine.update();
     }, 2000);
     //socket.on('pushdata', function (data, chart) {
