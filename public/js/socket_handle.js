@@ -128,11 +128,11 @@ function init() {
         myLine.update();
     }, 2000);
     //socket.on('pushdata', function (data, chart) {
-        console.log("Got new data: "+data);
-        //updateChart(myLine, data);
-        chart.datasets[0].data.shift();
-        chart.datasets[0].data.push(new_data);
-        chart.update();
+    //    console.log("Got new data: "+data);
+    //    //updateChart(myLine, data);
+    //    chart.datasets[0].data.shift();
+    //    chart.datasets[0].data.push(new_data);
+    //    chart.update();
     //});
 
     //arr_clean();
