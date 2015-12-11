@@ -122,7 +122,7 @@ function init() {
         animation: false
     });
     setInterval(function() {
-        var qwe =  Math.floor(Math.random() * (max - min + 1)) + min;
+        var qwe =  Math.floor(Math.random() * 100);
         myLine.datasets[0].data.shift();
         myLine.datasets[0].data.push(qwe);
         myLine.update();
