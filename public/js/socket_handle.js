@@ -121,19 +121,14 @@ function init() {
         bezierCurve : false,
         animation: false
     });
-    setInterval(function() {
-        var qwe =  Math.floor(Math.random() * 100);
-        lineChartData.datasets[0].data.shift();
-        lineChartData.datasets[0].data.push(qwe);
+
+    socket.on('pushdata', function (data, myLine) {
+        console.log("Got new data: "+data);
+        //updateChart(myLine, data);
+        myLine.datasets[0].data.shift();
+        myLine.datasets[0].data.push(data);
         myLine.update();
-    }, 2000);
-    //socket.on('pushdata', function (data, chart) {
-    //    console.log("Got new data: "+data);
-    //    //updateChart(myLine, data);
-    //    chart.datasets[0].data.shift();
-    //    chart.datasets[0].data.push(new_data);
-    //    chart.update();
-    //});
+    });
 
     //arr_clean();
 }
@@ -141,9 +136,9 @@ function init() {
 
 
 
-
-function  updateChart(obj, new_data){
-    obj.datasets[0].data.shift();
-    obj.datasets[0].data.push(new_data);
-    obj.update();
-}
+//
+//function  updateChart(obj, new_data){
+//    obj.datasets[0].data.shift();
+//    obj.datasets[0].data.push(new_data);
+//    obj.update();
+//}
