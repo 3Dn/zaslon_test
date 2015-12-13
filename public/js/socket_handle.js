@@ -51,6 +51,7 @@ function arr_clean() {
 
 
 
+/*
 function init() {
 
     //socket.emit("getCharts");
@@ -58,7 +59,7 @@ function init() {
     //ret_mass.dates = [];
     //ret_mass.states = [];
 
-    /*socket.on("chart_data", function(data){
+    /!*socket.on("chart_data", function(data){
         //console.log("socket_handle.js -> ok!\nData: " + data);
         data.forEach(function(value, key, data){
 
@@ -77,14 +78,14 @@ function init() {
         });
         return ret_mass;
         arr_clean();
-    });*/
+    });*!/
 
     //console.log("socket_handle.js -> dates: \n" + dates + "\n");
     //console.log("socket_handle.js -> states: \n" + states + "\n");
     //console.log("socket_handle.js -> test_lables: \n" + test_lables + "\n");
     //console.log("socket_handle.js -> \n ret_mass.states: " + ret_mass.states + "\n" + "ret_mass.dates: " + ret_mass.dates + "\n");
 
-    /*var lineChartData = {
+    /!*var lineChartData = {
         labels : dates,
         datasets : [
             {
@@ -99,7 +100,7 @@ function init() {
                 data : states
             }
         ]
-    };*/
+    };*!/
 
     var lineChartData = {
         labels : ["January","February","March","April","May","June","July"],
@@ -142,3 +143,4 @@ function init() {
 //    obj.datasets[0].data.push(new_data);
 //    obj.update();
 //}
+*/
