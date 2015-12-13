@@ -15,14 +15,13 @@ function init(myCanvas) {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [1,0,1,0,1]
+                data: [1,0,1,0,1,0,1]
             }
         ]
-    }
-    window.onload = function () {
-        var ctx = document.getElementById(myCanvas).getContext("2d");
-        window.myLine = new Chart(ctx).Line(lineChartData, {
-            responsive: true
-        });
-    }
+    };
+
+    var ctx = document.getElementById(myCanvas).getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+        responsive: true
+    });
 }
