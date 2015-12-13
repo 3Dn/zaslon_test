@@ -1,6 +1,11 @@
 /**
  * Created by user on 13.12.2015.
  */
+var socket = io.connect();
+
+socket.on('pushdata', function(data){
+    console.log(data);
+});
 
 function init(myCanvas) {
     console.log(myCanvas);
@@ -22,6 +27,6 @@ function init(myCanvas) {
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
     window.myLine = new Chart(ctx).Line(lineChartData, {
-        responsive: true
+        responsive: false
     });
 }
