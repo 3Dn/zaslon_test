@@ -6,7 +6,7 @@ var socket = io.connect();
 socket.on('pushdata', function(data){
     console.log("my: " + data);
     myLine.removeData();
-    myLine.addData(data, data);
+    myLine.addData(data, "au");
 });
 
 function init(myCanvas) {
