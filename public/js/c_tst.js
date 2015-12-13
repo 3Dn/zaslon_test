@@ -5,6 +5,8 @@ var socket = io.connect();
 
 socket.on('pushdata', function(data){
     console.log("my: " + data);
+    myLine.removeData();
+    myLine.addData([40, 60], "August");
 });
 
 function init(myCanvas) {
