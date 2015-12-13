@@ -7,7 +7,6 @@ socket.on('pushdata', function(data){
     console.log("my: " + data);
     myLine.removeData();
     myLine.addData([data], data);
-    myLine.update();
 });
 
 function init(myCanvas) {
