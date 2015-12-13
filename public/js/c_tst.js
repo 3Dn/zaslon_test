@@ -4,7 +4,7 @@
 var socket = io.connect();
 
 socket.on('pushdata', function(data){
-    console.log(data);
+    console.log("my: " + data);
 });
 
 function init(myCanvas) {
