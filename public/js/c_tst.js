@@ -29,6 +29,8 @@ function init(myCanvas) {
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
     window.myLine = new Chart(ctx).Line(lineChartData, {
-        responsive: true
+        responsive: true,
+        bezierCurve : false,
+        animation: false
     });
 }
