@@ -223,3 +223,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     font-family: Consolas, sans-serif;
     overflow: auto;
 }
+#myChart{
+    display:block;
+    margin: 25px auto;
+}
