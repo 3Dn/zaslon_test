@@ -44,7 +44,9 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_5").hide();
         }else if(ws == '5') {
             $("#workspace_5").show();
+            socket.emit("sensors");
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
+
         }
     });
 
