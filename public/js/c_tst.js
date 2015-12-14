@@ -31,7 +31,7 @@ function init(myCanvas) {
         animation: false
     });
 }
-init();
+
 
 socket.on('pushdata', function(data){
     console.log("my: " + data);
