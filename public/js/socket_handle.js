@@ -119,8 +119,8 @@ function init() {
 
     var ctx = document.getElementById("myChart").getContext("2d");
     window.myLine = new Chart(ctx).Line(lineChartData, {
-        //bezierCurve : false,
-        //animation: false
+        bezierCurve : false,
+        animation: false
     });
 
     socket.on('pushdata', function (data, myLine) {

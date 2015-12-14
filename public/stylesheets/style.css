@@ -213,7 +213,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_sersor{
     background:url('/images/icon_sensor.png') no-repeat center center;
 }
-#logs, #charts, #videos, #linemap, #sersors {
+#logs, #charts, #videos, #linemap, #sensors {
     margin: 5%;
     padding: 2%;
     height: 86%;
