@@ -62,6 +62,15 @@ io.sockets.on('connection', function (socket) {
     }
 
 
+    $.ajax({
+        type: "GET",
+        url: "http://192.168.1.156/gpio/0",
+        dataType: "jsonp",
+        success: function (data) {
+            console.log("GPIO: "+data);
+        },
+    });
+
     setInterval(function(){
         var chart_obj = getRandomInt(0,100);
         console.log("random obj = "+ chart_obj);

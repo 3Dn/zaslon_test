@@ -45,14 +45,7 @@ $(document).ready(function(){
         }else if(ws == '5') {
             $("#workspace_5").show();
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
-            $.ajax({
-                type: "GET",
-                url: "http://192.168.1.156/gpio/0",
-                dataType: "jsonp",
-                success: function (data) {
-                    console.log(data);
-                },
-            });
+
         }
     });
 
