@@ -65,7 +65,7 @@ io.sockets.on('connection', function (socket) {
     setInterval(function(){
         var chart_obj = getRandomInt(0,100);
         console.log("random obj = "+ chart_obj);
-        io.sockets.emit('pushdata', chart_obj);
+        socket.emit('pushdata', chart_obj);
     },2000);
 
 
