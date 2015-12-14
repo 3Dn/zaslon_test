@@ -210,7 +210,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_weight{
     background:url('/images/icon_weight.png') no-repeat center center;
 }
-#button_sersor{
+#button_sensor{
     background:url('/images/icon_sensor.png') no-repeat center center;
 }
 #logs, #charts, #videos, #linemap, #sensors {
