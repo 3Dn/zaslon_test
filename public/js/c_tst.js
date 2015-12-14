@@ -3,11 +3,8 @@
  */
 var socket = io.connect();
 
-socket.on('pushdata', function(data){
-    console.log("my: " + data);
-    myLine.removeData();
-    myLine.addData([data], data);
-});
+var myLine;
+
 
 function init(myCanvas) {
     console.log(myCanvas);
@@ -28,9 +25,15 @@ function init(myCanvas) {
     };
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
-    window.myLine = new Chart(ctx).Line(lineChartData, {
+    myLine = new Chart(ctx).Line(lineChartData, {
         responsive: true,
         bezierCurve : false,
         animation: false
     });
 }
+
+socket.on('pushdata', function(data){
+    console.log("my: " + data);
+    myLine.removeData();
+    myLine.addData([data], data);
+});
