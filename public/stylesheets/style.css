@@ -235,6 +235,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     padding: 0 5px 5px;
     width: 25%;
     display: inline-block;
+    float: left;
     margin: 10px 21px;
 }
 
