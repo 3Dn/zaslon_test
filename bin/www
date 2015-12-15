@@ -79,7 +79,7 @@ io.sockets.on('connection', function (socket) {
         var options = {
             host: '192.168.1.156',
             port: 80,
-            path: '/gpio/0'
+            path: '/dht'
         };
         http.get(options, function(resp){
             resp.on('data', function(chunk){
