@@ -50,7 +50,7 @@ $(document).ready(function(){
             socket.on("sensor_chunk", function(data){
                 console.log(JSON.parse(data));
                 var sensor = JSON.parse(data);
-                $("#sensors").emty().html("Температура: <b>"+ sensor.t +"</b><br> Влажность: <b>"+sensor.h+"%</b>");
+                $("#sensors").empty().html("Температура: <b>"+ sensor.t +"</b><br> Влажность: <b>"+sensor.h+"%</b>");
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
 
