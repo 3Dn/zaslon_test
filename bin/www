@@ -91,7 +91,7 @@ io.sockets.on('connection', function (socket) {
     socket.on("sensors", function(socket){
         console.log("___________________ EMIT SENSORS ______________________");
         var options = {
-            host: '192.168.1.156',
+            host: 'http://192.168.1.156',
             port: 80,
             path: '/gpio/0'
         };
