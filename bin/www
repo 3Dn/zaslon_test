@@ -74,7 +74,7 @@ io.sockets.on('connection', function (socket) {
     },2000);
 
 
-     socket.on("sensors", function(socket){
+     socket.on("sensors", function(){
         console.log("___________________ EMIT SENSORS ______________________");
         var options = {
             host: '192.168.1.156',
