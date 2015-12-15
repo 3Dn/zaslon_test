@@ -81,21 +81,16 @@ io.sockets.on('connection', function (socket) {
             port: 80,
             path: '/gpio/0'
         };
-         var qwe;
         http.get(options, function(resp){
             resp.on('data', function(chunk){
                 //do something with chunk
                 console.log("_______CHUNK: " + chunk);
-                var socket = io.connect();
-                socket.emit("sensor_chunk", chunk);
-                qwe = chunk;
+                //socket.emit("sensor_chunk", chunk);
             });
-            //socket.emit("sensor_chunk", "qweqwe");
+            //socket.emit("sensor_chunk", chunk);
         }).on("error", function(e){
             console.log("____________________ Got error: " + e.message + "___________________");
         });
-
-         //socket.emit("sensor_chunk", qwe);
     });
 
 
