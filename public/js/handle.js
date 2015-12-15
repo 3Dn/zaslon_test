@@ -54,7 +54,7 @@ $(document).ready(function(){
                                        '<div class="s_tab_name">DHT22 (192.168.1.156)</div>'+
                                         'Температура: <span class="sensor_t"><b>'+sensor.t+'&deg;C</b></span><br/>'+
                                         'Влажность: <span class="sensor_h"><b>'+sensor.h+'%</b></span><br/>'+
-                                    '</div>'
+                                    '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>'
                 $("#sensors").empty().html(sebsor_tab);
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
