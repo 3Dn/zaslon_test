@@ -92,7 +92,7 @@ io.sockets.on('connection', function (socket) {
     connectionsArray.push(socket);
 });
 
-io.sockets.on("sensors", function(){
+socket.on("sensors", function(){
     console.log("___________________ EMIT SENSORS ______________________");
     var options = {
         host: '192.168.1.156',
