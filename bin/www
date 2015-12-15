@@ -98,7 +98,8 @@ io.sockets.on('connection', function (socket) {
         http.get(options, function(resp){
             resp.on('data', function(chunk){
                 //do something with chunk
-                console.log(chunk)
+                console.log("_______CHUNK: " + chunk);
+                console.log("_______RESP: " + resp);
             });
         }).on("error", function(e){
             console.log("____________________ Got error: " + e.message + "___________________");
