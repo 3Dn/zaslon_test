@@ -69,7 +69,7 @@ io.sockets.on('connection', function (socket) {
 
 
     socket.on("sensors", function(){
-        setImmediate(function(){
+        //setImmediate(function(){
             console.log("___________________ EMIT SENSORS ______________________");
             var options = {
                 host: '192.168.1.156',
@@ -77,17 +77,21 @@ io.sockets.on('connection', function (socket) {
                 path: '/dht'
             };
             http.get(options, function(resp){
-                var qwe;
+                var qwe='';
                 resp.on('data', function(chunk){
                     //do something with chunk
-                    console.log("_______CHUNK: " + chunk);
-                    io.sockets.emit("sensor_chunk", chunk);
-                    qwe = chunk;
+                    //console.log("_______CHUNK: " + chunk);
+                    //io.sockets.emit("sensor_chunk", chunk);
+                    qwe += chunk;
+                });
+
+                resp.on('end', function(){
+                   socket.emit('sensor_chunk', qwe);
                 });
             }).on("error", function(e){
                 console.log("____________________ Got error: " + e.message + "___________________");
             });
-        });
+        //});
     });
 
 
