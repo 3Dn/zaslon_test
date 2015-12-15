@@ -9,7 +9,7 @@ var debug = require('debug')('zaslon_test:server');
 var http = require('http');
 
 
-var request = require('request');
+//var request = require('request');
 
 
 
