@@ -46,9 +46,11 @@ $(document).ready(function(){
             $("#workspace_5").show();
             socket.emit("sensors");
             console.log("EMIT SENSORS");
+
             socket.on("sensor_chunk", function(data){
                 console.log("CHUNK: "+data);
-                alert("AAAAAAA");
+                var sensor = JSON.parse(data);
+                $("#sensors").html("Температура: <b>"+sensor.t+"</b><br> Влажность: +<b>"+sensor.h+"</b>");
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
 
