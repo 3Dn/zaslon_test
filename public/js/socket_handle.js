@@ -15,6 +15,7 @@ var test_lables = [];
 
 socket.on("sensor_chunk", function(data){
     console.log(JSON.parse(data));
+
 });
 
 socket.on('send', function (data) {
