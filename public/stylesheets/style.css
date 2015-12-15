@@ -227,3 +227,26 @@ input.cmn-toggle-round-flat:checked + label:after {
     display:block;
     margin: 25px auto;
 }
+
+.sensor_tab {
+    border: 1px solid #999;
+    border-radius: 5px;
+    height: 15%;
+    padding: 0 5px 5px;
+    width: 25%;
+}
+
+
+.s_tab_name {
+    border-bottom: 1px solid #999;
+    margin-bottom: 15px;
+    padding: 5px 0;
+}
+
+.sensor_t {
+    color: #c90c0f;
+}
+
+.sensor_h {
+    color: #6aafff;
+}
