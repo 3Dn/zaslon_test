@@ -12,6 +12,11 @@ var test_lables = [];
 //    $("#logs").jScrollPane();
 //});
 
+
+socket.on("sensor_chunk", function(data){
+    console.log(JSON.parse(data));
+});
+
 socket.on('send', function (data) {
     console.log(data);
     if(data) {
