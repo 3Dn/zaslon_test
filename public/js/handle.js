@@ -48,7 +48,7 @@ $(document).ready(function(){
             console.log("EMIT SENSORS");
 
             socket.on("sensor_chunk", function(data){
-                console.log("CHUNK: "+data);
+                console.log(JSON.parse(data));
                 var sensor = JSON.parse(data);
                 $("#sensors").html("Температура: <b>"+sensor.t+"</b><br> Влажность: +<b>"+sensor.h+"</b>");
             });
