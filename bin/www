@@ -74,21 +74,7 @@ io.sockets.on('connection', function (socket) {
     },2000);
 
 
-    /*socket.on("sensors", function(socket){
-        request.post(
-            'http://192.168.1.156/gpio/0',
-            {},
-            function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    console.log(body);
-                    socket.emit("gpio: "+ response);
-                }
-            }
-        );
-    });*/
-
-
-    socket.on("sensors", function(socket){
+     socket.on("sensors", function(socket){
         console.log("___________________ EMIT SENSORS ______________________");
         var options = {
             host: '192.168.1.156',
