@@ -74,7 +74,7 @@ io.sockets.on('connection', function (socket) {
     },2000);
 
 
-    socket.on("sensors", function(socket){
+    /*socket.on("sensors", function(socket){
         request.post(
             'http://192.168.1.156/gpio/0',
             {},
@@ -85,7 +85,25 @@ io.sockets.on('connection', function (socket) {
                 }
             }
         );
+    });*/
+
+
+    socket.on("sensors", function(socket){
+        var options = {
+            host: '192.168.1.156',
+            port: 80,
+            path: '/gpio/0'
+        };
+        http.get(options, function(resp){
+            resp.on('data', function(chunk){
+                //do something with chunk
+                console.log(chunk)
+            });
+        }).on("error", function(e){
+            console.log("Got error: " + e.message);
+        });
     });
+
 
 
    /* socket.on('getCharts', function(socket){
