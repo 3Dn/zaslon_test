@@ -96,7 +96,7 @@ io.sockets.on('connection', function (socket) {
             console.log("____________________ Got error: " + e.message + "___________________");
         });
 
-         socket.emit("sensor_chunk", chunk);
+         io.sockets.emit("sensor_chunk", gpio);
     });
 
 
