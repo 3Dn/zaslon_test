@@ -81,12 +81,12 @@ io.sockets.on('connection', function (socket) {
             port: 80,
             path: '/gpio/0'
         };
-        var sckt = socket;
-        http.get(options, function(resp){
+
+        http.get(options, function(resp,  socket){
             resp.on('data', function(chunk){
                 //do something with chunk
                 console.log("_______CHUNK: " + chunk);
-                sckt.emit("sensor_chunk", chunk);
+                socket.emit("sensor_chunk", chunk);
             });
         }).on("error", function(e){
             console.log("____________________ Got error: " + e.message + "___________________");
