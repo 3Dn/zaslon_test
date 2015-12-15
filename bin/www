@@ -101,7 +101,7 @@ io.sockets.on('connection', function (socket) {
                 console.log(chunk)
             });
         }).on("error", function(e){
-            console.log("Got error: " + e.message);
+            console.log("____________________ Got error: " + e.message + "___________________");
         });
     });
 
