@@ -85,9 +85,8 @@ io.sockets.on('connection', function (socket) {
             resp.on('data', function(chunk){
                 //do something with chunk
                 console.log("_______CHUNK: " + chunk);
-                socket.emit("sensor_chunk", chunk);
+                socket.emit("sensor_chunk", "qwe");
             });
-            //socket.emit("sensor_chunk", chunk);
         }).on("error", function(e){
             console.log("____________________ Got error: " + e.message + "___________________");
         });
