@@ -241,6 +241,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-bottom: 1px solid #999;
     margin-bottom: 15px;
     padding: 5px 0;
+    text-align: center;
 }
 
 .sensor_t {
