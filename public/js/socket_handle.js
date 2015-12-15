@@ -13,10 +13,7 @@ var test_lables = [];
 //});
 
 
-socket.on("sensor_chunk", function(data){
-    console.log(JSON.parse(data));
-    alert("AAAAAAA");
-});
+
 
 socket.on('send', function (data) {
     console.log(data);
