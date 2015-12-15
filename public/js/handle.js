@@ -50,7 +50,12 @@ $(document).ready(function(){
             socket.on("sensor_chunk", function(data){
                 console.log(JSON.parse(data));
                 var sensor = JSON.parse(data);
-                $("#sensors").empty().html("Температура: <b>"+ sensor.t +"</b><br> Влажность: <b>"+sensor.h+"%</b>");
+                var sebsor_tab =    '<div class="sensor_tab">'+
+                                       '<div class="s_tab_name">DHT22 (192.168.1.156)</div>'+
+                                        'Температура: <span class="sensor_t"><b>'+sensor.t+'&deg;C</b></span><br/>'+
+                                        'Влажность:<span class="sensor_h"><b>'+sensor.h+'%</b></span><br/>'+
+                                    '</div>'
+                $("#sensors").empty().html(sebsor_tab);
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4").hide();
 
