@@ -67,6 +67,28 @@ io.sockets.on('connection', function (socket) {
         log_getter.unref();
     }
 
+
+    socket.on("sensors", function(){
+        setImmediate(function(){
+            console.log("___________________ EMIT SENSORS ______________________");
+            var options = {
+                host: '192.168.1.156',
+                port: 80,
+                path: '/dht'
+            };
+            http.get(options, function(resp){
+                resp.on('data', function(chunk){
+                    //do something with chunk
+                    console.log("_______CHUNK: " + chunk);
+                    socket.emit("sensor_chunk", "qwe");
+                });
+            }).on("error", function(e){
+                console.log("____________________ Got error: " + e.message + "___________________");
+            });
+        });
+    });
+
+
     setInterval(function(){
         var chart_obj = getRandomInt(0,100);
         console.log("random obj = "+ chart_obj);
@@ -90,24 +112,6 @@ io.sockets.on('connection', function (socket) {
 
     console.log("A new socket is connected!");
     connectionsArray.push(socket);
-});
-
-socket.on("sensors", function(){
-    console.log("___________________ EMIT SENSORS ______________________");
-    var options = {
-        host: '192.168.1.156',
-        port: 80,
-        path: '/dht'
-    };
-    http.get(options, function(resp){
-        resp.on('data', function(chunk){
-            //do something with chunk
-            console.log("_______CHUNK: " + chunk);
-            socket.emit("sensor_chunk", "qwe");
-        });
-    }).on("error", function(e){
-        console.log("____________________ Got error: " + e.message + "___________________");
-    });
 });
 
 /**
