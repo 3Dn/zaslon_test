@@ -38,11 +38,10 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
-            var myCanvas = $('#cam_can');
-            var url = new WebSocket('ws://81.211.117.195:9999');
-            var player = new jsmpeg(url, {
-                canvas: myCanvas // Canvas should be a canvas DOM element
-            });
+            // Setup the WebSocket connection and start the player
+            var client = new WebSocket( 'ws://192.168.1.29:9999/' );
+            var canvas = document.getElementById('videoCanvas');
+            var player = new jsmpeg(client, {canvas:canvas});
             $("#workspace_1, #workspace_2, #workspace_4, #workspace_5").hide();
         }else if(ws == '4'){
             $("#workspace_4").show();
