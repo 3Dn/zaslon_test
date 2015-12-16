@@ -26,7 +26,7 @@ $(document).ready(function(){
             wrapper.find(".led_light").removeClass("led_on")
         }
     });
-
+    var client = new Websocket('ws://81.211.117.195:9999');
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
         if(ws == '1'){
@@ -39,7 +39,7 @@ $(document).ready(function(){
         }else if(ws == '3'){
             $("#workspace_3").show();
             var canvas = document.getElementById('cam_can').getContext('2D');
-            var client = new Websocket('ws://81.211.117.195:9999');
+            //var client = new Websocket('ws://81.211.117.195:9999');
             var player = new jsmpeg(client, {
                 canvas: canvas // Canvas should be a canvas DOM element
             });
