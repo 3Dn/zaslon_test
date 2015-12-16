@@ -39,8 +39,8 @@ $(document).ready(function(){
         }else if(ws == '3'){
             $("#workspace_3").show();
             var myCanvas = $('#cam_can');
-            url = new WebSocket('ws://81.211.117.195:9999');
-            player = new jsmpeg(url, {
+            var url = new WebSocket('ws://81.211.117.195:9999');
+            var player = new jsmpeg(url, {
                 canvas: myCanvas // Canvas should be a canvas DOM element
             });
             $("#workspace_1, #workspace_2, #workspace_4, #workspace_5").hide();
