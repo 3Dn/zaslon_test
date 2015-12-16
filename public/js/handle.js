@@ -26,8 +26,7 @@ $(document).ready(function(){
             wrapper.find(".led_light").removeClass("led_on")
         }
     });
-    var canvas = document.getElementById('cam_can');
-    //var client = new WebSocket('ws://192.168.1.29:9999');
+    var canvas = $('#cam_can');
     var client = new WebSocket('ws://81.211.117.195:9999');
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
