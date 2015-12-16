@@ -26,7 +26,7 @@ $(document).ready(function(){
             wrapper.find(".led_light").removeClass("led_on")
         }
     });
-    var client = new Websocket('ws://localhost:9999');
+    var client = new WebSocket('ws://localhost:9999');
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
         if(ws == '1'){
