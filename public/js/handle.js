@@ -26,7 +26,9 @@ $(document).ready(function(){
             wrapper.find(".led_light").removeClass("led_on")
         }
     });
-    //var client = new WebSocket('ws://localhost:9999');
+    var canvas = document.getElementById('cam_can');
+    //var client = new WebSocket('ws://192.168.1.29:9999');
+    var client = new WebSocket('ws://81.211.117.195:9999');
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
         if(ws == '1'){
@@ -38,9 +40,7 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
-            var canvas = document.getElementById('cam_can').getContext('2d');
-            //var client = new WebSocket('ws://192.168.1.29:9999');
-            var client = new WebSocket('ws://81.211.117.195:9999');
+
             var player = new jsmpeg(client, {
                 canvas: canvas // Canvas should be a canvas DOM element
             });
