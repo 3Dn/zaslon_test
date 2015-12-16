@@ -40,7 +40,7 @@ $(document).ready(function(){
         }else if(ws == '3'){
             $("#workspace_3").show();
 
-            var player = new jsmpeg(client, {
+            player = new jsmpeg(client, {
                 canvas: canvas // Canvas should be a canvas DOM element
             });
             $("#workspace_1, #workspace_2, #workspace_4, #workspace_5").hide();
