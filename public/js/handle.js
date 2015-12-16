@@ -38,7 +38,7 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
-            var canvas = document.getElementById('cam_can');
+            var canvas = document.getElementById('cam_can').getContext('2d');
             //var client = new WebSocket('ws://192.168.1.29:9999');
             var client = new WebSocket('ws://81.211.117.195:9999');
             var player = new jsmpeg(client, {
