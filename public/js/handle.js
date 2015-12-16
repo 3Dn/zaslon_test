@@ -38,6 +38,11 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
+            var canvas = document.getElementById('cam_can');
+            client = new Websocket('ws://localhost:9999');
+            player = new jsmpeg(client, {
+                canvas: canvas // Canvas should be a canvas DOM element
+            });
             $("#workspace_1, #workspace_2, #workspace_4, #workspace_5").hide();
         }else if(ws == '4'){
             $("#workspace_4").show();
