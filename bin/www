@@ -39,12 +39,14 @@ server.on('listening', onListening);
  * Enable RTSP
  */
 
+/*
 Stream = require('node-rtsp-stream');
 var stream = new Stream({
     name: 'live1.sdp',
     streamUrl: 'rtsp://192.168.1.53/live1.sdp',
     wsPort: 9999
 });
+*/
 
 
 /**
