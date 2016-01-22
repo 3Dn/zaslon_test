@@ -74,7 +74,7 @@ io.sockets.on('connection', function (socket) {
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
             io.sockets.emit('send', tmp_obj);
-            //console.log("Get logs: " + tmp_obj);
+            console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
         log_getter.unref();
@@ -96,6 +96,7 @@ io.sockets.on('connection', function (socket) {
                     //console.log("_______CHUNK: " + chunk);
                     //io.sockets.emit("sensor_chunk", chunk);
                     qwe += chunk;
+
                 });
 
                 resp.on('end', function(){
@@ -110,7 +111,7 @@ io.sockets.on('connection', function (socket) {
 
     setInterval(function(){
         var chart_obj = getRandomInt(0,100);
-        console.log("random obj = "+ chart_obj);
+        //console.log("random obj = "+ chart_obj);
         socket.emit('pushdata', chart_obj);
     },2000);
 
