@@ -22,7 +22,7 @@ var wire_loop = setInterval(function(){
         obj = tmp_buff.substring(0, pos+2);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        obj.date = Date().toLocaleString();
+        obj["date"] = Date().toLocaleString();
         console.log(obj);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     });
