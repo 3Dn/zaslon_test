@@ -71,11 +71,14 @@ function getRandomInt(min, max) {
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     if (!connectionsArray.length) {
+        var curr='';
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
-
-            io.sockets.emit('send', tmp_obj);
-            console.log("Get logs: " + JSON.parse(tmp_obj));
+            if(curr != tmp_obj.t[0]){
+                io.sockets.emit('send', tmp_obj);
+            }
+            curr = tmp_obj.t[0];
+            console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
         log_getter.unref();
