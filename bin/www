@@ -74,9 +74,9 @@ io.sockets.on('connection', function (socket) {
         var curr='';
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
-            if(curr != tmp_obj.t[0]){
+            if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);
-                curr = tmp_obj.t[0];
+                curr = tmp_obj;
             }
 
             console.log("Get logs: " + tmp_obj);
