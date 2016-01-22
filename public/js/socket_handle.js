@@ -25,10 +25,12 @@ socket.on('send', function (data) {
             //var info = {};
             //info = JSON.parse(data);
             console.log(data);
+            var open_close = ['закрыта', 'открыта'];
             $.each(data.t, function (key, value) {
                 console.log("t = " + value);
 
-                $("#logs").append("<p> t = " + value + "</p>");
+
+                $("#logs").append("<p> Заслонка  = " + open_close[+value] + "</p>");
                 //$("#logs").jScrollPane();
 
             });
