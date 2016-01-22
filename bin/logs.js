@@ -9,7 +9,7 @@ var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c addres
 
 var ret_obj = '';
 var obj = '';
-var current_state='';
+
 var tmp_buff='';
 
 db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
@@ -21,9 +21,12 @@ var wire_loop = setInterval(function(){
         var pos = tmp_buff.lastIndexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        obj.date = Date().toLocaleString();
         console.log(obj);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     });
+    var current_state='';
     try {
         obj = JSON.parse(obj);
         if (current_state != obj.t[0]) {
