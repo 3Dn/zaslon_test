@@ -22,7 +22,7 @@ var wire_loop = setInterval(function(){
         obj = tmp_buff.substring(0, pos+2);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
-        obj["date"] = Date().toLocaleString();
+
         console.log(obj);
         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     });
@@ -35,6 +35,7 @@ var wire_loop = setInterval(function(){
             console.log("new_curr: " + current_state);
             //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
             db.query('INSERT INTO scale_log(zaslon_id, state) values("1", "'+current_state+'")');
+            obj["date"] = Date().toLocaleString();
             ret_obj = obj;
         }
     }
