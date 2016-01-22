@@ -30,7 +30,7 @@ socket.on('send', function (data) {
                 console.log("t = " + value);
 
 
-                $("#logs").append("<p> Заслонка  = " + open_close[+value] + "</p>");
+                $("#logs").append("<p> Заслонка " + open_close[+value] + "</p>");
                 //$("#logs").jScrollPane();
 
             });
