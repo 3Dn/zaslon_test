@@ -20,6 +20,9 @@ var wire_loop = setInterval(function(){
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        console.log(obj);
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     });
     try {
         obj = JSON.parse(obj);
