@@ -43,6 +43,7 @@ var wire_loop = setInterval(function(){
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.getLogs = function(){
+
         return ret_obj;
     };
 
