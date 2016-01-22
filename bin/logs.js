@@ -23,7 +23,6 @@ var wire_loop = setInterval(function(){
     });
     try {
         obj = JSON.parse(obj);
-        var current_state='';
         if (current_state != obj.t[0]) {
             console.log("curr: " + current_state);
             current_state = obj.t[0];
