@@ -9,7 +9,7 @@ var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c addres
 
 var ret_obj = '';
 var obj = '';
-
+var current_state='';
 var tmp_buff='';
 
 db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
@@ -21,7 +21,7 @@ var wire_loop = setInterval(function(){
         var pos = tmp_buff.lastIndexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
     });
-    var current_state='';
+
     try {
         obj = JSON.parse(obj);
         if (current_state != obj.t[0]) {
@@ -30,7 +30,7 @@ var wire_loop = setInterval(function(){
             console.log("new_curr: " + current_state);
             //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
             db.query('INSERT INTO scale_log(zaslon_id, state) values("1", "'+current_state+'")');
-            obj.t[1] = Date().toLocaleString();
+            obj.date = Date().toLocaleString();
             ret_obj = obj;
         }
     }
