@@ -23,15 +23,18 @@ body {
 }
 
 #workspace_1, #workspace_2,
-#workspace_3, #workspace_4, #workspace_5{
+#workspace_3, #workspace_4,
+#workspace_5, #workspace_6{
     height: 727px;
     width: 900px;
     margin-top: 10px;
     float: left;
     display: inline-block;
 }
+
 #workspace_2, #workspace_3,
-#workspace_4, #workspace_5{
+#workspace_4, #workspace_5,
+#workspace_1{
     display: none;
 }
 
@@ -216,7 +219,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_logs{
     background:url('/images/icon_logs.png') no-repeat center center;
 }
-#logs, #charts, #videos, #linemap, #sensors {
+#logs, #charts, #videos, #linemap, #sensors, #scales {
     margin: 5%;
     padding: 2%;
     height: 86%;
