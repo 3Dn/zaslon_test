@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
-        if(ws == '6'){
+        if(ws == '1'){
             $("#workspace_1").show();
             $("#workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
             socket.emit("daily_logs");
@@ -64,6 +64,9 @@ $(document).ready(function(){
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_6").hide();
 
+        }else if(ws == '6'){
+            $("#workspace_6").show();
+            $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5").hide();
         }
     });
 
