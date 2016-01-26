@@ -61,7 +61,9 @@ var singleton = function singleton(){
     this.dailyLogs = function(){
         var sql = "SELECT sc.state, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
         var daily = db.query(sql, function(err, rows, fields){
+            console.log("DAILY: "+rows);
             return rows;
+
         });
         return daily;
 
