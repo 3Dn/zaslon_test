@@ -213,6 +213,9 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_sensor{
     background:url('/images/icon_sensor.png') no-repeat center center;
 }
+#button_logs{
+    background:url('/images/icon_logs.png') no-repeat center center;
+}
 #logs, #charts, #videos, #linemap, #sensors {
     margin: 5%;
     padding: 2%;
