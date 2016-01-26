@@ -20,11 +20,11 @@ var singleton = function singleton(){
     };
     this.query = function(text) {
         var query = connection.query(text, function(err, rows, fields){
-/*            if (err)
+           if (err)
                 console.log("DB query error: " + err);
             else
                 console.log("DB query: " + rows);
-            return rows;*/
+            return rows;
         });
     };
     this.sys_log_query = function(zaslon_id, sys_name, level, message) {

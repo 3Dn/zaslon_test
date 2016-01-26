@@ -47,6 +47,11 @@ var singleton = function singleton(){
         return ret_obj;
     };
 
+    this.dailyLogs = function(){
+        var daily = db.query("SELECT sc.state, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)");
+        return daily;
+    };
+
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
     }

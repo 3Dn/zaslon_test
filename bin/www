@@ -86,6 +86,11 @@ io.sockets.on('connection', function (socket) {
     }
 
 
+    socket.on("daily_logs", function(){
+        var daily = Logs.dailyLogs();
+        socket.emit("daily_scale", daily);
+    });
+
     socket.on("sensors", function(){
         //setImmediate(function(){
             console.log("___________________ EMIT SENSORS ______________________");
