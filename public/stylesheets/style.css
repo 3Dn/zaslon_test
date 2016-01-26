@@ -234,7 +234,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     margin: 25px auto;
 }
 
-.sensor_tab {
+.sensor_tab, .sc_tab {
     border: 1px solid #999;
     border-radius: 5px;
     height: 15%;
@@ -244,13 +244,25 @@ input.cmn-toggle-round-flat:checked + label:after {
     float: left;
     margin: 10px 21px;
 }
+.sc_led{
+    display: inline-block;
+    float: right;
+    border-radius: 50%;
+    height: 12px;
+    margin: 2px;
+    transition: background 0.4s ease 0s;
+    width: 12px;
+}
 
 
-.s_tab_name {
+.s_tab_name, .sc_tab_name {
     border-bottom: 1px solid #999;
     margin-bottom: 15px;
     padding: 5px 0;
     text-align: center;
+}
+.sc_tab_name {
+    text-align: left;
 }
 
 .sensor_t {
