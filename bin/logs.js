@@ -47,9 +47,24 @@ var singleton = function singleton(){
         return ret_obj;
     };
 
+    /*
+    *
+    *
+    *  if (err) throw err;
+
+     for (var i in rows) {
+     console.log('Post Titles: ', rows[i].post_title);
+     }
+    *
+    * */
+
     this.dailyLogs = function(){
-        var daily = db.query("SELECT sc.state, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)");
-        return JSON.stringify(daily);
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
+        var daily = db.query(sql, function(err, rows, fields){
+            return rows;
+        });
+        return daily;
+
     };
 
     if(singleton.caller != singleton.getInstance){
