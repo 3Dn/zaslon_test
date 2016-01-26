@@ -92,7 +92,7 @@ io.sockets.on('connection', function (socket) {
         socket.emit("daily_scale", daily);
     });
 
-    socket.on("sensors", function(){
+  /*  socket.on("sensors", function(){
         //setImmediate(function(){
             console.log("___________________ EMIT SENSORS ______________________");
             var options = {
@@ -117,14 +117,14 @@ io.sockets.on('connection', function (socket) {
                 console.log("____________________ Got error: " + e.message + "___________________");
             });
         //});
-    });
+    });*/
 
 
-    setInterval(function(){
+   /* setInterval(function(){
         var chart_obj = getRandomInt(0,100);
         //console.log("random obj = "+ chart_obj);
         socket.emit('pushdata', chart_obj);
-    },2000);
+    },2000);*/
 
    /* socket.on('getCharts', function(socket){
         var chart_obj = charts.getCharts();
