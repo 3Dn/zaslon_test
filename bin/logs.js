@@ -19,7 +19,7 @@ var wire_loop = setInterval(function(){
         var buff_bytes = new Buffer(res);
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.lastIndexOf(']}');
-        obj = tmp_buff.substring(0, pos+2);
+        obj = tmp_buff.substring(0, pos+10);
     });
 
     try {
