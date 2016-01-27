@@ -24,7 +24,7 @@ socket.on('send', function (data) {
             //    j = data.substring(0, pos+2);
             //var info = {};
             //info = JSON.parse(data);
-            console.log(data);
+            console.log("socket SEND: "+data);
             var open_close = ['закрыта', 'открыта'];
             $.each(data.t, function (key, value) {
                 console.log("t = " + value);

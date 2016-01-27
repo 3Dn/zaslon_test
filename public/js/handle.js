@@ -32,7 +32,6 @@ $(document).ready(function(){
         if(ws == '1'){
             $("#workspace_1").show();
             $("#workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
-            socket.emit("daily_logs");
         }else if(ws == '2'){
             $("#workspace_2").show();
             init('myChart');
@@ -67,6 +66,7 @@ $(document).ready(function(){
         }else if(ws == '6'){
             $("#workspace_6").show();
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5").hide();
+            socket.emit("daily_logs");
         }
     });
 
