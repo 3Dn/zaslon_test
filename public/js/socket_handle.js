@@ -33,12 +33,25 @@ socket.on('send', function (data) {
 
             });
             console.log("data.d: "+data.d);
-            $.each(data.d, function (key, value) {
-                if (value == '1') {
-                    $("#cmn-toggle-" + key).prop("checked", true);
-                    $("#cmn-toggle-" + key).parents(".box-inner-block").find('.led_light').addClass('led_on');
-                }
-            });
+            if(data.d[3] == '1'){
+                $("#scale_25_led").addClass("led_on");
+            }else if(data.d[3] == '0'){
+                $("#scale_25_led").removeClass("led_on");
+            }
+
+            if(data.d[4] == '1'){
+                $("#scale_35_led").addClass("led_on");
+            }else if(data.d[4] == '0'){
+                $("#scale_35_led").removeClass("led_on");
+            }
+
+            //$.each(data.d, function (key, value) {
+            //    if (value == '1') {
+            //        $("#cmn-toggle-" + key).prop("checked", true);
+            //        $("#cmn-toggle-" + key).parents(".box-inner-block").find('.led_light').addClass('led_on');
+            //    }
+            //});
+
         } catch (err) {
             console.log(data);
             console.log(err.name + ":" + err.message + "\n" + err.stack);
