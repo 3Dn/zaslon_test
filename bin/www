@@ -72,8 +72,8 @@ io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    io.json.emit({'event': 'connected', 'name': ID, 'time': time});
-    io.json.emit({'event': 'userJoined', 'name': ID, 'time': time});
+    //io.json.emit({'event': 'connected', 'name': ID, 'time': time});
+    //io.json.emit({'event': 'userJoined', 'name': ID, 'time': time});
     socket.on('message', function (msg) {
         var time = (new Date).toLocaleTimeString();
         socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
