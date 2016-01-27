@@ -32,6 +32,7 @@ socket.on('send', function (data) {
                 //$("#logs").jScrollPane();
 
             });
+            console.log("data.d: "+data.d);
             $.each(data.d, function (key, value) {
                 if (value == '1') {
                     $("#cmn-toggle-" + key).prop("checked", true);
