@@ -67,13 +67,14 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+io.
 
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    socket.json.emit({'event': 'connected', 'name': ID, 'time': time}, { for: 'everyone'});
-    socket.json.broadcast.emit({'event': 'userJoined', 'name': ID, 'time': time});
+    socket.json.send({'event': 'connected', 'name': ID, 'time': time}, { for: 'everyone'});
+    socket.json.broadcast.send({'event': 'userJoined', 'name': ID, 'time': time});
     socket.on('message', function (msg) {
         var time = (new Date).toLocaleTimeString();
         socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
