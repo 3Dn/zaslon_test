@@ -50,6 +50,8 @@ socket.on("daily_scale", function(data){
     console.log(data);
 });
 
+
+
 function arr_clean() {
     dates.length = 0;
     states.length = 0;

@@ -70,6 +70,10 @@ function getRandomInt(min, max) {
 
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
+    var ID = (socket.id).toString();
+    var time = (new Date).toLocaleTimeString();
+    socket.json.send({'event': 'connected', 'name': ID, 'time': time});
+    socket.broadcast.json.send({'event': 'userJoined', 'name': ID, 'time': time});
     if (!connectionsArray.length) {
         var curr='';
         var log_getter = setTimeout(function getter(){
@@ -134,6 +138,8 @@ io.sockets.on('connection', function (socket) {
     });*/
 
     socket.on('disconnect', function(socket){
+        var time = (new Date).toLocaleTimeString();
+        io.sockets.json.send({'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {
