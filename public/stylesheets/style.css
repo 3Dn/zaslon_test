@@ -179,18 +179,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     float: right;
     margin-left: 10px;
 }
-.led_on{
-    background: #8ce196;
 
-}
-.led_light, .sc_led_light{
-    width: 12px;
-    height: 12px;
-    display: block;
-    border-radius: 50%;
-    transition: background 0.4s;
-    margin: 2px;
-}
 .u_button{
     width: 70px;
     height: 70px;
@@ -272,4 +261,16 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 .sensor_h {
     color: #6aafff;
+}
+.led_on{
+    background: #8ce196;
+
+}
+.led_light, .sc_led_light{
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 50%;
+    transition: background 0.4s;
+    margin: 2px;
 }
