@@ -67,7 +67,12 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-io.
+io.on('connection', function(socket){
+    console.log('test socket');
+    var ID = (socket.id).toString();
+    var time = (new Date).toLocaleTimeString();
+    io.emit({'event': 'userJoined', 'name': ID, 'time': time});
+});
 
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
