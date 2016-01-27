@@ -264,7 +264,6 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 .led_on{
     background: #8ce196;
-
 }
 .led_light, .sc_led_light{
     width: 12px;
