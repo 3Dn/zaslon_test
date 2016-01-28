@@ -11,7 +11,7 @@ window.onload = function() {
             // Добавляем в лог сообщение, заменив время, имя и текст на полученные
             document.querySelector('#logs').innerHTML += strings[msg.event].replace(/\[([a-z]+)\]/g, '<span class="$1">').replace(/\[\/[a-z]+\]/g, '</span>').replace(/\%time\%/, msg.time).replace(/\%name\%/, msg.name).replace(/\%text\%/, unescape(msg.text).replace('<', '&lt;').replace('>', '&gt;')) + '<br>';
             // Прокручиваем лог в конец
-            document.querySelector('#logs').scrollTop = document.querySelector('#log').scrollHeight;
+            //document.querySelector('#logs').scrollTop = document.querySelector('#log').scrollHeight;
         });
     //});
 };
