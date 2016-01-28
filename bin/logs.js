@@ -20,15 +20,13 @@ var wire_loop = setInterval(function(){
         tmp_buff = buff_bytes.toString('utf8');
         var pos = tmp_buff.indexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
-        console.log("obj_t: " + obj);
     });
 
     try {
         obj = JSON.parse(obj);
-        if (current_state != obj.d[3]) {
+        if (current_state != obj) {
             console.log("curr: " + current_state);
-            console.log("curr: " + obj);
-            current_state = obj.d[3];
+            current_state = obj;
             console.log("new_curr: " + current_state);
             //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
             db.query('INSERT INTO scale_log(zaslon_id, state) values("1", "'+current_state+'")');
