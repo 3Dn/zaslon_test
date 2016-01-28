@@ -36,18 +36,22 @@ socket.on('send', function (data) {
             console.log("data.d: "+data.d);
             if(data.d[3] == '1'){
                 $("#scale_25_led").addClass("led_on");
-                socket.emit('sys', {'event': 'scale_open', 'name': "scale_1", 'time': time});
+                //socket.emit('sys', {'event': 'scale_open', 'name': "scale_1", 'time': time});
+                $("#logs").append("<p>"+time+": Заслонка весов 1 открыта.</p>");
             }else if(data.d[3] == '0'){
                 $("#scale_25_led").removeClass("led_on");
-                socket.emit('sys', {'event': 'scale_close', 'name': "scale_1", 'time': time});
+                //socket.emit('sys', {'event': 'scale_close', 'name': "scale_1", 'time': time});
+                $("#logs").append("<p>"+time+": Заслонка весов 1 закрыта.</p>");
             }
 
             if(data.d[4] == '1'){
                 $("#scale_35_led").addClass("led_on");
-                socket.emit('sys', {'event': 'scale_open', 'name': "scale_2", 'time': time});
+                //socket.emit('sys', {'event': 'scale_open', 'name': "scale_2", 'time': time});
+                $("#logs").append("<p>"+time+": Заслонка весов 2 открыта.</p>");
             }else if(data.d[4] == '0'){
                 $("#scale_35_led").removeClass("led_on");
-                socket.emit('sys', {'event': 'scale_close', 'name': "scale_2", 'time': time});
+                //socket.emit('sys', {'event': 'scale_close', 'name': "scale_2", 'time': time});
+                $("#logs").append("<p>"+time+": Заслонка весов 2 закрыта.</p>");
             }
 
             //$.each(data.d, function (key, value) {
