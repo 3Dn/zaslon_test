@@ -26,8 +26,8 @@ socket.on('send', function (data) {
             //info = JSON.parse(data);
             console.log("socket SEND: "+data);
             var open_close = ['закрыта', 'открыта'];
-            $.each(data.t, function (key, value) {
-                console.log("t = " + value);
+            $.each(data.d, function (key, value) {
+                console.log("d = " + value);
                 $("#logs").append("<p>"+data.date+": Заслонка " + open_close[+value] + "</p>");
                 //$("#logs").jScrollPane();
 
