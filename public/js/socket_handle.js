@@ -2,7 +2,7 @@
  * Created by Kriv on 16.11.2015.
  */
 
-//var socket = io.connect();
+var socket = io.connect();
 var dates = [];
 var states = [];
 var test_lables = [];
