@@ -56,14 +56,12 @@ var singleton = function singleton(){
             for(var i in rows){
                 var obj = {};
                 obj.state_1 = rows[i].state_1;
-                console.log("\nOBJ STATE!!! -> "
-                obj.state_1;
-            )
+                console.log("\nOBJ STATE!!! -> " + obj.state_1);
                 obj.state_2 = rows[i].state_2;
                 obj.name = rows[i].name;
                 obj.date = rows[i].date;
                 arr.push(obj);
-            };
+            }
         });
         return arr;
     };
