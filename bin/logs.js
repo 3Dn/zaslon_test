@@ -9,7 +9,7 @@ var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
 var ret_obj = '';
-var arr = [];
+var ret_daily_arr = [];
 var obj = '';
 var current_state='';
 var state_1 = '', state_2 = '';
@@ -52,6 +52,7 @@ var singleton = function singleton(){
     };
 
     this.dailyLogs = function(){
+        var arr = [];
         var sql = "SELECT sc.state_1, sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
         local_conn.query(sql, function(err, rows, fields){
             for(var i in rows){
@@ -63,8 +64,9 @@ var singleton = function singleton(){
                 arr.push(obj);
             }
             //console.log("ARRRRRR: ", arr);
-            return arr;
+            ret_daily_arr = arr;
         });
+        return ret_daily_arr;
     };
 
     if(singleton.caller != singleton.getInstance){
