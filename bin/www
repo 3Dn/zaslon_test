@@ -70,8 +70,8 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('message', function (msg) {
         var time = (new Date).toLocaleTimeString();
-        socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
-        socket.broadcast.json.send({'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
+        socket.send('system', {'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
+        socket.broadcast.send('system', {'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
     });
     if (!connectionsArray.length) {
         var curr='';
@@ -138,8 +138,8 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(socket){
         var time = (new Date).toLocaleTimeString();
-        io.sockets.emit('system', {'event': 'userSplit', 'name': ID, 'time': time});
-        io.sockets.broadcast.emit('system', {'event': 'userSplit', 'name': ID, 'time': time});
+        socket.emit('system', {'event': 'userSplit', 'name': ID, 'time': time});
+        socket.broadcast.emit('system', {'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {
