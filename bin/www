@@ -136,7 +136,7 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('chart_data', chart_obj);
     });*/
 
-    socket.on('disconnect', function(socket){
+    socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();
         io.sockets.send({'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
