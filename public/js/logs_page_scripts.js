@@ -3,7 +3,9 @@ strings = {
     'userJoined': '[sys][time]%time%[/time]: Пользователь [user]%name%[/user] вошел.[/sys]',
     'messageSent': '[out][time]%time%[/time]: [user]%name%[/user]: %text%[/out]',
     'messageReceived': '[in][time]%time%[/time]: [user]%name%[/user]: %text%[/in]',
-    'userSplit': '[sys][time]%time%[/time]: Пользователь [user]%name%[/user] отключился.[/sys]'
+    'userSplit': '[sys][time]%time%[/time]: Пользователь [user]%name%[/user] отключился.[/sys]',
+    'scale_open': '[sys][time]%time%[/time]: Заслонка весов [user]%name%[/user] открыта.[/sys]',
+    'scale_close': '[sys][time]%time%[/time]: Заслонка весов [user]%name%[/user] закрыта.[/sys]'
 };
 window.onload = function() {
     //socket.on('connect', function () {

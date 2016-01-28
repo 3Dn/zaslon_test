@@ -24,25 +24,30 @@ socket.on('send', function (data) {
             //    j = data.substring(0, pos+2);
             //var info = {};
             //info = JSON.parse(data);
+            var time = (new Date).toLocaleTimeString();
             console.log("socket SEND: "+data);
             var open_close = ['закрыта', 'открыта'];
             $.each(data.d, function (key, value) {
                 console.log("d = " + value);
-                $("#logs").append("<p>"+data.date+": Заслонка " + open_close[+value] + "</p>");
+                //$("#logs").append("<p>"+data.date+": Заслонка " + open_close[+value] + "</p>");
                 //$("#logs").jScrollPane();
 
             });
             console.log("data.d: "+data.d);
             if(data.d[3] == '1'){
                 $("#scale_25_led").addClass("led_on");
+                socket.emit('sys', {'event': 'scale_open', 'name': 'scale_1', 'time': time});
             }else if(data.d[3] == '0'){
                 $("#scale_25_led").removeClass("led_on");
+                socket.emit('sys', {'event': 'scale_close', 'name': 'scale_1', 'time': time});
             }
 
             if(data.d[4] == '1'){
                 $("#scale_35_led").addClass("led_on");
+                socket.emit('sys', {'event': 'scale_open', 'name': 'scale_2', 'time': time});
             }else if(data.d[4] == '0'){
                 $("#scale_35_led").removeClass("led_on");
+                socket.emit('sys', {'event': 'scale_close', 'name': 'scale_2', 'time': time});
             }
 
             //$.each(data.d, function (key, value) {
