@@ -6,6 +6,7 @@ strings = {
     'userSplit': '[sys][time]%time%[/time]: Пользователь [user]%name%[/user] отключился.[/sys]'
 };
 window.onload = function() {
+    socket = io();
     socket.on('connect', function () {
         socket.on('system', function (msg) {
             // Добавляем в лог сообщение, заменив время, имя и текст на полученные
