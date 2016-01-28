@@ -73,6 +73,13 @@ io.sockets.on('connection', function (socket) {
         socket.emit('sys', {'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
         socket.broadcast.emit('sys', {'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
     });
+
+    socket.on('daily_logs', function(){
+        //var daily = Logs.dailyLogs();
+        console.log("DAILY: " /*+ daily*/);
+        //socket.emit('sys', daily);
+    });
+
     if (!connectionsArray.length) {
         var curr='';
         var log_getter = setTimeout(function getter(){
@@ -87,13 +94,6 @@ io.sockets.on('connection', function (socket) {
         }, 1);
         //log_getter.unref();
     }
-
-
-    socket.on('daily_logs', function(){
-        //var daily = Logs.dailyLogs();
-        console.log("DAILY: " + daily);
-        //socket.emit('sys', daily);
-    });
 
   /*  socket.on("sensors", function(){
         //setImmediate(function(){
