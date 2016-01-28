@@ -46,25 +46,24 @@ var wire_loop = setInterval(function(){
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
     this.getLogs = function(){
-
         return ret_obj;
     };
 
     this.dailyLogs = function(){
-
         var sql = "SELECT sc.state_1, sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
         var daily = db.query(sql, function(err, rows, fields){
             var arr = new array();
             for(var i in rows){
                 var obj = {};
                 obj.state_1 = rows[i].state_1;
+                console.log(obj.state_1);
                 obj.state_2 = rows[i].state_2;
                 obj.name = rows[i].name;
                 obj.date = rows[i].date;
                 arr.push(obj);
             }
-            return arr;
         });
+        return arr;
     };
 
     if(singleton.caller != singleton.getInstance){
