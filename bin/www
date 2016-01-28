@@ -89,7 +89,7 @@ io.sockets.on('connection', function (socket) {
     }
 
 
-    socket.on("daily_logs", function(){
+    socket.on('daily_logs', function(socket){
         var daily = Logs.dailyLogs();
         console.log("DAILY: " + daily);
         socket.emit('sys', daily);

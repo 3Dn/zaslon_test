@@ -58,7 +58,7 @@ $(document).ready(function(){
                                        '<div class="s_tab_name">DHT22 (192.168.1.156)</div>'+
                                         'Температура: <span class="sensor_t"><b>'+sensor.t+'&deg;C</b></span><br/>'+
                                         'Влажность: <span class="sensor_h"><b>'+sensor.h+'%</b></span><br/>'+
-                                    '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>'
+                                    '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>';
                 $("#sensors").empty().html(sebsor_tab);
             });
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_6").hide();
@@ -66,7 +66,7 @@ $(document).ready(function(){
         }else if(ws == '6'){
             $("#workspace_6").show();
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5").hide();
-            socket.emit("daily_logs");
+            socket.emit('daily_logs');
         }
     });
 
