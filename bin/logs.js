@@ -57,7 +57,8 @@ var singleton = function singleton(){
             var arr = new array();
             for(var i in rows){
                 var obj = {};
-                obj.state = rows[i].state;
+                obj.state_1 = rows[i].state_1;
+                obj.state_2 = rows[i].state_2;
                 obj.name = rows[i].name;
                 obj.date = rows[i].date;
                 arr.push(obj);
