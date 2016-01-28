@@ -64,10 +64,8 @@ var singleton = function singleton(){
                 arr.push(obj);
             }
             return arr;
-
         });
         return daily;
-
     };
 
     if(singleton.caller != singleton.getInstance){
