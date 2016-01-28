@@ -65,13 +65,13 @@ io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    socket.emit('system', {'event': 'connected', 'name': ID, 'time': time});
-    socket.broadcast.emit('system', {'event': 'userJoined', 'name': ID, 'time': time});
+    socket.emit('message', {'event': 'connected', 'name': ID, 'time': time});
+    socket.broadcast.emit('message', {'event': 'userJoined', 'name': ID, 'time': time});
 
-    socket.on('system', function (msg) {
+    socket.on('message', function (msg) {
         var time = (new Date).toLocaleTimeString();
-        socket.emit('system', {'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
-        socket.broadcast.emit('system', {'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
+        socket.emit('message', {'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
+        socket.broadcast.emit('message', {'event': 'messageReceived', 'name': ID, 'text': msg, 'time': time})
     });
     if (!connectionsArray.length) {
         var curr='';
@@ -138,7 +138,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();
-        io.sockets.broadcast.send('system', {'event': 'userSplit', 'name': ID, 'time': time});
+        io.sockets.send('message', {'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {
