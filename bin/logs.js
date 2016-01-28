@@ -14,7 +14,7 @@ var current_state='';
 var state_1 = '', state_2 = '';
 var tmp_buff='';
 
-local_conn.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
+db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
 
 var wire_loop = setInterval(function(){
     wire.read(32, function(err, res){
