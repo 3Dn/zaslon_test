@@ -62,10 +62,10 @@ var singleton = function singleton(){
                 obj.name = rows[i].name;
                 obj.date = rows[i].date;
                 arr.push(obj);
-                console.log(arr);
             }
             return arr;
         });
+        console.log(daily);
         return daily;
     };
 
