@@ -53,6 +53,7 @@ var Logs = require('./logs.js');
 var io = require('socket.io')(server);
 
 var connectionsArray = [];
+var daily = [];
 
 var charts = require('./charts.js');
 
@@ -75,7 +76,7 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('daily_logs', function(){
-        var daily = Logs.dailyLogs();
+        daily = Logs.dailyLogs();
         console.log("DAILY: " + daily);
         //socket.emit('sys', daily);
     });
