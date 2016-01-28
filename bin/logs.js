@@ -50,11 +50,12 @@ var singleton = function singleton(){
     };
 
     this.dailyLogs = function(){
-        console.log("\nDAILY_LOG_OK!\n\n\n");
+        //console.log("\nDAILY_LOG_OK!\n\n\n");
         var arr = '';
         var sql = "SELECT sc.state_1, sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
-        var daily = db.query(sql, function(err, rows, fields){
-            for(var i in rows){
+        db.query(sql, function(err, rows, fields){
+            console.log("\n\nREZ: ", rows[0].state_1);
+/*            for(var i in rows){
                 var obj = {};
                 obj.state_1 = rows[i].state_1;
                 console.log("\nOBJ STATE!!! -> " + obj.state_1);
@@ -62,9 +63,9 @@ var singleton = function singleton(){
                 obj.name = rows[i].name;
                 obj.date = rows[i].date;
                 arr.push(obj);
-            }
+            }*/
         });
-        return arr;
+        //return daily;
     };
 
     if(singleton.caller != singleton.getInstance){
