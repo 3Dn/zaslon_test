@@ -51,7 +51,7 @@ var singleton = function singleton(){
     };
 
     this.dailyLogs = function(){
-        //var arr = '';
+        var arr = '';
         var sql = "SELECT sc.state_1, sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
         local_conn.query(sql, function(err, rows, fields){
             //console.log("\n\nREZ: ", rows[0].state_1);
@@ -65,7 +65,7 @@ var singleton = function singleton(){
                 arr.push(obj);
             }
         });
-        return daily;
+        return arr;
     };
 
     if(singleton.caller != singleton.getInstance){
