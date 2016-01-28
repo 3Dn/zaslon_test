@@ -50,7 +50,7 @@ var singleton = function singleton(){
     };
 
     this.dailyLogs = function(){
-        var arr = new array();
+        var arr = '';
         var sql = "SELECT sc.state_1, sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)";
         var daily = db.query(sql, function(err, rows, fields){
             for(var i in rows){
