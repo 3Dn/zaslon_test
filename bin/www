@@ -8,11 +8,7 @@ var app = require('../app');
 var debug = require('debug')('zaslon_test:server');
 var http = require('http');
 
-
 //var request = require('request');
-
-
-
 
 /**
  * Get port from environment and store in Express.
@@ -53,8 +49,6 @@ var stream = new Stream({
  * Listen i2c and sockets
  */
 
-
-//var io = require('socket.io').listen(server);
 var Logs = require('./logs.js');
 var io = require('socket.io')(server);
 
@@ -67,19 +61,13 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-io.on('connection', function(socket){
-    console.log('test socket');
-    var ID = (socket.id).toString();
-    var time = (new Date).toLocaleTimeString();
-    io.emit({'event': 'userJoined', 'name': ID, 'time': time});
-});
-
 io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    socket.json.send({'event': 'connected', 'name': ID, 'time': time}, { for: 'everyone'});
-    socket.json.broadcast.send({'event': 'userJoined', 'name': ID, 'time': time});
+    socket.emit('system', {'event': 'connected', 'name': ID, 'time': time});
+    socket.broadcast.emit('system', {'event': 'userJoined', 'name': ID, 'time': time});
+
     socket.on('message', function (msg) {
         var time = (new Date).toLocaleTimeString();
         socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg, 'time': time});
@@ -150,7 +138,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(socket){
         var time = (new Date).toLocaleTimeString();
-        io.sockets.json.send({'event': 'userSplit', 'name': ID, 'time': time});
+        io.sockets.emit('system', {'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {

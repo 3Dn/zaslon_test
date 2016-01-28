@@ -7,7 +7,7 @@ strings = {
 };
 window.onload = function() {
     socket.on('connect', function () {
-        socket.on('message', function (msg) {
+        socket.on('system', function (msg) {
             // Добавляем в лог сообщение, заменив время, имя и текст на полученные
             document.querySelector('#logs').innerHTML += strings[msg.event].replace(/\[([a-z]+)\]/g, '<span class="$1">').replace(/\[\/[a-z]+\]/g, '</span>').replace(/\%time\%/, msg.time).replace(/\%name\%/, msg.name).replace(/\%text\%/, unescape(msg.text).replace('<', '&lt;').replace('>', '&gt;')) + '<br>';
             // Прокручиваем лог в конец
