@@ -18,8 +18,9 @@ var wire_loop = setInterval(function(){
     wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
         tmp_buff = buff_bytes.toString('utf8');
-        var pos = tmp_buff.lastIndexOf(']}');
+        var pos = tmp_buff.indexOf(']}');
         obj = tmp_buff.substring(0, pos+2);
+        console.log("obj_t: " + obj);
     });
 
     try {
