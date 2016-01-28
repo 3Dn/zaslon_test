@@ -65,8 +65,6 @@ var singleton = function singleton(){
             }
             return arr;
         });
-        console.log("Daily: " + daily);
-        return daily;
     };
 
     if(singleton.caller != singleton.getInstance){
