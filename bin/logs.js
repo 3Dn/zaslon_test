@@ -62,7 +62,7 @@ var singleton = function singleton(){
                 obj.date = rows[i].date;
                 arr.push(obj);
             }
-            console.log("ARRRRRR: ", arr);
+            //console.log("ARRRRRR: ", arr);
             return arr;
         });
     };
