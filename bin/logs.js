@@ -65,7 +65,7 @@ var singleton = function singleton(){
             }
             return arr;
         });
-        console.log(daily);
+        console.log("Daily: " + daily);
         return daily;
     };
 
