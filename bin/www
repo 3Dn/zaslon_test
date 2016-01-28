@@ -138,7 +138,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();
-        io.sockets.send('sys', {'event': 'userSplit', 'name': ID, 'time': time});
+        io.emit('sys', {'event': 'userSplit', 'name': ID, 'time': time});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {
