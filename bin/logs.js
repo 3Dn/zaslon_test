@@ -3,7 +3,6 @@
  * Created by Kriv on 26.11.2015.
  */
 var i2c = require('i2c');
-var local_www = require('./www');
 var db  = require('./db_engine');
 var local_conn = db.connection();
 var address = 0x04;
@@ -33,7 +32,6 @@ var wire_loop = setInterval(function(){
             current_state = obj;
             state_1 = obj.d[3];
             state_2 = obj.d[4];
-            local_www.socket.emit('sys', {'event': 'scale_open', 'name': 'scale_1', 'time': 'time'});
             //console.log("new_curr: " + current_state);
             //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
             local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "'+state_1+'", "'+state_2+'")');
