@@ -25,7 +25,7 @@ var wire_loop = setInterval(function(){
 
     try {
         obj = JSON.parse(obj);
-        if (current_state != obj) {
+        if ((state_1 != obj.d[3]) || (state_2 != obj.d[4])) { //current_state != obj
             //console.log("curr: " + current_state);
             current_state = obj;
             state_1 = obj.d[3];
