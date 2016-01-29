@@ -80,12 +80,12 @@ var singleton = function singleton(){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     if(0 < item.scale_1 < 2){
-                        console.log('yeap!');
                         scale_1_log_hour_count += 40;
                     }
                 });
             }
         });
+        console.log(scale_1_log_hour_count);
         return scale_1_log_hour_count;
     };
 
