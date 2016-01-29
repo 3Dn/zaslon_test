@@ -65,8 +65,8 @@ io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    socket.emit('sys', {'event': 'connected', 'name': ID, 'time': time});
-    socket.broadcast.emit('sys', {'event': 'userJoined', 'name': ID, 'time': time});
+    socket.emit('sys_to_web', {'event': 'connected', 'name': ID, 'time': time});
+    socket.broadcast.emit('sys_to_web', {'event': 'userJoined', 'name': ID, 'time': time});
 
     socket.on('sys', function (msg) {
         var time = (new Date).toLocaleTimeString();
