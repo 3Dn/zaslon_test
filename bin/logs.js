@@ -79,7 +79,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if(0 < item.scale_1 < 2){
+                    if((item.scale_1 > 0) && (item.scale_1 < 2)){
                         ret_count += 40;
                     }
                 });
