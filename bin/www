@@ -57,7 +57,7 @@ var connectionsArray = [];
 var charts = require('./charts.js');
 
 Logs.dailyLogs();
-Logs.scale_1_log_hour();
+console.log(Logs.scale_1_log_hour());
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

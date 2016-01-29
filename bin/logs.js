@@ -70,15 +70,18 @@ var singleton = function singleton(){
     };
 
     this.scale_1_log_hour = function(){
-        var arr = [];
+        var count = 0;
         var sql = "SELECT sc.state_1, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    console.log(item.state_1);
+                    if(0 < item.scale_1 < 2){
+                        count += 40;
+                    }
                 });
             }
         });
+        return count;
     };
 
     if(singleton.caller != singleton.getInstance){
