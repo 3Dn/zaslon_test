@@ -16,8 +16,9 @@ window.onload = function() {
             //document.querySelector('#logs').scrollTop = document.querySelector('#log').scrollHeight;
         });
         socket.on('scale_log', function(data){
-
-            document.querySelector('#logs').innerHTML += data[0].date.toLocaleTimeString() + '<br>';
+            data.forEach(function(item, i, data){
+                document.querySelector('#logs').innerHTML += item.date + '<br>';
+            });
             console.log(data);
         });
     //});
