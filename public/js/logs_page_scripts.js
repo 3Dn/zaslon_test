@@ -17,7 +17,7 @@ window.onload = function() {
         });
         socket.on('scale_log', function(data){
 
-            document.querySelector('#logs').innerHTML += data[0].date + '<br>';
+            document.querySelector('#logs').innerHTML += data[0].date.toLocaleTimeString() + '<br>';
             console.log(data);
         });
     //});
