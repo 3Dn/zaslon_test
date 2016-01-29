@@ -77,7 +77,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('daily_logs', function(){
         var daily = Logs.dailyLogs();
-        console.log(daily);
+        //console.log(daily);
         socket.emit('scale_log', daily);
     });
 

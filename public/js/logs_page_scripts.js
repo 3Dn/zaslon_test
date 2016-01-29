@@ -16,7 +16,8 @@ window.onload = function() {
             //document.querySelector('#logs').scrollTop = document.querySelector('#log').scrollHeight;
         });
         socket.on('scale_log', function(data){
-            document.querySelector('#logs').innerHTML += data.date;
+
+            document.querySelector('#logs').innerHTML += data[0].date;
             console.log(data);
         });
     //});
