@@ -17,7 +17,7 @@ window.onload = function() {
         });
         socket.on('scale_log', function(data){
             data.forEach(function(item, i, data){
-                var ltzDate = new Date(item.date.toLocaleTimeString());
+                var ltzDate = new Date(item.date.toLocaleString());
                 document.querySelector('#logs').innerHTML += ltzDate + '<br>';
             });
             console.log(data);
