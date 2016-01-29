@@ -83,9 +83,9 @@ var singleton = function singleton(){
                         scale_1_log_hour_count += 40;
                     }
                 });
+                console.log(scale_1_log_hour_count);
             }
         });
-        console.log(scale_1_log_hour_count);
         return scale_1_log_hour_count;
     };
 
