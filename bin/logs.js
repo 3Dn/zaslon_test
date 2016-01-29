@@ -12,6 +12,7 @@ var ret_obj = '';
 var ret_daily_arr = [];
 var obj = '';
 var current_state='';
+var crc_count = 0;
 var state_1 = '', state_2 = '';
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
@@ -30,10 +31,13 @@ var wire_loop = setInterval(function(){
     });
 
     try {
+        crc_count = 0;
         obj = JSON.parse(obj);
-       // if ((state_1 != obj.d[3]) || (state_2 != obj.d[4])) { //current_state != obj
-            //console.log("curr: " + current_state);
-            //current_state = obj;
+        console.log(obj.d.length);
+        for (var i = 0; i < 6; i++){
+            crc_count += obj.d[i];
+        }
+        if (obj.d[6] == crc_count) {
             state_1 = obj.d[3];
             state_2 = obj.d[4];
             //console.log("new_curr: " + current_state);
@@ -41,7 +45,7 @@ var wire_loop = setInterval(function(){
             local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "'+state_1+'", "'+state_2+'")');
             obj.date = Date().toLocaleString();
             ret_obj = obj;
-       // }
+       }
     }
     catch (err) {
         console.log("Error parsing obj! obj is: " + obj);
