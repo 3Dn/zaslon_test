@@ -57,8 +57,8 @@ var connectionsArray = [];
 var charts = require('./charts.js');
 
 Logs.dailyLogs();
-var tttt = Logs.scale_1_log_hour();
-console.log(tttt);
+Logs.scale_1_log_hour();
+
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -81,6 +81,11 @@ io.sockets.on('connection', function (socket) {
         var daily = Logs.dailyLogs();
         //console.log(daily);
         socket.emit('scale_log', daily);
+    });
+
+    socket.on('scale_1_log_hour', function(){
+        var scale_1_log_hour = Logs.scale_1_log_hour();
+        socket.emit('scale_1_log_hour', scale_1_log_hour);
     });
 
     if (!connectionsArray.length) {
