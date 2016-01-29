@@ -19,8 +19,7 @@ window.onload = function() {
             data.forEach(function(item, i, data){
                 var open_close = ['закрыта', 'открыта'];
                 var ltzDate = new Date(item.date.toLocaleString());
-                ltzDate.slice(0, -4);
-                document.querySelector('#logs').innerHTML += ltzDate + " -> Контроллер: " + item.name + ". Заслонка #1: " + open_close[item.state_1] + ". Залонка #2: " + open_close[item.state_2] + '.<br>';
+                document.querySelector('#logs').innerHTML += ltzDate + " Контроллер: " + item.name + ". Заслонка #1: " + open_close[item.state_1] + ". Залонка #2: " + open_close[item.state_2] + '.<br>';
             });
             //console.log(data);
         });
