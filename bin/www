@@ -68,11 +68,8 @@ io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    var scale_1_log_hour = Logs.scale_1_log_hour();
     socket.emit('sys_to_web', {'event': 'connected', 'name': ID, 'time': time});
     socket.broadcast.emit('sys_to_web', {'event': 'userJoined', 'name': ID, 'time': time});
-
-    socket.emit('scale_1_log_hour', scale_1_log_hour);
 
     socket.on('sys', function (msg) {
         var time = (new Date).toLocaleTimeString();
@@ -93,11 +90,12 @@ io.sockets.on('connection', function (socket) {
         var curr='';
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
+            var scale_1_log_hour = Logs.scale_1_log_hour();
             if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);
                 curr = tmp_obj;
             }
-
+            io.sockets.emit('scale_1_log_hour', scale_1_log_hour);
             //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
