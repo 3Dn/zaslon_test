@@ -45,7 +45,7 @@ var wire_loop = setInterval(function(){
             local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "'+state_1+'", "'+state_2+'")');
             obj.date = Date().toLocaleString();
             ret_obj = obj;
-       }
+       } else console.log("logs.js -> wire_loop -> error CRC! CRC is: " + crc_count + "\nCRC check sum is: " + obj.d[obj.d.length-1]);
     }
     catch (err) {
         console.log("Error parsing obj! obj is: " + obj);
