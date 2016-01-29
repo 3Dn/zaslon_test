@@ -91,11 +91,14 @@ io.sockets.on('connection', function (socket) {
         var log_getter = setTimeout(function getter(){
             var tmp_obj = Logs.getLogs();
             var scale_1_log_hour = Logs.scale_1_log_hour();
+            var scale_2_log_hour = Logs.scale_2_log_hour();
+            var scale_1_log_day = Logs.scale_1_log_day();
+            var scale_2_log_day = Logs.scale_2_log_day();
             if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);
                 curr = tmp_obj;
             }
-            io.sockets.emit('scale_1_log_hour', scale_1_log_hour);
+            io.sockets.emit('scale_log_home_page', {'scale_1_hour':scale_1_log_hour, 'scale_2_hour':scale_2_log_hour, 'scale_1_day': scale_1_log_day, 'scale_2_day': scale_2_log_day});
             //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);

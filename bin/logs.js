@@ -13,10 +13,10 @@ var ret_daily_arr = [];
 var obj = '';
 var current_state='';
 var state_1 = '', state_2 = '';
-var scale_1_log_hour_count = 0;
-/*scale_2_log_hour_count,
-    scale_1_log_day_count,
-    scale_2_log_day_count;*/
+var scale_1_log_hour_count = 0,
+    scale_2_log_hour_count = 0,
+    scale_1_log_day_count = 0,
+    scale_2_log_day_count = 0;
 var tmp_buff='';
 
 db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
@@ -84,10 +84,57 @@ var singleton = function singleton(){
                     }
                 });
                 scale_1_log_hour_count = ret_count;
-                console.log(scale_1_log_hour_count);
             }
         });
         return scale_1_log_hour_count;
+    };
+
+    this.scale_2_log_hour = function(){
+        var ret_count = 0;
+        var sql = "SELECT sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
+        local_conn.query(sql, function(err ,rows, fields){
+            if(!err){
+                rows.forEach(function(item, i, rows){
+                    if((item.scale_2 > 0) && (item.scale_2 < 2)){
+                        ret_count += 40;
+                    }
+                });
+                scale_2_log_hour_count = ret_count;
+            }
+        });
+        return scale_2_log_hour_count;
+    };
+
+    this.scale_1_log_day = function(){
+        var ret_count = 0;
+        var sql = "SELECT sc.state_1, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
+        local_conn.query(sql, function(err ,rows, fields){
+            if(!err){
+                rows.forEach(function(item, i, rows){
+                    if((item.scale_1 > 0) && (item.scale_1 < 2)){
+                        ret_count += 40;
+                    }
+                });
+                scale_1_log_day_count = ret_count;
+            }
+        });
+        return scale_1_log_day_count;
+    };
+
+    this.scale_2_log_day = function(){
+        var ret_count = 0;
+        var sql = "SELECT sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
+        local_conn.query(sql, function(err ,rows, fields){
+            if(!err){
+                rows.forEach(function(item, i, rows){
+                    if((item.scale_2 > 0) && (item.scale_2 < 2)){
+                        ret_count += 40;
+                    }
+                });
+                scale_2_log_day_count = ret_count;
+            }
+        });
+        return scale_2_log_day_count;
     };
 
     if(singleton.caller != singleton.getInstance){
