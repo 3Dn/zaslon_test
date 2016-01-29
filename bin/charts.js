@@ -24,7 +24,7 @@ var ret_rows = null;
 var chart_loop = setInterval(function(){
     chart_obj = local_conn.query("SELECT id, UNIX_TIMESTAMP(date) as my_date, pin_state FROM io_log ORDER BY id DESC LIMIT 10", function(err, rows, fields) {
         if (!err){
-            console.log("chart.js -> rows:\n", rows);
+           // console.log("chart.js -> rows:\n", rows);
             ret_rows = rows;
             //return ret_rows;
         }else {
