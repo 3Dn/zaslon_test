@@ -14,6 +14,9 @@ var obj = '';
 var current_state='';
 var state_1 = '', state_2 = '';
 var scale_1_log_hour_count = 0;
+/*scale_2_log_hour_count,
+    scale_1_log_day_count,
+    scale_2_log_day_count;*/
 var tmp_buff='';
 
 db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
@@ -81,8 +84,8 @@ var singleton = function singleton(){
                     }
                 });
                 scale_1_log_hour_count = ret_count;
-                return scale_1_log_hour_count;
                 console.log(scale_1_log_hour_count);
+                return scale_1_log_hour_count;
             }
         });
     };
