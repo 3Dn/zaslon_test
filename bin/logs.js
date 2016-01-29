@@ -13,7 +13,7 @@ var ret_daily_arr = [];
 var obj = '';
 var current_state='';
 var state_1 = '', state_2 = '';
-var scale_1_log_hour_count,
+var scale_1_log_hour_count = '',
     scale_2_log_hour_count,
     scale_1_log_day_count0,
     scale_2_log_day_count;
