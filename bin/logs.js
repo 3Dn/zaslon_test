@@ -37,7 +37,7 @@ var wire_loop = setInterval(function(){
         for (var i = 0; i < (obj.d.length - 1); i++){
             crc_count += obj.d[i];
         }
-        if ((obj.d.length - 1) == crc_count) {
+        if (obj.d[obj.d.length-1] == crc_count) {
             state_1 = obj.d[3];
             state_2 = obj.d[4];
             //console.log("new_curr: " + current_state);
