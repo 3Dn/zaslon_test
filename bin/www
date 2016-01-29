@@ -89,7 +89,7 @@ io.sockets.on('connection', function (socket) {
                 curr = tmp_obj;
             }
 
-            console.log("Get logs: " + tmp_obj);
+            //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 5000);
         }, 1);
         //log_getter.unref();
