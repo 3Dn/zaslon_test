@@ -15,5 +15,8 @@ window.onload = function() {
             // Прокручиваем лог в конец
             //document.querySelector('#logs').scrollTop = document.querySelector('#log').scrollHeight;
         });
+        socket.on('scale_log', function(data){
+            console.log(data);
+        });
     //});
 };
