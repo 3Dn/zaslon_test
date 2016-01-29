@@ -18,7 +18,7 @@ window.onload = function() {
         socket.on('scale_log', function(data){
             data.forEach(function(item, i, data){
                 var open_close = ['закрыта', 'открыта'];
-                var ltzDate = new Date(item.date.toLocaleString().slice(0, -4));
+                var ltzDate = new Date(item.date.toLocaleString().replace(/\s*(GMT|UTC)$/, ""));
                 document.querySelector('#logs').innerHTML += ltzDate + " -> Контроллер: " + item.name + ". Заслонка #1: " + open_close[item.state_1] + ". Залонка #2: " + open_close[item.state_2] + '.<br>';
             });
             //console.log(data);
