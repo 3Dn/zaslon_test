@@ -83,7 +83,7 @@ var singleton = function singleton(){
                         ret_count += 40;
                     }
                 });
-                console.log(ret_count);
+                scale_1_log_hour_count = ret_count;
             }
         });
         return scale_1_log_hour_count;
