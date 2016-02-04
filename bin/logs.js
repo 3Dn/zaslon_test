@@ -92,7 +92,7 @@ var singleton = function singleton(){
 
     this.scale_1_log_hour = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state_1, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale1_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
@@ -108,7 +108,7 @@ var singleton = function singleton(){
 
     this.scale_2_log_hour = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale2_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 1 HOUR)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
@@ -124,7 +124,7 @@ var singleton = function singleton(){
 
     this.scale_1_log_day = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state_1, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale1_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
@@ -140,7 +140,7 @@ var singleton = function singleton(){
 
     this.scale_2_log_day = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state_2, zn.name, sc.date FROM scale_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale2_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(CURRENT_DATE, INTERVAL 0 DAY)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
