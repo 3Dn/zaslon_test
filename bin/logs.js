@@ -96,7 +96,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if(item.state_1 == 1){
+                    if(item.state == 1){
                         ret_count += 40;
                     }
                 });
@@ -112,7 +112,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if(item.state_2 == 1){
+                    if(item.state == 1){
                         ret_count += 40;
                     }
                 });
@@ -128,7 +128,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if(item.state_1 == 1){
+                    if(item.state == 1){
                         ret_count += 40;
                     }
                 });
@@ -144,7 +144,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if(item.state_2 == 1){
+                    if(item.state == 1){
                         ret_count += 40;
                     }
                 });
