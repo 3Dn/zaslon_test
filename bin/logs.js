@@ -13,7 +13,10 @@ var ret_daily_arr = [];
 var obj = '';
 var current_state='';
 var crc_count = 0;
-var state_1 = '', state_2 = '';
+var state_1 = '',
+    state_2 = '',
+    old_state_1 = '',
+    old_state_2 = '';
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
     scale_1_log_day_count = 0,
@@ -40,11 +43,21 @@ var wire_loop = setInterval(function(){
         if (obj.d[obj.d.length-1] == crc_count) {
             state_1 = obj.d[3];
             state_2 = obj.d[4];
-            //console.log("new_curr: " + current_state);
-            //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
-            local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "'+state_1+'", "'+state_2+'")');
-            obj.date = Date().toLocaleString();
-            ret_obj = obj;
+            if(old_state_1 != state_1){
+                old_state_1 = state_1;
+                //console.log("new_curr: " + current_state);
+                //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
+                //local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "' + state_1 + '", "' + state_2 + '")');
+                local_conn.query('INSERT INTO scale1_log(zaslon_id, state,) values("1", "' + state_1 + '")');
+                obj.date = Date().toLocaleString();
+                ret_obj = obj;
+            }
+            if(old_state_2 != state_2){
+                old_state_2 = state_2;
+                local_conn.query('INSERT INTO scale2_log(zaslon_id, state,) values("1", "' + state_2 + '")');
+                obj.date = Date().toLocaleString();
+                ret_obj = obj;
+            }
        } else console.log("logs.js -> wire_loop -> error CRC! CRC is: " + crc_count + "\nCRC check sum is: " + obj.d[obj.d.length-1]);
     }
     catch (err) {
