@@ -97,7 +97,7 @@ var singleton = function singleton(){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     if(item.state == 1){
-                        ret_count += 40;
+                        ret_count += 20;
                     }
                 });
                 scale_1_log_hour_count = ret_count;
@@ -113,7 +113,7 @@ var singleton = function singleton(){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     if(item.state == 1){
-                        ret_count += 40;
+                        ret_count += 20;
                     }
                 });
                 scale_2_log_hour_count = ret_count;
@@ -129,7 +129,7 @@ var singleton = function singleton(){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     if(item.state == 1){
-                        ret_count += 40;
+                        ret_count += 20;
                     }
                 });
                 scale_1_log_day_count = ret_count;
@@ -145,7 +145,7 @@ var singleton = function singleton(){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     if(item.state == 1){
-                        ret_count += 40;
+                        ret_count += 20;
                     }
                 });
                 scale_2_log_day_count = ret_count;
