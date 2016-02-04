@@ -94,6 +94,7 @@ io.sockets.on('connection', function (socket) {
             var scale_2_log_hour = Logs.scale_2_log_hour();
             var scale_1_log_day = Logs.scale_1_log_day();
             var scale_2_log_day = Logs.scale_2_log_day();
+            console.log("S1" + scale_1_log_hour);
             if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);
                 curr = tmp_obj;
