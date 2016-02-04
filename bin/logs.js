@@ -88,7 +88,6 @@ var singleton = function singleton(){
                     }
                 });
                 scale_1_log_hour_count = ret_count;
-                console.log("SS1 " + scale_1_log_hour_count);
             }
         });
         return scale_1_log_hour_count;
@@ -100,7 +99,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if((item.scale_2 > 0) && (item.scale_2 < 2)){
+                    if(item.state_2 == 1){
                         ret_count += 40;
                     }
                 });
@@ -116,7 +115,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if((item.scale_1 > 0) && (item.scale_1 < 2)){
+                    if(item.state_1 == 1){
                         ret_count += 40;
                     }
                 });
@@ -132,7 +131,7 @@ var singleton = function singleton(){
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
-                    if((item.scale_2 > 0) && (item.scale_2 < 2)){
+                    if(item.state_2 == 1){
                         ret_count += 40;
                     }
                 });
