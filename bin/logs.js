@@ -48,13 +48,13 @@ var wire_loop = setInterval(function(){
                 //console.log("new_curr: " + current_state);
                 //db.query('INSERT INTO io_log (pin_mode, pin_io, pin_state) VALUES("1","0","' + current_state + '")');
                 //local_conn.query('INSERT INTO scale_log(zaslon_id, state_1, state_2) values("1", "' + state_1 + '", "' + state_2 + '")');
-                local_conn.query('INSERT INTO scale1_log(zaslon_id, state,) values("1", "' + state_1 + '")');
+                local_conn.query('INSERT INTO scale1_log(zaslon_id, state) values("1", "' + state_1 + '")');
                 obj.date = Date().toLocaleString();
                 ret_obj = obj;
             }
             if(old_state_2 != state_2){
                 old_state_2 = state_2;
-                local_conn.query('INSERT INTO scale2_log(zaslon_id, state,) values("1", "' + state_2 + '")');
+                local_conn.query('INSERT INTO scale2_log(zaslon_id, state) values("1", "' + state_2 + '")');
                 obj.date = Date().toLocaleString();
                 ret_obj = obj;
             }
