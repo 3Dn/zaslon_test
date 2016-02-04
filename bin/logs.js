@@ -88,9 +88,9 @@ var singleton = function singleton(){
                     }
                 });
                 scale_1_log_hour_count = ret_count;
+                console.log("SS1 " + scale_1_log_hour_count);
             }
         });
-        console.log("SS1 " + scale_1_log_hour_count);
         return scale_1_log_hour_count;
     };
 
