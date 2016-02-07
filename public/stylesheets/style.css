@@ -221,6 +221,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 #myChart{
     display:block;
     margin: 25px auto;
+    width:650px;
+    height:550px;
+    maxwidth:650px;
+    maxheight:550px;
 }
 
 .sensor_tab, .sc_tab {
