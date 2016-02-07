@@ -164,7 +164,7 @@ var singleton = function singleton(){
         //var res = {};
 
         ret_chart_data = {};
-        arr_1,length = 0;
+        arr_1.length = 0;
         arr_2.length = 0;
 
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
