@@ -18,6 +18,7 @@ var state_1 = '',
     state_2 = '',
     old_state_1 = '',
     old_state_2 = '';
+var arr_1=[], arr_2=[];
 var ret_chart_data = {};
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
