@@ -159,10 +159,8 @@ var singleton = function singleton(){
     };
 
     this.chart_log = function(from, to){ //дерагем данные для графика по дням
-
-        console.log("from: "+from+" to: "+to);
-        var arr_1 = new Array(),
-            arr_2 = new Array();
+        var arr_1 = [],
+            arr_2 = [];
         //var res = {};
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
@@ -197,14 +195,14 @@ var singleton = function singleton(){
         ret_chart_data.scale_1 = arr_1;
         ret_chart_data.scale_2 = arr_2;
         console.log("+++++++++++++++++++++++");
-        console.log(ret_chart_data.scale_1);
+        console.log(ret_chart_data);
         console.log("+++++++++++++++++++++++");
         return ret_chart_data;
     };
 
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
-    };
+    }
 };
 
 singleton.instance = null;
