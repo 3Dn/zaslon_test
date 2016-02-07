@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 
 
-    $(".u_button").button().tooltip();
+    $("input[type='button'], button").button().tooltip();
 
     $(".cmn-toggle").on("click", function(){ //включаем-выключаем лампочки
         var state = $(this).prop("checked"),
