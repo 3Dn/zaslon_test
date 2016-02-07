@@ -174,6 +174,8 @@ var singleton = function singleton(){
                     obj.count = item.count*20;
                     arr_1.push(obj);
                 });
+            }else{
+                console.log(err);
             }
         });
         local_conn.query(sql_2, function(err, rows, fields){
@@ -184,6 +186,8 @@ var singleton = function singleton(){
                     obj.count = item.count*20;
                     arr_2.push(obj);
                 });
+            }else{
+                console.log(err);
             }
         });
         res.scale_1 = arr_1;
