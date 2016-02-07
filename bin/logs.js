@@ -4,6 +4,7 @@
  */
 var i2c = require('i2c');
 var db  = require('./db_engine');
+var logs = require('./logs_engine');
 var local_conn = db.connection();
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
@@ -23,7 +24,8 @@ var scale_1_log_hour_count = 0,
     scale_2_log_day_count = 0;
 var tmp_buff='';
 
-db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
+//db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
+logs.log_write("sys", "System start at: " + Date().toLocaleString());
 
 var wire_loop = setInterval(function(){
     wire.read(32, function(err, res){
