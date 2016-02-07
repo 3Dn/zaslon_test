@@ -195,6 +195,8 @@ var singleton = function singleton(){
         });
         ret_chart_data.scale_1 = arr_1;
         ret_chart_data.scale_2 = arr_2;
+        console.log("+++++++++++++++++++++++");
+        console.log(ret_chart_data);
         return ret_chart_data;
     };
 
