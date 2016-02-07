@@ -18,7 +18,7 @@ var state_1 = '',
     state_2 = '',
     old_state_1 = '',
     old_state_2 = '';
-var res = {};
+var ret_chart_data = {};
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
     scale_1_log_day_count = 0,
@@ -174,6 +174,7 @@ var singleton = function singleton(){
                     obj.date = item.date;
                     obj.count = item.count*20;
                     arr_1.push(obj);
+                    console.log(obj);
                 });
             }else{
                 console.log(err);
@@ -186,14 +187,15 @@ var singleton = function singleton(){
                     obj.date = item.date;
                     obj.count = item.count*20;
                     arr_2.push(obj);
+                    console.log(obj);
                 });
             }else{
                 console.log(err);
             }
         });
-        res.scale_1 = arr_1;
-        res.scale_2 = arr_2;
-        return res;
+        ret_chart_data.scale_1 = arr_1;
+        ret_chart_data.scale_2 = arr_2;
+        return ret_chart_data;
     };
 
     if(singleton.caller != singleton.getInstance){
