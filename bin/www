@@ -85,7 +85,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('chart_refresh', function(data){
         var chart_data =  Logs.chart_log(data.from, data.to);
-        console.log("CHART DATA:" + chart_data );
+        console.log(chart_data );
         socket.emit("chart_refresh_data", chart_data);
     });
 
