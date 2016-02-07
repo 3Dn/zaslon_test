@@ -198,7 +198,9 @@ var singleton = function singleton(){
         console.log("+++++++++++++++++++++++");
         console.log(ret_chart_data);
         console.log("+++++++++++++++++++++++");
+
         return ret_chart_data;
+
         ret_chart_data = {};
         arr_1 = [];
         arr_2 = [];
