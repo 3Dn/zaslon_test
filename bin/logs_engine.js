@@ -10,3 +10,11 @@ function log_write(system, message, level, zaslon_id){
     }
     local_logs_conn.query('INSERT INTO sys_log(zaslon_id, sys_name, level, message) values("' + zaslon_id + '","' + system + '","' + level + '","' + message + '")');
 }
+
+function log_read(system){
+    if (system == ''){
+        local_logs_conn.query('SELECT * from sys_log');
+    } else {
+        local_logs_conn.query('SELECT * from sys_log WHERE sys_name="' + system + '"');
+    }
+}
