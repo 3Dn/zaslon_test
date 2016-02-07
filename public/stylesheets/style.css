@@ -281,11 +281,11 @@ input.cmn-toggle-round-flat:checked + label:after {
     display: inline-block;
     float: right;
     margin-right: 10px;
-    width: 270px;
+    width: 300px;
 }
 #users_count{
     height: 20px;
-    width: 80%;
+    width: 90%;
     border: thin solid #a0a0a0;
     box-shadow: 3px 3px 11px #999;
     border-radius: 4px;
@@ -293,7 +293,7 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 #last_logs{
     height: 40px;
-    width: 80%;
+    width: 90%;
     border: thin solid #a0a0a0;
     box-shadow: 3px 3px 11px #999;
     border-radius: 4px;
