@@ -18,6 +18,7 @@ var state_1 = '',
     state_2 = '',
     old_state_1 = '',
     old_state_2 = '';
+var res = {};
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
     scale_1_log_day_count = 0,
@@ -161,7 +162,7 @@ var singleton = function singleton(){
         console.log("from: "+from+" to: "+to);
         var arr_1 = new Array(),
             arr_2 = new Array();
-        var res = {};
+        //var res = {};
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
         var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
