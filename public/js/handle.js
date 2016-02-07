@@ -74,7 +74,8 @@ $(document).ready(function(){
     $( "#from" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        numberOfMonths: 3,
+        numberOfMonths: 2,
+        dateFormat: "YY-mm-dd",
         onClose: function( selectedDate ) {
             $( "#to" ).datepicker( "option", "minDate", selectedDate );
         }
@@ -83,7 +84,8 @@ $(document).ready(function(){
     $( "#to" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        numberOfMonths: 3,
+        numberOfMonths: 2,
+        dateFormat: "YY-mm-dd",
         onClose: function( selectedDate ) {
             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
         }
