@@ -34,7 +34,7 @@ $(document).ready(function(){
             $("#workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
         }else if(ws == '2'){
             $("#workspace_2").show();
-            init('myChart');
+            //init('myChart');
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
         }else if(ws == '3'){
             $("#workspace_3").show();
@@ -89,6 +89,16 @@ $(document).ready(function(){
         onClose: function( selectedDate ) {
             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
         }
+    });
+
+    $("#refresh_chart").on("click", function(){
+        var from = $("#from").val(),
+            to = $("#to").val();
+        var obj = {};
+        obj.from = from;
+        obj.to = to;
+        console.log(obj);
+        socket.emit("chart_refresh", obj);
     });
 
 

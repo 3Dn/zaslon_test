@@ -156,6 +156,23 @@ var singleton = function singleton(){
         return scale_2_log_day_count;
     };
 
+    this.chart_log = function(from, to){
+        var arr = new Array();
+        var sql = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+            " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
+        local_conn.query(sql, function(err, rows, fields){
+            if(!err){
+                rows.forEach(function(item, i, rows){
+                    var obj = {};
+                    obj.date = item.date;
+                    obj.count = item.count*20;
+                    arr.push(obj);
+                });
+            }
+        });
+        return arr;
+    }
+
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
     }
