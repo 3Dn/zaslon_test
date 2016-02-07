@@ -159,9 +159,6 @@ var singleton = function singleton(){
     };
 
     this.chart_log = function(from, to){ //дерагем данные для графика по дням
-        //var arr_1 = [],
-        //    arr_2 = [];
-        //var res = {};
 
         //ret_chart_data = {};
         //arr_1.length = 0;
