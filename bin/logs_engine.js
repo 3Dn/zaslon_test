@@ -19,5 +19,5 @@ exports.log_read = function(system) {
     }
 };
 
-module.exports = "logs";
+module.exports.logs = "logs";
 
