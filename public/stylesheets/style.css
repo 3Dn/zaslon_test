@@ -281,7 +281,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     display: inline-block;
     float: right;
     margin-right: 10px;
-    width: 180px;
+    width: 270px;
 }
 #users_count{
     height: 20px;
@@ -297,4 +297,5 @@ input.cmn-toggle-round-flat:checked + label:after {
     border: thin solid #a0a0a0;
     box-shadow: 3px 3px 11px #999;
     border-radius: 4px;
+    margin: 5px 15px 15px
 }
