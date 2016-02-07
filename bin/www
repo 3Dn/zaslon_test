@@ -70,6 +70,7 @@ io.sockets.on('connection', function (socket) {
     var time = (new Date).toLocaleTimeString();
     socket.emit('sys_to_ligth_home_log', {'users_count': connectionsArray.length});
     socket.broadcast.emit('sys_to_ligth_home_log', {'users_count': connectionsArray.length});
+    io.sockets.emit('sys_to_ligth_home_log', {'users_count': connectionsArray.length});
 
     socket.emit('sys_to_web', {'event': 'connected', 'name': ID, 'time': time});
     socket.broadcast.emit('sys_to_web', {'event': 'userJoined', 'name': ID, 'time': time});
