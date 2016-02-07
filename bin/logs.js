@@ -163,6 +163,10 @@ var singleton = function singleton(){
         //    arr_2 = [];
         //var res = {};
 
+        ret_chart_data = {};
+        arr_1 = null;
+        arr_2 = null;
+
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
         var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
@@ -201,9 +205,7 @@ var singleton = function singleton(){
 
         return ret_chart_data;
 
-        ret_chart_data = {};
-        arr_1 = null;
-        arr_2 = null;
+
     };
 
     if(singleton.caller != singleton.getInstance){
