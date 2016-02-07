@@ -83,6 +83,11 @@ io.sockets.on('connection', function (socket) {
         socket.emit('scale_log', daily);
     });
 
+    socket.on('chart_refresh', function(data){
+        var chart_data =  Logs.chart_log(data.from, data.to);
+        socket.emit("chart_refresh_data", chart_data);
+    });
+
     socket.on('scale_1_log_hour', function(){
     });
 

@@ -74,6 +74,10 @@ socket.on("daily_scale", function(data){
     console.log(data);
 });
 
+socket.on("chart_refresh_data", function(data){
+   console.log(data);
+});
+
 
 
 function arr_clean() {

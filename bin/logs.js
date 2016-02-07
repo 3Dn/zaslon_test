@@ -156,26 +156,42 @@ var singleton = function singleton(){
         return scale_2_log_day_count;
     };
 
-    this.chart_log = function(from, to){
-        var arr = new Array();
-        var sql = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+    this.chart_log = function(from, to){ //дерагем данные для графика по дням
+        var arr_1 = new Array(),
+            arr_2 = new Array();
+        var res = {};
+        var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
-        local_conn.query(sql, function(err, rows, fields){
+        var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+            " from scale2_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
+        local_conn.query(sql_1, function(err, rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
                     var obj = {};
                     obj.date = item.date;
                     obj.count = item.count*20;
-                    arr.push(obj);
+                    arr_1.push(obj);
                 });
             }
         });
-        return arr;
-    }
+        local_conn.query(sql_2, function(err, rows, fields){
+            if(!err){
+                rows.forEach(function(item, i, rows){
+                    var obj = {};
+                    obj.date = item.date;
+                    obj.count = item.count*20;
+                    arr_2.push(obj);
+                });
+            }
+        });
+        res.scale_1 = arr_1;
+        res.scale_2 = arr_2;
+        return res;
+    };
 
     if(singleton.caller != singleton.getInstance){
         throw new Error("This object cannot be instanciated");
-    }
+    };
 };
 
 singleton.instance = null;
