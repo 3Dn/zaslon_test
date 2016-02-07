@@ -202,8 +202,8 @@ var singleton = function singleton(){
         return ret_chart_data;
 
         ret_chart_data = {};
-        arr_1.length = 0;
-        arr_2.length = 0;
+        arr_1 = null;
+        arr_2 = null;
     };
 
     if(singleton.caller != singleton.getInstance){
