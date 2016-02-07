@@ -75,7 +75,9 @@ socket.on("daily_scale", function(data){
 });
 
 socket.on("chart_refresh_data", function(data){
-   console.log(data);
+    var scale_1 = $.unique(data.scale_1);
+    var scale_2 = $.unique(data.scale_2);
+   console.log(scale_1, scale_2);
 });
 
 
