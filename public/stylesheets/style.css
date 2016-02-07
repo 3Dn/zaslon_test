@@ -286,10 +286,15 @@ input.cmn-toggle-round-flat:checked + label:after {
 #users_count{
     height: 20px;
     width: 80%;
-    bodrder: 1px solid #606060;
+    border: thin solid #a0a0a0;
+    box-shadow: 3px 3px 11px #999;
+    border-radius: 4px;
+    margin:15px 15px 0 15px;
 }
 #last_logs{
     height: 40px;
     width: 80%;
-    bodrder: 1px solid #606060;
+    border: thin solid #a0a0a0;
+    box-shadow: 3px 3px 11px #999;
+    border-radius: 4px;
 }
