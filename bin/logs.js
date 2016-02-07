@@ -161,8 +161,8 @@ var singleton = function singleton(){
     this.chart_log = function(from, to){ //дерагем данные для графика по дням
 
         console.log("from: "+from+" to: "+to);
-        var arr_1 = new Array(),
-            arr_2 = new Array();
+        //var arr_1 = new Array(),
+        //    arr_2 = new Array();
         //var res = {};
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
