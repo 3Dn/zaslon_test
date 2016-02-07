@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a556fb1-10e5-48b2-b9d3-142e62888e2f" name="Default" comment="sensors">
+    <list default="true" id="3a556fb1-10e5-48b2-b9d3-142e62888e2f" name="Default" comment="datepicker">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
     </list>
     <ignored path="zaslon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,31 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jsmpg.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/jsmpg.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="socket_handle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/socket_handle.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -58,20 +37,8 @@
         <entry file="file://$PROJECT_DIR$/public/js/c_tst.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="charts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/charts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding>
-                <marker date="1449661602264" expanded="true" signature="1191:1197" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,27 +47,27 @@
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/logs.js">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.1698112">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7574316">
-              <caret line="265" column="24" selection-start-line="265" selection-start-column="24" selection-end-line="265" selection-end-column="24" />
+            <state vertical-scroll-proportion="-0.34545454">
+              <caret line="274" column="19" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -109,8 +76,28 @@
       <file leaf-file-name="handle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/handle.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.103448">
+              <caret line="100" column="34" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logs_engine.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/logs_engine.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logs.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/logs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7989556">
+              <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="167" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -120,8 +107,10 @@
         <entry file="file://$PROJECT_DIR$/bin/db_engine.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding />
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+              <folding>
+                <marker date="1453825078554" expanded="true" signature="626:792" placeholder="/*...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,17 +139,17 @@
         <option value="$PROJECT_DIR$/views/handle.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/js/1-11-4-jquery-ui.js" />
+        <option value="$PROJECT_DIR$/bin/db_engine.js" />
         <option value="$PROJECT_DIR$/bin/charts.js" />
         <option value="$PROJECT_DIR$/public/js/c_tst.js" />
+        <option value="$PROJECT_DIR$/public/js/handle.js" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
-        <option value="$PROJECT_DIR$/bin/db_engine.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/js/socket_handle.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/bin/logs.js" />
-        <option value="$PROJECT_DIR$/public/js/handle.js" />
-        <option value="$PROJECT_DIR$/public/js/socket_handle.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
       </list>
     </option>
   </component>
@@ -172,8 +161,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -222,8 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,20 +240,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zaslon_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zaslon_test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -336,6 +309,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,9 +348,7 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/www</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/handle.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/stylesheets/style.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/index.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/js/light_home_log.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -383,7 +356,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/images/icon_logs.png</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -545,301 +517,301 @@
       <option name="number" value="Default" />
       <updated>1447165692894</updated>
     </task>
-    <task id="LOCAL-00098" summary="sensors">
-      <created>1450187557945</created>
+    <task id="LOCAL-00089" summary="scales">
+      <created>1453463693540</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1453463693540</updated>
+    </task>
+    <task id="LOCAL-00090" summary="charts">
+      <created>1453464342354</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1453464342354</updated>
+    </task>
+    <task id="LOCAL-00091" summary="scales">
+      <created>1453464478284</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1453464478284</updated>
+    </task>
+    <task id="LOCAL-00092" summary="scales">
+      <created>1453465063417</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1453465063417</updated>
+    </task>
+    <task id="LOCAL-00093" summary="scales">
+      <created>1453465289608</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1453465289608</updated>
+    </task>
+    <task id="LOCAL-00094" summary="scales">
+      <created>1453465323159</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1453465323159</updated>
+    </task>
+    <task id="LOCAL-00095" summary="scales">
+      <created>1453465973848</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1453465973848</updated>
+    </task>
+    <task id="LOCAL-00096" summary="icon logs">
+      <created>1453825846409</created>
+      <option name="number" value="00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1453825846427</updated>
+    </task>
+    <task id="LOCAL-00097" summary="scales ws &amp; tabs">
+      <created>1453826431841</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1453826431842</updated>
+    </task>
+    <task id="LOCAL-00098" summary="logs &amp; scales">
+      <created>1453826858524</created>
       <option name="number" value="00098" />
       <option name="project" value="LOCAL" />
-      <updated>1450187557945</updated>
+      <updated>1453826858525</updated>
     </task>
-    <task id="LOCAL-00099" summary="sensors">
-      <created>1450188544193</created>
+    <task id="LOCAL-00099" summary="logs &amp; scales">
+      <created>1453826932430</created>
       <option name="number" value="00099" />
       <option name="project" value="LOCAL" />
-      <updated>1450188544193</updated>
+      <updated>1453826932431</updated>
     </task>
-    <task id="LOCAL-00100" summary="sensors">
-      <created>1450188673086</created>
+    <task id="LOCAL-00100" summary="logs &amp; scales">
+      <created>1453827152905</created>
       <option name="number" value="00100" />
       <option name="project" value="LOCAL" />
-      <updated>1450188673086</updated>
+      <updated>1453827152906</updated>
     </task>
-    <task id="LOCAL-00101" summary="sensors">
-      <created>1450188763241</created>
+    <task id="LOCAL-00101" summary="logs &amp; scales">
+      <created>1453828028274</created>
       <option name="number" value="00101" />
       <option name="project" value="LOCAL" />
-      <updated>1450188763241</updated>
+      <updated>1453828028274</updated>
     </task>
-    <task id="LOCAL-00102" summary="sensors">
-      <created>1450188924774</created>
+    <task id="LOCAL-00102" summary="logs &amp; scales">
+      <created>1453828144554</created>
       <option name="number" value="00102" />
       <option name="project" value="LOCAL" />
-      <updated>1450188924774</updated>
+      <updated>1453828144554</updated>
     </task>
-    <task id="LOCAL-00103" summary="sensors">
-      <created>1450189024413</created>
+    <task id="LOCAL-00103" summary="logs &amp; scales">
+      <created>1453828423840</created>
       <option name="number" value="00103" />
       <option name="project" value="LOCAL" />
-      <updated>1450189024413</updated>
+      <updated>1453828423840</updated>
     </task>
-    <task id="LOCAL-00104" summary="sensors">
-      <created>1450189147987</created>
+    <task id="LOCAL-00104" summary="logs &amp; scales">
+      <created>1453828559270</created>
       <option name="number" value="00104" />
       <option name="project" value="LOCAL" />
-      <updated>1450189147987</updated>
+      <updated>1453828559270</updated>
     </task>
-    <task id="LOCAL-00105" summary="sensors">
-      <created>1450189209579</created>
+    <task id="LOCAL-00105" summary="datepicker">
+      <created>1454848690898</created>
       <option name="number" value="00105" />
       <option name="project" value="LOCAL" />
-      <updated>1450189209579</updated>
+      <updated>1454848690930</updated>
     </task>
-    <task id="LOCAL-00106" summary="sensors">
-      <created>1450189279091</created>
+    <task id="LOCAL-00106" summary="datepicker">
+      <created>1454849613734</created>
       <option name="number" value="00106" />
       <option name="project" value="LOCAL" />
-      <updated>1450189279091</updated>
+      <updated>1454849613734</updated>
     </task>
-    <task id="LOCAL-00107" summary="sensors">
-      <created>1450189344768</created>
+    <task id="LOCAL-00107" summary="datepicker">
+      <created>1454849695395</created>
       <option name="number" value="00107" />
       <option name="project" value="LOCAL" />
-      <updated>1450189344768</updated>
+      <updated>1454849695395</updated>
     </task>
-    <task id="LOCAL-00108" summary="sensors">
-      <created>1450189425494</created>
+    <task id="LOCAL-00108" summary="datepicker">
+      <created>1454850082605</created>
       <option name="number" value="00108" />
       <option name="project" value="LOCAL" />
-      <updated>1450189425494</updated>
+      <updated>1454850082606</updated>
     </task>
-    <task id="LOCAL-00109" summary="sensors">
-      <created>1450189486986</created>
+    <task id="LOCAL-00109" summary="datepicker">
+      <created>1454853029511</created>
       <option name="number" value="00109" />
       <option name="project" value="LOCAL" />
-      <updated>1450189486986</updated>
+      <updated>1454853029511</updated>
     </task>
-    <task id="LOCAL-00110" summary="sensors">
-      <created>1450189826848</created>
+    <task id="LOCAL-00110" summary="datepicker">
+      <created>1454853197923</created>
       <option name="number" value="00110" />
       <option name="project" value="LOCAL" />
-      <updated>1450189826849</updated>
+      <updated>1454853197924</updated>
     </task>
-    <task id="LOCAL-00111" summary="sensors">
-      <created>1450190241563</created>
+    <task id="LOCAL-00111" summary="datepicker">
+      <created>1454854121794</created>
       <option name="number" value="00111" />
       <option name="project" value="LOCAL" />
-      <updated>1450190241563</updated>
+      <updated>1454854121794</updated>
     </task>
-    <task id="LOCAL-00112" summary="sensors">
-      <created>1450190309218</created>
+    <task id="LOCAL-00112" summary="datepicker">
+      <created>1454855214295</created>
       <option name="number" value="00112" />
       <option name="project" value="LOCAL" />
-      <updated>1450190309218</updated>
+      <updated>1454855214295</updated>
     </task>
-    <task id="LOCAL-00113" summary="sensors">
-      <created>1450190465822</created>
+    <task id="LOCAL-00113" summary="datepicker">
+      <created>1454855484638</created>
       <option name="number" value="00113" />
       <option name="project" value="LOCAL" />
-      <updated>1450190465822</updated>
+      <updated>1454855484638</updated>
     </task>
-    <task id="LOCAL-00114" summary="sensors">
-      <created>1450190554579</created>
+    <task id="LOCAL-00114" summary="datepicker">
+      <created>1454855687772</created>
       <option name="number" value="00114" />
       <option name="project" value="LOCAL" />
-      <updated>1450190554579</updated>
+      <updated>1454855687772</updated>
     </task>
-    <task id="LOCAL-00115" summary="sensors">
-      <created>1450191920282</created>
+    <task id="LOCAL-00115" summary="datepicker">
+      <created>1454855877075</created>
       <option name="number" value="00115" />
       <option name="project" value="LOCAL" />
-      <updated>1450191920282</updated>
+      <updated>1454855877075</updated>
     </task>
-    <task id="LOCAL-00116" summary="sensors">
-      <created>1450192293822</created>
+    <task id="LOCAL-00116" summary="datepicker">
+      <created>1454855993871</created>
       <option name="number" value="00116" />
       <option name="project" value="LOCAL" />
-      <updated>1450192293822</updated>
+      <updated>1454855993871</updated>
     </task>
-    <task id="LOCAL-00117" summary="sensors">
-      <created>1450192362458</created>
+    <task id="LOCAL-00117" summary="datepicker">
+      <created>1454856138264</created>
       <option name="number" value="00117" />
       <option name="project" value="LOCAL" />
-      <updated>1450192362458</updated>
+      <updated>1454856138265</updated>
     </task>
-    <task id="LOCAL-00118" summary="sensors">
-      <created>1450192860278</created>
+    <task id="LOCAL-00118" summary="datepicker">
+      <created>1454856371089</created>
       <option name="number" value="00118" />
       <option name="project" value="LOCAL" />
-      <updated>1450192860278</updated>
+      <updated>1454856371089</updated>
     </task>
-    <task id="LOCAL-00119" summary="sensors">
-      <created>1450192896622</created>
+    <task id="LOCAL-00119" summary="datepicker">
+      <created>1454856481313</created>
       <option name="number" value="00119" />
       <option name="project" value="LOCAL" />
-      <updated>1450192896622</updated>
+      <updated>1454856481313</updated>
     </task>
-    <task id="LOCAL-00120" summary="sensors">
-      <created>1450192960611</created>
+    <task id="LOCAL-00120" summary="datepicker">
+      <created>1454856605493</created>
       <option name="number" value="00120" />
       <option name="project" value="LOCAL" />
-      <updated>1450192960611</updated>
+      <updated>1454856605493</updated>
     </task>
-    <task id="LOCAL-00121" summary="rtsp">
-      <created>1450263146507</created>
+    <task id="LOCAL-00121" summary="datepicker">
+      <created>1454857062021</created>
       <option name="number" value="00121" />
       <option name="project" value="LOCAL" />
-      <updated>1450263146507</updated>
+      <updated>1454857062021</updated>
     </task>
-    <task id="LOCAL-00122" summary="sensors">
-      <created>1450263600361</created>
+    <task id="LOCAL-00122" summary="datepicker">
+      <created>1454857345167</created>
       <option name="number" value="00122" />
       <option name="project" value="LOCAL" />
-      <updated>1450263600361</updated>
+      <updated>1454857345167</updated>
     </task>
-    <task id="LOCAL-00123" summary="sensors">
-      <created>1450263663702</created>
+    <task id="LOCAL-00123" summary="datepicker">
+      <created>1454857495914</created>
       <option name="number" value="00123" />
       <option name="project" value="LOCAL" />
-      <updated>1450263663702</updated>
+      <updated>1454857495914</updated>
     </task>
-    <task id="LOCAL-00124" summary="sensors">
-      <created>1450263852844</created>
+    <task id="LOCAL-00124" summary="datepicker">
+      <created>1454857603215</created>
       <option name="number" value="00124" />
       <option name="project" value="LOCAL" />
-      <updated>1450263852844</updated>
+      <updated>1454857603215</updated>
     </task>
-    <task id="LOCAL-00125" summary="sensors">
-      <created>1450264075060</created>
+    <task id="LOCAL-00125" summary="datepicker">
+      <created>1454857721573</created>
       <option name="number" value="00125" />
       <option name="project" value="LOCAL" />
-      <updated>1450264075060</updated>
+      <updated>1454857721573</updated>
     </task>
-    <task id="LOCAL-00126" summary="sensors">
-      <created>1450264200257</created>
+    <task id="LOCAL-00126" summary="datepicker">
+      <created>1454858915506</created>
       <option name="number" value="00126" />
       <option name="project" value="LOCAL" />
-      <updated>1450264200257</updated>
+      <updated>1454858915506</updated>
     </task>
-    <task id="LOCAL-00127" summary="sensors">
-      <created>1450265274246</created>
+    <task id="LOCAL-00127" summary="datepicker">
+      <created>1454859249197</created>
       <option name="number" value="00127" />
       <option name="project" value="LOCAL" />
-      <updated>1450265274246</updated>
+      <updated>1454859249197</updated>
     </task>
-    <task id="LOCAL-00128" summary="sensors">
-      <created>1450265747683</created>
+    <task id="LOCAL-00128" summary="datepicker">
+      <created>1454859409263</created>
       <option name="number" value="00128" />
       <option name="project" value="LOCAL" />
-      <updated>1450265747683</updated>
+      <updated>1454859409263</updated>
     </task>
-    <task id="LOCAL-00129" summary="rtsp">
-      <created>1450265848277</created>
+    <task id="LOCAL-00129" summary="datepicker">
+      <created>1454859518017</created>
       <option name="number" value="00129" />
       <option name="project" value="LOCAL" />
-      <updated>1450265848278</updated>
+      <updated>1454859518017</updated>
     </task>
-    <task id="LOCAL-00130" summary="rtsp">
-      <created>1450266015780</created>
+    <task id="LOCAL-00130" summary="datepicker">
+      <created>1454859898874</created>
       <option name="number" value="00130" />
       <option name="project" value="LOCAL" />
-      <updated>1450266015780</updated>
+      <updated>1454859898875</updated>
     </task>
-    <task id="LOCAL-00131" summary="rtsp">
-      <created>1450266044643</created>
+    <task id="LOCAL-00131" summary="datepicker">
+      <created>1454859946649</created>
       <option name="number" value="00131" />
       <option name="project" value="LOCAL" />
-      <updated>1450266044643</updated>
+      <updated>1454859946649</updated>
     </task>
-    <task id="LOCAL-00132" summary="rtsp">
-      <created>1450266164316</created>
+    <task id="LOCAL-00132" summary="datepicker">
+      <created>1454860093912</created>
       <option name="number" value="00132" />
       <option name="project" value="LOCAL" />
-      <updated>1450266164316</updated>
+      <updated>1454860093912</updated>
     </task>
-    <task id="LOCAL-00133" summary="sensors">
-      <created>1450266294479</created>
+    <task id="LOCAL-00133" summary="datepicker">
+      <created>1454860836403</created>
       <option name="number" value="00133" />
       <option name="project" value="LOCAL" />
-      <updated>1450266294479</updated>
+      <updated>1454860836403</updated>
     </task>
-    <task id="LOCAL-00134" summary="sensors">
-      <created>1450266416698</created>
+    <task id="LOCAL-00134" summary="datepicker">
+      <created>1454861036657</created>
       <option name="number" value="00134" />
       <option name="project" value="LOCAL" />
-      <updated>1450266416698</updated>
+      <updated>1454861036658</updated>
     </task>
-    <task id="LOCAL-00135" summary="rtsp">
-      <created>1450266808545</created>
+    <task id="LOCAL-00135" summary="datepicker">
+      <created>1454861160333</created>
       <option name="number" value="00135" />
       <option name="project" value="LOCAL" />
-      <updated>1450266808545</updated>
+      <updated>1454861160333</updated>
     </task>
-    <task id="LOCAL-00136" summary="sensors">
-      <created>1450266883159</created>
+    <task id="LOCAL-00136" summary="datepicker">
+      <created>1454861248276</created>
       <option name="number" value="00136" />
       <option name="project" value="LOCAL" />
-      <updated>1450266883159</updated>
+      <updated>1454861248277</updated>
     </task>
-    <task id="LOCAL-00137" summary="daily scale log">
-      <created>1453819042558</created>
+    <task id="LOCAL-00137" summary="datepicker">
+      <created>1454861773480</created>
       <option name="number" value="00137" />
       <option name="project" value="LOCAL" />
-      <updated>1453819042559</updated>
+      <updated>1454861773481</updated>
     </task>
-    <task id="LOCAL-00138" summary="daily scale log">
-      <created>1453819280466</created>
-      <option name="number" value="00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1453819280466</updated>
-    </task>
-    <task id="LOCAL-00139" summary="daily scale log">
-      <created>1453819901383</created>
-      <option name="number" value="00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1453819901383</updated>
-    </task>
-    <task id="LOCAL-00140" summary="daily scale log">
-      <created>1453820054223</created>
-      <option name="number" value="00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1453820054223</updated>
-    </task>
-    <task id="LOCAL-00141" summary="daily scale log">
-      <created>1453820467619</created>
-      <option name="number" value="00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1453820467619</updated>
-    </task>
-    <task id="LOCAL-00142" summary="daily scale log">
-      <created>1453820595723</created>
-      <option name="number" value="00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1453820595723</updated>
-    </task>
-    <task id="LOCAL-00143" summary="daily scale log">
-      <created>1453820716162</created>
-      <option name="number" value="00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1453820716162</updated>
-    </task>
-    <task id="LOCAL-00144" summary="daily scale log">
-      <created>1453820921617</created>
-      <option name="number" value="00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1453820921617</updated>
-    </task>
-    <task id="LOCAL-00145" summary="daily scale log">
-      <created>1453897069388</created>
-      <option name="number" value="00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1453897069388</updated>
-    </task>
-    <task id="LOCAL-00146" summary="daily scale log">
-      <created>1453897257491</created>
-      <option name="number" value="00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1453897257491</updated>
-    </task>
-    <option name="localTasksCounter" value="147" />
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -852,17 +824,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17175975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17113096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23701298" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24928367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -872,6 +843,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -882,14 +854,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23701298" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17175975" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17113096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24928367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -910,9 +882,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <confirmMoveToFailedCommit value="1" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="Commit main" />
-    <MESSAGE value="IO box" />
-    <MESSAGE value="IO box fix" />
     <MESSAGE value="css change:&#10; - border color&#10; - shadows&#10; - round corners" />
     <MESSAGE value="led-lights" />
     <MESSAGE value="camera button + workspace_3" />
@@ -929,11 +898,16 @@
     <MESSAGE value="client chart generator" />
     <MESSAGE value="pretty scrolls" />
     <MESSAGE value="sensors workarea" />
-    <MESSAGE value="charts" />
-    <MESSAGE value="rtsp" />
     <MESSAGE value="sensors" />
-    <MESSAGE value="daily scale log" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily scale log" />
+    <MESSAGE value="zaslonak" />
+    <MESSAGE value="zaslonka" />
+    <MESSAGE value="charts" />
+    <MESSAGE value="scales" />
+    <MESSAGE value="icon logs" />
+    <MESSAGE value="scales ws &amp; tabs" />
+    <MESSAGE value="logs &amp; scales" />
+    <MESSAGE value="datepicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="datepicker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1204,18 +1178,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/1-11-4-jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16592" column="34" selection-start-line="16592" selection-start-column="34" selection-end-line="16592" selection-end-column="34" />
-          <folding>
-            <marker date="1447744346734" expanded="true" signature="41347:41418" placeholder="..." />
-            <marker date="1447744346734" expanded="true" signature="41432:41456" placeholder="..." />
-            <marker date="1447744346734" expanded="true" signature="163485:163529" placeholder="..." />
-            <marker date="1447744346734" expanded="true" signature="227774:228208" placeholder="..." />
-            <marker date="1447744346734" expanded="true" signature="295404:295421" placeholder="..." />
-            <marker date="1447744346734" expanded="true" signature="315208:315224" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,34 +1214,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jsmpg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="47" />
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1275,25 +1233,7 @@
     <entry file="file://$PROJECT_DIR$/public/js/c_tst.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/charts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <marker date="1449661602264" expanded="true" signature="1191:1197" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1301,23 +1241,33 @@
     <entry file="file://$PROJECT_DIR$/bin/db_engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding />
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <marker date="1453825078554" expanded="true" signature="626:792" placeholder="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/logs.js">
+    <entry file="file://$PROJECT_DIR$/bin/logs_engine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/handle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+        <state vertical-scroll-proportion="-12.103448">
+          <caret line="100" column="34" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.34545454">
+          <caret line="274" column="19" selection-start-line="274" selection-start-column="19" selection-end-line="274" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1325,15 +1275,31 @@
     <entry file="file://$PROJECT_DIR$/public/js/socket_handle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7574316">
-          <caret line="265" column="24" selection-start-line="265" selection-start-column="24" selection-end-line="265" selection-end-column="24" />
+        <state vertical-scroll-proportion="-4.1698112">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/logs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7989556">
+          <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="167" selection-end-column="27" />
           <folding />
         </state>
       </provider>
