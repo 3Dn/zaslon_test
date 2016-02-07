@@ -277,3 +277,19 @@ input.cmn-toggle-round-flat:checked + label:after {
     transition: background 0.4s;
     margin: 2px;
 }
+#log_info_wrapper{
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    width: 180px;
+}
+#users_count{
+    height: 20px;
+    width: 80%;
+    bodrder: 1px solid #606060;
+}
+#last_logs{
+    height: 40px;
+    width: 80%;
+    bodrder: 1px solid #606060;
+}
