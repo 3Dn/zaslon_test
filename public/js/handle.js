@@ -74,6 +74,7 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
             $("#from").val(lastWeek());
             $("#to").val(today());
+
         }else if(ws == '3'){
             $("#workspace_3").show();
             // Setup the WebSocket connection and start the player

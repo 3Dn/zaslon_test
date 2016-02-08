@@ -49,6 +49,8 @@ function scale_chart(myCanvas, data){
     };
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
+    ctx.canvas.width = 650;
+    ctx.canvas.height = 550;
     myLine = new Chart(ctx).Line(lineChartData, {
         responsive: true,
         bezierCurve : false,
@@ -57,31 +59,31 @@ function scale_chart(myCanvas, data){
 }
 
 
-function init(myCanvas) {
-    console.log(myCanvas);
-    var lineChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [
-            {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [1,0,1,0,1,0,1]
-            }
-        ]
-    };
-
-    var ctx = document.getElementById(myCanvas).getContext("2d");
-    myLine = new Chart(ctx).Line(lineChartData, {
-        responsive: true,
-        bezierCurve : false,
-        animation: false
-    });
-}
+//function init(myCanvas) {
+//    console.log(myCanvas);
+//    var lineChartData = {
+//        labels: ["January", "February", "March", "April", "May", "June", "July"],
+//        datasets: [
+//            {
+//                label: "My First dataset",
+//                fillColor: "rgba(220,220,220,0.2)",
+//                strokeColor: "rgba(220,220,220,1)",
+//                pointColor: "rgba(220,220,220,1)",
+//                pointStrokeColor: "#fff",
+//                pointHighlightFill: "#fff",
+//                pointHighlightStroke: "rgba(220,220,220,1)",
+//                data: [1,0,1,0,1,0,1]
+//            }
+//        ]
+//    };
+//
+//    var ctx = document.getElementById(myCanvas).getContext("2d");
+//    myLine = new Chart(ctx).Line(lineChartData, {
+//        responsive: true,
+//        bezierCurve : false,
+//        animation: false
+//    });
+//}
 
 
 socket.on('pushdata', function(data){
