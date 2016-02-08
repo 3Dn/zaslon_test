@@ -156,7 +156,7 @@ io.sockets.on('connection', function (socket) {
         console.log("www -> chart_obj: \n" + chart_obj);
         io.sockets.emit('chart_data', chart_obj);
     });*/
-    socket.on('ready', function(socket){
+    socket.on('ready', function(data){
         socket.emit('r', {'reconnect' : 'Welcome back!'});
     });
 
