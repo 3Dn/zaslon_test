@@ -96,9 +96,7 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('chart_refresh', function(data){
-        var chart_data =  setImmediate(function(){
-            Logs.chart_log(data.from, data.to);
-        });
+        var chart_data =  Logs.chart_log(data.from, data.to);
         console.log(chart_data );
         socket.emit("chart_refresh_data", chart_data);
     });
