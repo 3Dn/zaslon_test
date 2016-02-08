@@ -49,8 +49,6 @@ function scale_chart(myCanvas, data){
     };
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
-    ctx.canvas.width = 650;
-    ctx.canvas.height = 550;
     myLine = new Chart(ctx).Line(lineChartData, {
         responsive: true,
         bezierCurve : false,
