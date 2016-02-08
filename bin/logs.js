@@ -194,9 +194,9 @@ var singleton = function singleton(){
                 console.log(err);
             }
         });
-        ret_chart_data.scale_1 = _.uniq(arr_1);
+        ret_chart_data.scale_1 = us.uniq(arr_1);
 
-        ret_chart_data.scale_2 = _.uniq(arr_2);
+        ret_chart_data.scale_2 = us.uniq(arr_2);
 
         console.log("+++++++++++++++++++++++");
         console.log(ret_chart_data);
