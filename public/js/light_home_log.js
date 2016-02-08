@@ -11,5 +11,5 @@
     socket.emit('ready', {'data': '1'});
     socket.on('r', function(msg){
         console.log(msg.reconnect);
-        console.log(msg.last_news);
+        console.log(msg.last_news[0]);
     });
