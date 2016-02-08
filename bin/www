@@ -155,6 +155,10 @@ io.sockets.on('connection', function (socket) {
         console.log("www -> chart_obj: \n" + chart_obj);
         io.sockets.emit('chart_data', chart_obj);
     });*/
+    socket.on('reconnect', function(socket){
+        socket.emit('reconnect', {msg : 'Welcome back!'});
+
+    });
 
     socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();
