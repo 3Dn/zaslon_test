@@ -8,5 +8,6 @@ window.onload = function () {
     });
     socket.on('reconnect', function(msg){
         console.log(msg.msg);
+
     });
 };
