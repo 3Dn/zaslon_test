@@ -60,9 +60,8 @@ var charts = require('./charts.js');
 
 Logs.dailyLogs();
 Logs.scale_1_log_hour();
-var last_log = Ligth_log.log_read('sys', 3);
 
-console.log(last_log);
+var last_log = Ligth_log.log_read('sys', 3);
 
 
 function getRandomInt(min, max) {
