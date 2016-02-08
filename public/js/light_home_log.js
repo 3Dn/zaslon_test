@@ -7,7 +7,7 @@ window.onload = function () {
         document.querySelector('#users_count_inner_text').innerHTML = "Connected users: " + msg.users_count;
     });
     socket.on('reconnect', function(msg){
-        console.log(msg.msg);
+        console.log(msg.reconnect);
 
     });
 };
