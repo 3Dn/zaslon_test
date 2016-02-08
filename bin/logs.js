@@ -5,6 +5,7 @@
 var i2c = require('i2c');
 var db  = require('./db_engine');
 var logs = require('./logs_engine');
+var us = require('underscore');
 var local_conn = db.connection();
 var address = 0x04;
 var wire = new i2c(address, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
