@@ -23,9 +23,9 @@ function lastWeek(){
     var myDate = new Date();
     var lastWeek = new Date(myDate.getTime() - (60*60*24*7*1000));
 
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
-    var yyyy = today.getFullYear();
+    var dd = lastWeek.getDate();
+    var mm = lastWeek.getMonth()+1; //January is 0!
+    var yyyy = lastWeek.getFullYear();
 
     if(dd<10) {
         dd='0'+dd
