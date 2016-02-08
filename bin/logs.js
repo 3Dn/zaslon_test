@@ -195,9 +195,34 @@ var singleton = function singleton(){
                 console.log(err);
             }
         });
-        ret_chart_data.scale_1 = us.uniq(arr_1);
 
-        ret_chart_data.scale_2 = us.uniq(arr_2);
+
+        arr_1 = us.map(us.groupBy(arr_1,function(doc){
+            return doc.date;
+        }),function(grouped){
+            return grouped[0];
+        });
+
+        arr_2 = us.map(us.groupBy(arr_2,function(doc){
+            return doc.date;
+        }),function(grouped){
+            return grouped[0];
+        });
+
+        //var res = [
+        //    {id: 1, content: 'heeey'},
+        //    {id: 2, content: 'woah'},
+        //    {id: 1, content:'foo'},
+        //    {id: 1, content: 'heeey'},
+        //];
+        //var uniques = _.map(_.groupBy(res,function(doc){
+        //    return doc.id;
+        //}),function(grouped){
+        //    return grouped[0];
+        //});
+
+
+
 
         console.log("+++++++++++++++++++++++");
         console.log(ret_chart_data);
