@@ -19,9 +19,9 @@ exports.log_read = function(system, limit) {
     } else if ((system != '') && (limit == '')) {
         sql = 'SELECT * from sys_log WHERE sys_name="' + system + '"';
     } else if ((system == '') && (limit != '')) {
-        sql = 'SELECT * from sys_log order by id limit ' + limit;
+        sql = 'SELECT * from sys_log order by id DESC limit ' + limit;
     } else if ((system != '') && (limit != '')) {
-        sql = 'SELECT * from sys_log WHERE sys_name="' + system + '" order by id limit ' + limit;
+        sql = 'SELECT * from sys_log WHERE sys_name="' + system + '" order by id DESC limit ' + limit;
     }
 
     local_logs_conn.query(sql, function(err ,rows, fields){
