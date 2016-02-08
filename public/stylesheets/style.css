@@ -56,6 +56,8 @@ body {
 #users_count_inner_text{
     font-family: Consolas,sans-serif;
     font-size: 8pt;
+    padding-left: 20px;
+    padding-top: 3px;
 }
 
 .work_style {
