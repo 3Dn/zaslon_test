@@ -158,13 +158,13 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();
-        io.sockets.emit('sys', {'event': 'userSplit', 'name': ID, 'time': time});
-        io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
         var socketIndex = connectionsArray.indexOf(socket);
         console.log("Socket == " + socketIndex + " disconnected.");
         if (socketIndex >= 0) {
             connectionsArray.splice(socketIndex, 1);
         }
+        io.sockets.emit('sys', {'event': 'userSplit', 'name': ID, 'time': time});
+        io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length});
     });
 
     console.log("A new socket is connected!");
