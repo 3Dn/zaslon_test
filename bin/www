@@ -70,7 +70,7 @@ io.sockets.on('connection', function (socket) {
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
 
-    //socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
+    socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
     io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
 
     socket.emit('sys_to_web', {'event': 'connected', 'name': ID, 'time': time});
@@ -156,8 +156,8 @@ io.sockets.on('connection', function (socket) {
         console.log("www -> chart_obj: \n" + chart_obj);
         io.sockets.emit('chart_data', chart_obj);
     });*/
-    socket.on('reconnect', function(socket){
-        socket.emit('reconnect', {'reconnect' : 'Welcome back!'});
+    socket.on('ready', function(socket){
+        socket.emit('r', {'reconnect' : 'Welcome back!'});
     });
 
     socket.on('disconnect', function(){
