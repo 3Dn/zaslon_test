@@ -19,6 +19,26 @@ function today(){
     return today;
 }
 
+function lastWeek(){
+    var myDate = new Date();
+    var lastWeek = new Date(myDate.getTime() - (60*60*24*7*1000));
+
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd
+    }
+
+    if(mm<10) {
+        mm='0'+mm
+    }
+
+    lastWeek = dd+'-'+mm+'-'+yyyy;
+    return lastWeek;
+}
+
 
 $(document).ready(function(){
 
@@ -52,6 +72,8 @@ $(document).ready(function(){
             $("#workspace_2").show();
             //init('myChart');
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
+            $("#from").val(lastWeek());
+            $("#to").val(today());
         }else if(ws == '3'){
             $("#workspace_3").show();
             // Setup the WebSocket connection and start the player
