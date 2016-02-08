@@ -1,7 +1,23 @@
 /**
  * Created by Kriv on 13.11.2015.
  */
+function today(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
 
+    if(dd<10) {
+        dd='0'+dd
+    }
+
+    if(mm<10) {
+        mm='0'+mm
+    }
+
+    today = dd+'-'+mm+'-'+yyyy;
+    return today;
+}
 
 
 $(document).ready(function(){
@@ -75,7 +91,7 @@ $(document).ready(function(){
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 2,
-        dateFormat: "yy-mm-dd",
+        dateFormat: "dd-mm-yy",
         onClose: function( selectedDate ) {
             $( "#to" ).datepicker( "option", "minDate", selectedDate );
         }
@@ -85,7 +101,7 @@ $(document).ready(function(){
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 2,
-        dateFormat: "yy-mm-dd",
+        dateFormat: "dd-mm-yy",
         onClose: function( selectedDate ) {
             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
         }
@@ -94,12 +110,16 @@ $(document).ready(function(){
     $("#refresh_chart").on("click", function(){
         var from = $("#from").val(),
             to = $("#to").val();
+        from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
+        to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
         var obj = {};
         obj.from = from;
         obj.to = to;
         console.log(obj);
         socket.emit("chart_refresh", obj);
     });
+
+
 
 
 });
