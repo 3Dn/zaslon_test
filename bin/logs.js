@@ -195,6 +195,7 @@ var singleton = function singleton(){
             }
         });
         ret_chart_data.scale_1 = _.uniq(arr_1);
+
         ret_chart_data.scale_2 = _.uniq(arr_2);
 
         console.log("+++++++++++++++++++++++");
