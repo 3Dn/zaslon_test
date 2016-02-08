@@ -12,4 +12,5 @@
     socket.on('r', function(msg){
         console.log(msg.reconnect);
         console.log(msg.last_news[0]);
+        console.log(msg.last_news.length);
     });
