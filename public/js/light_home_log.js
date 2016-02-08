@@ -13,7 +13,8 @@
     socket.on('r', function(msg){
         console.log(msg.reconnect);
         msg.last_news.forEach(function(item){
-            document.querySelector('#last_logs_inner_text').innerHTML += item.message +'<br>';
+            var split_rez = item.message.split('GMT');
+            document.querySelector('#last_logs_inner_text').innerHTML += split_rez[0] +'<br>';
         });
         console.log(msg.last_news[0]);
         console.log(msg.last_news.length);

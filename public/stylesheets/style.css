@@ -60,6 +60,12 @@ body {
     padding-top: 3px;
 }
 
+#last_logs_inner_text{
+    font-family: Consolas,sans-serif;
+    font-size: 8pt;
+    padding-left: 20px;
+}
+
 .work_style {
     background: #f3f3f3 none repeat scroll 0 0;
     border: thin solid #a0a0a0;
