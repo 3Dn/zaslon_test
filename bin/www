@@ -164,9 +164,9 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('chart_data', chart_obj);
     });*/
 
-    /*socket.on('ready', function(data){
-        socket.emit('r', {'reconnect' : 'Welcome back!'});
-    });*/
+    socket.on('ready', function(data){
+        socket.emit('r', {'reconnect' : 'Welcome back!', 'last_news': last_log});
+    });
 
     socket.on('disconnect', function(){
         var time = (new Date).toLocaleTimeString();

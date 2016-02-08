@@ -8,8 +8,8 @@
     socket.on('sys_to_ligth_home_log_last_logs', function(data){
         document.querySelector('#last_logs_inner_text').innerHTML += data.text;
     });
-/*
     socket.emit('ready', {'data': '1'});
     socket.on('r', function(msg){
         console.log(msg.reconnect);
-    });*/
+        console.log(msg.last_news);
+    });
