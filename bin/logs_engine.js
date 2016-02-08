@@ -23,7 +23,7 @@ exports.log_read = function(system, limit) {
         sql = 'SELECT * from sys_log WHERE sys_name="' + system + '" limit ' + limit;
     }
 
-    return local_logs_conn.query(sql);
+    //return local_logs_conn.query(sql);
 
 /*
     if (system == ''){

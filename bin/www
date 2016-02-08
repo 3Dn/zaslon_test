@@ -60,7 +60,7 @@ var charts = require('./charts.js');
 
 Logs.dailyLogs();
 Logs.scale_1_log_hour();
-var last_log = Ligth_log.log_read('sys', 1);
+//var last_log = Ligth_log.log_read('sys', 1);
 
 
 function getRandomInt(min, max) {
@@ -75,8 +75,8 @@ io.sockets.on('connection', function (socket) {
     socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
     io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
 
-    socket.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
-    io.sockets.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
+    //socket.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
+    //io.sockets.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
 
     socket.emit('sys_to_web', {'event': 'connected', 'name': ID, 'time': time});
     socket.broadcast.emit('sys_to_web', {'event': 'userJoined', 'name': ID, 'time': time});
