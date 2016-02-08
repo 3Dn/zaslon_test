@@ -27,6 +27,7 @@ function scale_chart(myCanvas, data){
         datasets: [
             {
                 label: "Scale_1",
+                labelColor : "rgba(51,51,255,1)",
                 fillColor: "rgba(51,51,255,0.2)",
                 strokeColor: "rgba(51,51,255,1)",
                 pointColor: "rgba(51,51,255,1)",
@@ -37,6 +38,7 @@ function scale_chart(myCanvas, data){
             },
             {
                 label: "Scale_2",
+                labelColor : "rgba(255,0,0,1)",
                 fillColor: "rgba(255,0,0,0.2)",
                 strokeColor: "rgba(255,0,0,1)",
                 pointColor: "rgba(255,0,0,1)",
