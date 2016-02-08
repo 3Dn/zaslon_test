@@ -26,15 +26,25 @@ function scale_chart(myCanvas, data){
         labels: labels,
         datasets: [
             {
-                label: "My First dataset",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
+                label: "Scale_1",
+                fillColor: "rgba(51,51,255,0.2)",
+                strokeColor: "rgba(51,51,255,1)",
+                pointColor: "rgba(51,51,255,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
+                pointHighlightStroke: "rgba(51,51,255,1)",
                 data: points.scale_1
-            }
+            },
+            {
+                label: "Scale_2",
+                fillColor: "rgba(255,0,0,0.2)",
+                strokeColor: "rgba(255,0,0,1)",
+                pointColor: "rgba(255,0,0,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(255,0,0,1)",
+                data: points.scale_2
+            },
         ]
     };
 
