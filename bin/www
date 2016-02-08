@@ -156,8 +156,7 @@ io.sockets.on('connection', function (socket) {
         io.sockets.emit('chart_data', chart_obj);
     });*/
     socket.on('reconnect', function(socket){
-        socket.emit('reconnect', {msg : 'Welcome back!'});
-
+        socket.emit('reconnect', {'msg' : 'Welcome back!'});
     });
 
     socket.on('disconnect', function(){
