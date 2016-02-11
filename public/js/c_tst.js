@@ -8,6 +8,13 @@ var myLine;
 
 function scale_chart(myCanvas, data){
     console.log(data);
+
+    var labels = [],
+        points = {
+            scale_1:[],
+            scale_2:[]
+        };
+
     var from = $("#from").val(),
         to = $("#to").val();
 
@@ -19,18 +26,20 @@ function scale_chart(myCanvas, data){
     var date = from;
     while(date <= to){
         //console.log(new Date(date));
-        //var d =
+        var  d=  new Date(date);
+
+        var day = d.getDay(),
+            month = d.getMonth(),
+            year = d.getFullYear();
+
+        labels.push(day+"-"+month+"-"+year);
         date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
     }
 
 
-    var labels = [],
-        points = {
-            scale_1:[],
-            scale_2:[]
-        };
+
     $.each(data.scale_1, function(){
-        labels.push(this.date);
+        //labels.push(this.date);
         points.scale_1.push(this.count);
     });
     $.each(data.scale_2, function(){
