@@ -28,8 +28,8 @@ function scale_chart(myCanvas, data){
         //console.log(new Date(date));
         var  d =  new Date(date);
 
-        var day = d.getDay(),
-            month = d.getMonth(),
+        var day = d.getDate(),
+            month = d.getMonth()+1,
             year = d.getFullYear();
         console.log(day+"-"+month+"-"+year);
         labels.push(day+"-"+month+"-"+year);
