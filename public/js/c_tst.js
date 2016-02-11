@@ -26,12 +26,12 @@ function scale_chart(myCanvas, data){
     var date = from;
     while(date <= to){
         //console.log(new Date(date));
-        var  d=  new Date(date);
+        var  d =  new Date(date);
 
         var day = d.getDay(),
             month = d.getMonth(),
             year = d.getFullYear();
-
+        console.log(day+"-"+month+"-"+year);
         labels.push(day+"-"+month+"-"+year);
         date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
     }
