@@ -141,14 +141,14 @@ $(document).ready(function(){
         console.log(obj);
         socket.emit("chart_refresh", obj);
 
-        from = Date.parse(from);
-        to = Date.parse(to);
-
-        var date = from;
-        while(date < to){
-            console.log(new Date(date));
-            date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
-        }
+        //from = Date.parse(from);
+        //to = Date.parse(to);
+        //
+        //var date = from;
+        //while(date <= to){
+        //    console.log(new Date(date));
+        //    date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
+        //}
     });
 
 

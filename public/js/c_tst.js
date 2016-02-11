@@ -7,6 +7,23 @@ var myLine;
 
 
 function scale_chart(myCanvas, data){
+    console.log(data);
+    var from = $("#from").val(),
+        to = $("#to").val();
+
+    from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
+    to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
+    from = Date.parse(from);
+    to = Date.parse(to);
+
+    var date = from;
+    while(date <= to){
+        //console.log(new Date(date));
+        //var d =
+        date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
+    }
+
+
     var labels = [],
         points = {
             scale_1:[],
