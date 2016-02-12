@@ -113,7 +113,6 @@ $(document).ready(function(){
     $( "#from" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        numberOfMonths: 2,
         dateFormat: "dd-mm-yy",
         maxDate: new Date(),
         closeText: 'Закрыть',
@@ -135,7 +134,6 @@ $(document).ready(function(){
     $( "#to" ).datepicker({
         defaultDate: "+1w",
         changeMonth: true,
-        numberOfMonths: 2,
         dateFormat: "dd-mm-yy",
         maxDate: new Date(),
         closeText: 'Закрыть',
