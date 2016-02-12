@@ -114,10 +114,10 @@ $(document).ready(function(){
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 2,
-        dateFormat: "dd-mm-yy",
-        onClose: function( selectedDate ) {
-            $( "#to" ).datepicker( "option", "minDate", selectedDate );
-        }
+        dateFormat: "dd-mm-yy"
+        //onClose: function( selectedDate ) {
+        //    $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        //}
     });
 
     $( "#to" ).datepicker({
@@ -125,9 +125,10 @@ $(document).ready(function(){
         changeMonth: true,
         numberOfMonths: 2,
         dateFormat: "dd-mm-yy",
-        onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-        }
+        maxDate: new Date()
+        //onClose: function( selectedDate ) {
+        //    $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        //}
     });
 
     $("#refresh_chart").on("click", function(){
