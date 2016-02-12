@@ -215,7 +215,7 @@ var singleton = function singleton(){
             local_conn.query(sql_1, function(err, rows, fields){
                 if(!err){
                     var obj = {};
-                    obj.date = currDate;
+                    obj.date = currDate.split("-")[2]+"-"+currDate.split("-")[1]+"-"+currDate.split("-")[0];
                     obj.count = 0;
                     if(rows.length){
                         rows.forEach(function(item, i, rows){
@@ -234,7 +234,7 @@ var singleton = function singleton(){
             local_conn.query(sql_2, function(err, rows, fields){
                 if(!err){
                     var obj = {};
-                    obj.date = currDate;
+                    obj.date = currDate.split("-")[2]+"-"+currDate.split("-")[1]+"-"+currDate.split("-")[0];
                     obj.count = 0;
                     if(rows.length){
                         rows.forEach(function(item, i, rows){
