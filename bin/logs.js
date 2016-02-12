@@ -201,6 +201,7 @@ var singleton = function singleton(){
         console.log(date_arr);
 
         date_arr.forEach(function(currDate){
+            console.log(currDate);
             var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
                 " from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
             local_conn.query(sql_1, function(err, rows, fields){
