@@ -130,7 +130,7 @@ socket.on('pushdata', function(data){
 
 socket.on('scale_lchart', function(data){
     scale_25_timeline.append(new Date().getTime(), data.scale_1_log_hour);
-    scale_35_timeline.append(new Data().getTime(). data.scale_2_log_hour);
+    scale_35_timeline.append(new Date().getTime(), data.scale_2_log_hour);
 });
 
 scale_25_lchart.addTimeSeries(scale_25_timeline);
