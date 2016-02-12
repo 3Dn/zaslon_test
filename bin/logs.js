@@ -211,17 +211,16 @@ var singleton = function singleton(){
             console.log(currDate);
             //var sql_1 = "select count(*) as count from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1'";
             var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
-                        " from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+                        " from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE) ORDER BY date(DATE)";
             local_conn.query(sql_1, function(err, rows, fields){
                 if(!err){
                     var obj = {};
                     obj.date = currDate;
+                    obj.count = 0;
                     if(rows.length){
                         rows.forEach(function(item, i, rows){
                             obj.count = item.count*20;
                         });
-                    }else{
-                        obj.count = 0;
                     }
                     arr_1.push(obj);
                 }else{
@@ -231,17 +230,16 @@ var singleton = function singleton(){
 
             //var sql_2 = "select count(*) as count from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1'";
             var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
-                " from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+                " from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE) ORDER BY date(DATE)";
             local_conn.query(sql_2, function(err, rows, fields){
                 if(!err){
                     var obj = {};
                     obj.date = currDate;
+                    obj.count = 0;
                     if(rows.length){
                         rows.forEach(function(item, i, rows){
                             obj.count = item.count*20;
                         });
-                    }else{
-                        obj.count = 0;
                     }
                     arr_2.push(obj);
                 }else{
