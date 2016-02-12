@@ -19,7 +19,7 @@ var state_1 = '',
     state_2 = '',
     old_state_1 = '',
     old_state_2 = '';
-var arr_1=[], arr_2=[];
+var arr_1=[], arr_2=[], date_arr=[];
 var ret_chart_data = {};
 var scale_1_log_hour_count = 0,
     scale_2_log_hour_count = 0,
@@ -30,6 +30,13 @@ var tmp_buff='';
 //db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
 logs.log_write("sys", "System start at: " + Date().toLocaleString());
 
+var fullDay = function(day){
+    var fullDay = day+"";
+    if(fullDay.length == 1){
+        return "0"+fullDay;
+    }
+    return fullDay;
+};
 
 var fullMonth = function(month){
     var fullMonth = month+1+"";
@@ -184,13 +191,13 @@ var singleton = function singleton(){
         to = Date.parse(to);
 
         var date = from;
-        var date_arr = [];
+        //var date_arr = [];
 
         while(date <= to){
             //console.log(new Date(date));
             var  d =  new Date(date);
 
-            var day = fullMonth(d.getDate()),
+            var day = fullDay(d.getDate()),
                 month = fullMonth(d.getMonth()),
                 year = d.getFullYear();
 
@@ -239,6 +246,27 @@ var singleton = function singleton(){
             });
         });
 
+        arr_1 = us.map(us.groupBy(arr_1,function(doc){
+            return doc.date;
+        }),function(grouped){
+            return grouped[0];
+        });
+
+        arr_2 = us.map(us.groupBy(arr_2,function(doc){
+            return doc.date;
+        }),function(grouped){
+            return grouped[0];
+        });
+
+        ret_chart_data.scale_1 = arr_1;
+        ret_chart_data.scale_2 = arr_2;
+
+        console.log("+++++++++++++++++++++++");
+        console.log(ret_chart_data);
+        console.log("+++++++++++++++++++++++");
+
+        return ret_chart_data;
+
 
 
         //var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
@@ -273,26 +301,7 @@ var singleton = function singleton(){
         //});
 
 
-        arr_1 = us.map(us.groupBy(arr_1,function(doc){
-            return doc.date;
-        }),function(grouped){
-            return grouped[0];
-        });
 
-        arr_2 = us.map(us.groupBy(arr_2,function(doc){
-            return doc.date;
-        }),function(grouped){
-            return grouped[0];
-        });
-
-        ret_chart_data.scale_1 = arr_1;
-        ret_chart_data.scale_2 = arr_2;
-
-        console.log("+++++++++++++++++++++++");
-        console.log(ret_chart_data);
-        console.log("+++++++++++++++++++++++");
-
-        return ret_chart_data;
 
 
     };
