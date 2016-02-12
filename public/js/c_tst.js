@@ -15,31 +15,35 @@ function scale_chart(myCanvas, data){
             scale_2:[]
         };
 
-    var from = $("#from").val(),
-        to = $("#to").val();
-
-    from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
-    to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
-    from = Date.parse(from);
-    to = Date.parse(to);
-
-    var date = from;
-    while(date <= to){
-        //console.log(new Date(date));
-        var  d =  new Date(date);
-
-        var day = d.getDate(),
-            month = d.getMonth()+1,
-            year = d.getFullYear();
-        console.log(day+"-"+month+"-"+year);
-        labels.push(day+"-"+month+"-"+year);
-        date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
-    }
-
-
+    //var from = $("#from").val(),
+    //    to = $("#to").val();
+    //
+    //from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
+    //to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
+    //from = Date.parse(from);
+    //to = Date.parse(to);
+    //
+    //var date = from;
+    //var i = 0;
+    //
+    //var date_arr = [];
+    //
+    //while(date <= to){
+    //    //console.log(new Date(date));
+    //    var  d =  new Date(date);
+    //
+    //    var day = d.getDate(),
+    //        month = d.getMonth()+1,
+    //        year = d.getFullYear();
+    //
+    //    date_arr.push(day+"-"+month+"-"+year);
+    //    date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
+    //}
+    //
+    //console.log(date_arr);
 
     $.each(data.scale_1, function(){
-        //labels.push(this.date);
+        labels.push(this.date);
         points.scale_1.push(this.count);
     });
     $.each(data.scale_2, function(){
