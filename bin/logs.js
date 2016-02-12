@@ -190,46 +190,88 @@ var singleton = function singleton(){
             //console.log(new Date(date));
             var  d =  new Date(date);
 
-            var day = d.getDate(),
+            var day = fullMonth(d.getDate()),
                 month = fullMonth(d.getMonth()),
                 year = d.getFullYear();
 
-            date_arr.push(day+"-"+month+"-"+year);
+            date_arr.push(year+"-"+month+"-"+day);
             date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
         }
 
         console.log(date_arr);
 
-        var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
-            " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
-        var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
-            " from scale2_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
-        local_conn.query(sql_1, function(err, rows, fields){
-            if(!err){
-                rows.forEach(function(item, i, rows){
+        date_arr.forEach(function(currDate){
+            var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+                " from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+            local_conn.query(sql_1, function(err, rows, fields){
+                if(!err){
                     var obj = {};
-                    obj.date = item.date;
-                    obj.count = item.count*20;
+                    obj.date = currDate;
+                    if(rows.length){
+                        rows.forEach(function(item, i, rows){
+                            obj.count = item.count*20;
+                        });
+                    }else{
+                        obj.count = 0;
+                    }
                     arr_1.push(obj);
-                    console.log(obj);
-                });
-            }else{
-                console.log(err);
-            }
-        });
-        local_conn.query(sql_2, function(err, rows, fields){
-            if(!err){
-                rows.forEach(function(item, i, rows){
+                }else{
+                    console.log(err);
+                }
+            });
+
+            var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+                " from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+            local_conn.query(sql_2, function(err, rows, fields){
+                if(!err){
                     var obj = {};
-                    obj.date = item.date;
-                    obj.count = item.count*20;
+                    obj.date = currDate;
+                    if(rows.length){
+                        rows.forEach(function(item, i, rows){
+                            obj.count = item.count*20;
+                        });
+                    }else{
+                        obj.count = 0;
+                    }
                     arr_2.push(obj);
-                    console.log(obj);
-                });
-            }else{
-                console.log(err);
-            }
+                }else{
+                    console.log(err);
+                }
+            });
         });
+
+
+
+        //var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+        //    " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
+        //var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
+        //    " from scale2_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
+        //local_conn.query(sql_1, function(err, rows, fields){
+        //    if(!err){
+        //        rows.forEach(function(item, i, rows){
+        //            var obj = {};
+        //            obj.date = item.date;
+        //            obj.count = item.count*20;
+        //            arr_1.push(obj);
+        //            console.log(obj);
+        //        });
+        //    }else{
+        //        console.log(err);
+        //    }
+        //});
+        //local_conn.query(sql_2, function(err, rows, fields){
+        //    if(!err){
+        //        rows.forEach(function(item, i, rows){
+        //            var obj = {};
+        //            obj.date = item.date;
+        //            obj.count = item.count*20;
+        //            arr_2.push(obj);
+        //            console.log(obj);
+        //        });
+        //    }else{
+        //        console.log(err);
+        //    }
+        //});
 
 
         arr_1 = us.map(us.groupBy(arr_1,function(doc){
