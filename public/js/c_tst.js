@@ -8,7 +8,6 @@ var myLine;
 
 function scale_chart(myCanvas, data){
     console.log(data);
-
     var labels = [],
         points = {
             scale_1:[],
