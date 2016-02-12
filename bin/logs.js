@@ -113,7 +113,7 @@ var singleton = function singleton(){
 
     this.scale_1_log_hour = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state, zn.name, sc.date FROM scale1_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale1_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(NOW(), INTERVAL 5 MINUTE)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
@@ -121,7 +121,7 @@ var singleton = function singleton(){
                         ret_count += 20;
                     }
                 });
-                scale_1_log_hour_count = ret_count;
+                scale_1_log_hour_count = ret_count*12;
             }
         });
         return scale_1_log_hour_count;
@@ -129,7 +129,7 @@ var singleton = function singleton(){
 
     this.scale_2_log_hour = function(){
         var ret_count = 0;
-        var sql = "SELECT sc.state, zn.name, sc.date FROM scale2_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(NOW(), INTERVAL 1 HOUR)";
+        var sql = "SELECT sc.state, zn.name, sc.date FROM scale2_log AS sc LEFT JOIN zaslon_names AS zn ON sc.zaslon_id = zn.id WHERE sc.date >= DATE_SUB(NOW(), INTERVAL 5 MINUTE)";
         local_conn.query(sql, function(err ,rows, fields){
             if(!err){
                 rows.forEach(function(item, i, rows){
@@ -137,7 +137,7 @@ var singleton = function singleton(){
                         ret_count += 20;
                     }
                 });
-                scale_2_log_hour_count = ret_count;
+                scale_2_log_hour_count = ret_count*12;
             }
         });
         return scale_2_log_hour_count;
