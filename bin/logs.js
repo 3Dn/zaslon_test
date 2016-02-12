@@ -202,7 +202,7 @@ var singleton = function singleton(){
 
         date_arr.forEach(function(currDate){
             console.log(currDate);
-            var sql_1 = "select count(*) as count from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+            var sql_1 = "select count(*) as count from scale1_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1'";
             local_conn.query(sql_1, function(err, rows, fields){
                 if(!err){
                     var obj = {};
@@ -220,7 +220,7 @@ var singleton = function singleton(){
                 }
             });
 
-            var sql_2 = "select count(*) as count from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1' GROUP BY date(DATE)";
+            var sql_2 = "select count(*) as count from scale2_log where date between '"+currDate+" 00:00:00' and '"+currDate+" 23:59:59' and state='1'";
             local_conn.query(sql_2, function(err, rows, fields){
                 if(!err){
                     var obj = {};
