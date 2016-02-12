@@ -69,7 +69,7 @@ var wire_loop = setInterval(function(){
         console.log("Error parsing obj! obj is: " + obj);
         //console.log(err.name + ":" + err.message + "\n" + err.stack);
     }
-},4000);
+},1500);
 
 var singleton = function singleton(){
     //defining a var instead of this (works for variable & function) will create a private definition
