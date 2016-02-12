@@ -4,7 +4,13 @@
 var socket = io.connect();
 
 var myLine;
+var scale_25_lchart = new SmoothieChart();
+var scale_35_lchart = new SmoothieChart();
+var scale_25_timeline = new TimeSeries();
+var scale_35_timeline = new TimeSeries();
 
+scale_25_lchart.streamTo(document.getElementById("scale_25_canvas"));
+scale_35_lchart.streamTo(document.getElementById("scale_35_canvas"));
 
 function scale_chart(myCanvas, data){
     console.log(data);
@@ -116,9 +122,16 @@ function scale_chart(myCanvas, data){
 //    });
 //}
 
-
 socket.on('pushdata', function(data){
     console.log("my: " + data);
     myLine.removeData();
     myLine.addData([data], data);
 });
+
+socket.on('scale_lchart', function(data){
+    scale_25_timeline.append(new Date().getTime(), data.scale_1_log_hour);
+    scale_35_timeline.append(new Data().getTime(). data.scale_2_log_hour);
+});
+
+scale_25_lchart.addTimeSeries(scale_25_timeline);
+scale_35_lchart.addTimeSeries(scale_35_timeline);

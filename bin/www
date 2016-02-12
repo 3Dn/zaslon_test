@@ -116,6 +116,7 @@ io.sockets.on('connection', function (socket) {
                 curr = tmp_obj;
             }
             io.sockets.emit('scale_log_home_page', {'scale_1_hour': scale_1_log_hour, 'scale_2_hour': scale_2_log_hour, 'scale_1_day': scale_1_log_day, 'scale_2_day': scale_2_log_day});
+            io.sockets.emit('scale_lchart', {'scale_1_hour': scale_1_log_hour, 'scale_2_hour': scale_2_log_hour});
             //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 2000);
         }, 1);
