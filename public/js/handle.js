@@ -111,7 +111,7 @@ $(document).ready(function(){
 
 
     $( "#from" ).datepicker({
-        defaultDate: "+1w",
+        //defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1,
         dateFormat: "dd-mm-yy",
@@ -133,7 +133,7 @@ $(document).ready(function(){
     });
 
     $( "#to" ).datepicker({
-        defaultDate: "+1w",
+        //defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1,
         dateFormat: "dd-mm-yy",
