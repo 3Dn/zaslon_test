@@ -165,6 +165,32 @@ var singleton = function singleton(){
         //arr_1.length = 0;
         //arr_2.length = 0;
 
+        //
+        //var from = $("#from").val(),
+        //    to = $("#to").val();
+        //
+        //from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
+        //to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
+        from = Date.parse(from);
+        to = Date.parse(to);
+
+        var date = from;
+        var date_arr = [];
+
+        while(date <= to){
+            //console.log(new Date(date));
+            var  d =  new Date(date);
+
+            var day = d.getDate(),
+                month = d.getMonth()+1,
+                year = d.getFullYear();
+
+            date_arr.push(day+"-"+month+"-"+year);
+            date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
+        }
+
+        console.log(date_arr);
+
         var sql_1 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
             " from scale1_log where date between '"+from+" 00:00:00' and '"+to+" 23:59:59' and state='1' GROUP BY date(DATE)";
         var sql_2 = "select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count"+
