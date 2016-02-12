@@ -30,6 +30,15 @@ var tmp_buff='';
 //db.sys_log_query("0", "sys", "0", "System start at: " + Date().toLocaleString());
 logs.log_write("sys", "System start at: " + Date().toLocaleString());
 
+
+var fullMonth = function(month){
+    var fullMonth = month+1+"";
+    if(fullMonth.length == 1){
+        return "0"+fullMonth;
+    }
+    return fullMonth;
+};
+
 var wire_loop = setInterval(function(){
     wire.read(32, function(err, res){
         var buff_bytes = new Buffer(res);
@@ -182,7 +191,7 @@ var singleton = function singleton(){
             var  d =  new Date(date);
 
             var day = d.getDate(),
-                month = d.getMonth()+1,
+                month = fullMonth(d.getMonth()),
                 year = d.getFullYear();
 
             date_arr.push(day+"-"+month+"-"+year);
