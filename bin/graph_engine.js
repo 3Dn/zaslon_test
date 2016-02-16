@@ -4,10 +4,8 @@
 var db  = require('./db_engine');
 var local_conn = db.connection();
 
-var ret_arr = [];
-
-exports.kgph = function(base){
-    ret_arr = [];
+exports.kg_ph = function(base){
+    var ret_arr = [];
     var t_arr = [];
     var sql = 'SELECT state, date from ' + base + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
     local_conn.query(sql, function(err, rows, fields) {
