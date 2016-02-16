@@ -133,6 +133,9 @@ socket.on('pushdata', function(data){
 socket.on('scale_lchart', function(data){
     lchart.scale_1 = data.scale_1_log_hour;
     lchart.scale_2 = data.scale_2_log_hour;
+    scale_25_timeline.append(new Date().getTime(), lchart.scale_1);
+    scale_35_timeline.append(new Date().getTime(), lchart.scale_2);
+    console.log("lchart: " + lchart.scale_1);
 });
 
 setInterval(function() {
