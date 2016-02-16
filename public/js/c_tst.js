@@ -135,14 +135,14 @@ socket.on('scale_lchart', function(data){
     lchart.scale_2 = data.scale_2_log_hour;
     scale_25_timeline.append(new Date().getTime(), lchart.scale_1);
     scale_35_timeline.append(new Date().getTime(), lchart.scale_2);
-    console.log("lchart: " + lchart.scale_1);
+    console.log("lchart: " + data.scale_1_log_hour);
 });
 
-setInterval(function() {
+/*setInterval(function() {
     scale_25_timeline.append(new Date().getTime(), lchart.scale_1);
     scale_35_timeline.append(new Date().getTime(), lchart.scale_2);
     console.log("lchart: " + lchart.scale_1);
-}, 1000);
+}, 1000);*/
 
 scale_25_lchart.addTimeSeries(scale_25_timeline);
 scale_35_lchart.addTimeSeries(scale_35_timeline);
