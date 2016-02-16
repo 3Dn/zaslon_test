@@ -23,7 +23,9 @@ exports.killogram_per_hour = function(str){
             var arr = [];
 
             t_obj.date = t_arr[i];
-            t_obj.state = ((20/(t_arr[i+1]-t_arr[i]))/1000)*3600; // (20 / dt) * 3600 <- (== 60*60) in hour
+            var delta = (t_arr[i+1]-t_arr[i])/1000;
+            var per_seconds = (20 / delta)*3600;
+            t_obj.state = per_seconds; // (20 / dt) * 3600 <- (== 60*60) in hour
 
             arr = [t_obj.date, t_obj.state];
 /*            console.log("Graph_engine date_1 -> " + t_arr[i]);
