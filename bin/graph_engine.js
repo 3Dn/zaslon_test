@@ -7,7 +7,7 @@ var local_logs_conn = db.connection();
 exports.kgph = function(base){
     var t_arr = [];
     var ret_arr = [];
-    var sql = 'SELECT date from ' + base + ' WHERE state="0" and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
+    var sql = 'SELECT state, date from ' + base + ' WHERE state="0" and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
     local_logs_conn.query(sql, function(err, rows, fields){
         rows.forEach(function(item){
             var obj = {};
