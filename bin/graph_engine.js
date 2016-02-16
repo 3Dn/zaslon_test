@@ -4,6 +4,8 @@
 var db  = require('./db_engine');
 var local_conn = db.connection();
 
+var rez_return = [];
+
 exports.killogram_per_hour = function(str){
     var ret_arr = [];
     var t_arr = [];
@@ -24,10 +26,11 @@ exports.killogram_per_hour = function(str){
             console.log("Graph_engine state  -> " + t_obj.state);*/
             ret_arr.push(t_obj);
         }
+        rez_return = ret_arr;
         //console.log("Graph_engine 1 -> " + ret_arr);
     });
     //console.log("Graph_engine 2 -> " + ret_arr);
-    return ret_arr;
+    return rez_return;
 };
 
 module.exports.graph_engine = "graph_engine";
