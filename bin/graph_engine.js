@@ -17,7 +17,7 @@ exports.kgph = function(base){
         for(var i = 0; i < t_arr.length; i=i+2 ){
             var t_obj = {};
             t_obj.date = t_arr[i];
-            t_obj.state = (t_arr[i+1]-t_arr[i])/1000;
+            t_obj.state = ((20/(t_arr[i+1]-t_arr[i]))/1000)*3600; // (20 / dt) * 3600 <- (== 60*60) in hour
 /*            console.log("Graph_engine date_1 -> " + t_arr[i]);
             console.log("Graph_engine date_2 -> " + t_arr[i+1]);
             console.log("Graph_engine state  -> " + t_obj.state);*/
