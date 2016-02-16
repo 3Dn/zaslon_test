@@ -29,10 +29,11 @@ exports.killogram_per_hour = function(str){
 /*            console.log("Graph_engine date_1 -> " + t_arr[i]);
             console.log("Graph_engine date_2 -> " + t_arr[i+1]);
             console.log("Graph_engine state  -> " + t_obj.state);*/
+            console.log("Graph_engine date_1 -> " + arr);
             ret_arr.push(arr);
         }
         rez_return = ret_arr;
-        //console.log("Graph_engine 1 -> " + ret_arr);
+        console.log("Graph_engine 1 -> " + ret_arr);
     });
     //console.log("Graph_engine 2 -> " + ret_arr);
     return rez_return;
