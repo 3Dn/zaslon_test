@@ -7,6 +7,8 @@
 
     <link rel="icon" type="image/x-icon"  href="/images/favicon.png">
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="/js/1-11-4-jquery-ui.js"></script>
     <script src="/js/jq-ui.min.js"></script>
     <script src="/js/underscore.js"></script>
@@ -82,7 +84,7 @@
       </div>
     </div>
     <div id="workspace_4" class="work_style">
-      <div id="linemap">а здесь карта линий</div>
+      <div id="linemap"></div>
     </div>
     <div id="workspace_5" class="work_style">
       <div id="sensors"></div>
@@ -91,7 +93,7 @@
       <div id="scales">
         <div class="sc_tab">
           <div class="sc_tab_name">
-            Scales 2.5
+            Scales 3.5
             <div class="sc_led">
               <div class="sc_led_light" id="scale_25_led"></div>
             </div>
@@ -105,7 +107,7 @@
 
         <div class="sc_tab">
           <div class="sc_tab_name">
-            Scales 3.5
+            Scales 2.4
             <div class="sc_led">
               <div class="sc_led_light" id="scale_35_led"></div>
             </div>
@@ -116,6 +118,14 @@
             <canvas id="scale_35_canvas" width="195px" height="50px"></canvas>
           </div>
         </div>
+<!--test-->
+        <div class="sc_tab">
+          <div class="sc_tab_name">
+            Test
+          <div id="test_div"></div>
+          </div>
+        </div>
+<!--test-->
       </div>
     </div>
     <div id="io-status-box" class="work_style">
