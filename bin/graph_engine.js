@@ -32,9 +32,7 @@ exports.killogram_per_hour = function(str){
             ret_arr.push(arr);
         }
         rez_return = ret_arr;
-        console.log("Graph_engine 1 -> " + ret_arr);
     });
-    console.log("Graph_engine 2 -> " + rez_return);
     return rez_return;
 };
 
