@@ -14,16 +14,19 @@ exports.kgph = function(base){
             obj.date = item.date;
             t_arr.push(obj.date);
         });
-        console.log("Graph_engine l-> " + t_arr.length);
         for(var i = 0; i < t_arr.length; i=i+2 ){
             var t_obj = {};
             t_obj.date = t_arr[i];
+            var date_parts = t_arr[i].split(" ");
+            var firstDate = new Date(date_parts[1], date_parts[2], date_parts[3], date_parts[4]);
+            console.log("Graph_engine state-> " + firstDate);
+           // var secondDate =
             t_obj.state = t_arr[i]-t_arr[i+1];
-            console.log("Graph_engine date-> " + t_obj.date);
-            console.log("Graph_engine state-> " + t_obj.state);
+            /*console.log("Graph_engine date-> " + t_obj.date);
+            console.log("Graph_engine state-> " + t_obj.state);*/
             ret_arr.push(t_obj);
         }
-        console.log("Graph_engine -> " + ret_arr);
+        //console.log("Graph_engine -> " + ret_arr);
         return ret_arr;
     });
 };
