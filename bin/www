@@ -63,6 +63,7 @@ Logs.dailyLogs();
 Logs.scale_1_log_hour();
 
 var last_log = Ligth_log.log_read('sys', 3);
+var g_kgph = Graph_kph.killogram_per_hour('scale1_log');
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -75,6 +76,8 @@ io.sockets.on('connection', function (socket) {
 
     socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
     io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
+
+    io.sockets.emit('kgph', {'kgph': g_kgph});
 
     //socket.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
     //io.sockets.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
@@ -111,7 +114,6 @@ io.sockets.on('connection', function (socket) {
             var scale_2_log_hour = Logs.scale_2_log_hour();
             var scale_1_log_day = Logs.scale_1_log_day();
             var scale_2_log_day = Logs.scale_2_log_day();
-            var g_kgph = Graph_kph.killogram_per_hour('scale1_log');
             //console.log("www -> " + g_kgph);
             if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);
@@ -119,7 +121,6 @@ io.sockets.on('connection', function (socket) {
             }
             io.sockets.emit('scale_log_home_page', {'scale_1_hour': scale_1_log_hour, 'scale_2_hour': scale_2_log_hour, 'scale_1_day': scale_1_log_day, 'scale_2_day': scale_2_log_day});
             io.sockets.emit('scale_lchart', {'scale_1_hour': scale_1_log_hour, 'scale_2_hour': scale_2_log_hour});
-            io.sockets.emit('kgph', {'kgph': g_kgph});
             //console.log("Get logs: " + tmp_obj);
             setTimeout(getter, 2000);
         }, 1);
