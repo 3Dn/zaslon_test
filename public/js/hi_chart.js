@@ -57,7 +57,7 @@ $(function () {
             series: [{
                 type: 'area',
                 name: 'Кг/ч',
-                data: data
+                data: data.kgph
             }]
         });
     });
