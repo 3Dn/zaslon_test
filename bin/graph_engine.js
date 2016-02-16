@@ -13,6 +13,7 @@ exports.kgph = function(base){
             var obj = {};
             obj.date = item.date;
             t_arr.push(obj.date);
+            console.log("Graph_engine date-> " + obj.date);
         })
     });
     console.log("Graph_engine l-> " + t_arr.length);
