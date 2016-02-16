@@ -20,7 +20,7 @@ $(function () {
             },
             yAxis: {
                 title: {
-                    text: 'Exchange rate'
+                    text: 'Килограммы'
                 }
             },
             legend: {
