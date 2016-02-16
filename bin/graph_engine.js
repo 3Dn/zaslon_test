@@ -7,7 +7,7 @@ var local_conn = db.connection();
 var rez_return = [];
 
 exports.killogram_per_hour = function(str){
-    rez_return = [];
+
     var ret_arr = [];
     var t_arr = [];
     var sql = 'SELECT state, date from ' + str + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
