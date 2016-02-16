@@ -23,7 +23,7 @@ exports.kgph = function(base){
             console.log("Graph_engine state  -> " + t_obj.state);*/
             ret_arr.push(t_obj);
         }
-        //console.log("Graph_engine -> " + ret_arr);
+        console.log("Graph_engine -> " + ret_arr);
     });
     console.log("Graph_engine -> " + ret_arr);
     return ret_arr;

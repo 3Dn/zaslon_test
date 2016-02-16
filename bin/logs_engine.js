@@ -36,19 +36,6 @@ exports.log_read = function(system, limit) {
     });
 
     return ret_arr;
-
-/*
-    if (system == ''){
-        local_logs_conn.query('SELECT * from sys_log');
-    } else {
-        local_logs_conn.query('SELECT * from sys_log WHERE sys_name="' + system + '"');
-    }
-
-    if(limit == '') {
-        sql = 'SELECT * from sys_log';
-    } else {
-        sql = 'SELECT * from sys_log LIMIT ' + limit;
-    }*/
 };
 
 module.exports.logs = "logs";
