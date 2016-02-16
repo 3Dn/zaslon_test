@@ -2,7 +2,8 @@
  * Created by adm_korolev on 16.02.2016.
  */
 $(function () {
-    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+    //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+    socket.on('kgph', function(data){
 
         $('#test_div').highcharts({
             chart: {
