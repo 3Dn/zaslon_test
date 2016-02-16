@@ -4,7 +4,7 @@
 $(function () {
     //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
     socket.on('kgph', function(data){
-
+        console.log(data);
         $('#test_div').highcharts({
             chart: {
                 zoomType: 'x'
