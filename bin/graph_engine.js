@@ -15,6 +15,7 @@ exports.kgph = function(base){
             t_arr.push(obj.date);
         })
     });
+    console.log("Graph_engine l-> " + t_arr.length);
     for(var i = 0; i < t_arr.length; i=i+2 ){
         var t_obj = {};
         t_obj.date = t_arr[i];
