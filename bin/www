@@ -111,7 +111,7 @@ io.sockets.on('connection', function (socket) {
             var scale_2_log_hour = Logs.scale_2_log_hour();
             var scale_1_log_day = Logs.scale_1_log_day();
             var scale_2_log_day = Logs.scale_2_log_day();
-            var g_kgph = Graph_kph.kg_ph("scale1_log");
+            var g_kgph = Graph_kph.killogram_per_hour('scale1_log');
             console.log("www -> " + g_kgph);
             if(curr != tmp_obj){
                 io.sockets.emit('send', tmp_obj);

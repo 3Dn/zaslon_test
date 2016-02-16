@@ -4,10 +4,10 @@
 var db  = require('./db_engine');
 var local_conn = db.connection();
 
-exports.kg_ph = function(base){
+exports.killogram_per_hour = function(str){
     var ret_arr = [];
     var t_arr = [];
-    var sql = 'SELECT state, date from ' + base + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
+    var sql = 'SELECT state, date from ' + str + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
     local_conn.query(sql, function(err, rows, fields) {
         rows.forEach(function (item) {
             var obj = {};
