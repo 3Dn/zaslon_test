@@ -21,7 +21,7 @@ exports.kgph = function(base){
             //var firstDate = new Date(date_parts[1], date_parts[2], date_parts[3], date_parts[4]);
             //console.log("Graph_engine state-> " + firstDate);
            // var secondDate =
-            t_obj.state = t_arr[i]-t_arr[i+1];
+            t_obj.state = t_arr[i+1]-t_arr[i];
             console.log("Graph_engine date-> " + t_obj.date);
             console.log("Graph_engine state-> " + t_obj.state);
             ret_arr.push(t_obj);
