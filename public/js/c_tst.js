@@ -136,8 +136,9 @@ socket.on('scale_lchart', function(data){
 });
 
 setInterval(function() {
-scale_25_timeline.append(new Date().getTime(), lchart.scale_1);
-scale_35_timeline.append(new Date().getTime(), lchart.scale_2);
+    scale_25_timeline.append(new Date().getTime(), lchart.scale_1);
+    scale_35_timeline.append(new Date().getTime(), lchart.scale_2);
+    console.log("lchart: " + lchart.scale_1);
 }, 1000);
 
 scale_25_lchart.addTimeSeries(scale_25_timeline);
