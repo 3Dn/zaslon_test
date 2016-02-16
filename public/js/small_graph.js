@@ -21,5 +21,5 @@ socket.on('scale_lchart', function(data){
 scale_25_lchart.addTimeSeries(scale_25_timeline);
 scale_35_lchart.addTimeSeries(scale_35_timeline);
 
-scale_25_lchart.streamTo(document.getElementById("scale_25_canvas"));
-scale_35_lchart.streamTo(document.getElementById("scale_35_canvas"));
+scale_25_lchart.streamTo(document.getElementById("scale_25_canvas"), 1000);
+scale_35_lchart.streamTo(document.getElementById("scale_35_canvas"), 1000);
