@@ -10,9 +10,6 @@ var scale_35_lchart = new SmoothieChart();
 var scale_25_timeline = new TimeSeries();
 var scale_35_timeline = new TimeSeries();
 
-scale_25_lchart.streamTo(document.getElementById("scale_25_canvas"));
-scale_35_lchart.streamTo(document.getElementById("scale_35_canvas"));
-
 function scale_chart(myCanvas, data){
     console.log(data);
     var labels = [],
@@ -89,6 +86,10 @@ function scale_chart(myCanvas, data){
     };
 
     var ctx = document.getElementById(myCanvas).getContext("2d");
+
+    scale_25_lchart.streamTo(document.getElementById("scale_25_canvas").getContext("2d"));
+    scale_35_lchart.streamTo(document.getElementById("scale_35_canvas").getContext("2d"));
+
     myLine = new Chart(ctx).Line(lineChartData, {
         responsive: true,
         bezierCurve : false,
