@@ -9,7 +9,7 @@ $(function () {
                 zoomType: 'x'
             },
             title: {
-                text: 'USD to EUR exchange rate over time'
+                text: 'Данные по 3.5. График Кг/ч'
             },
             subtitle: {
                 text: document.ontouchstart === undefined ?
@@ -55,7 +55,7 @@ $(function () {
 
             series: [{
                 type: 'area',
-                name: 'USD to EUR',
+                name: 'Кг/ч',
                 data: data
             }]
         });
