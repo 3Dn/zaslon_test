@@ -24,9 +24,9 @@ exports.kgph = function(base){
             ret_arr.push(t_obj);
         }
         console.log("Graph_engine -> " + ret_arr);
+        return ret_arr;
     });
     console.log("Graph_engine -> " + ret_arr);
-    return ret_arr;
 };
 
 module.exports.graph_engine = "graph_engine";
