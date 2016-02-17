@@ -24,7 +24,7 @@ exports.killogram_per_hour = function(str){
 
             t_obj.date = t_arr[i];
             var temp_date = new Date(t_obj.date);
-            console.log(temp_date.getUTCDate());
+            console.log(temp_date.getDay() + "." + temp_date.getMonth() + "." + temp_date.getFullYear() + " / " + temp_date.getHours() + ":" + temp_date.getMinutes());
             var delta = (t_arr[i+1]-t_arr[i])/1000;
             var per_seconds = (20 / delta)*3600;
             t_obj.state = per_seconds - (per_seconds%1); // (20 / dt) * 3600 <- (== 60*60) in hour
