@@ -24,8 +24,9 @@ exports.killogram_per_hour = function(str){
             var temp_date = new Date(t_arr[i]);
 
             //console.log(temp_date.getDay() + "." + temp_date.getMonth() + "." + temp_date.getFullYear() + " / " + temp_date.getHours() + ":" + temp_date.getMinutes());
+            t_obj.date = temp_date;
 
-            t_obj.date = Date.UTC(temp_date.getFullYear(), temp_date.getMonth(), temp_date.getDay());//, temp_date.getHours(), temp_date.getMinutes());
+            //t_obj.date = Date.UTC(temp_date.getFullYear(), temp_date.getMonth(), temp_date.getDay());//, temp_date.getHours(), temp_date.getMinutes());
 
             var delta = (t_arr[i+1]-t_arr[i])/1000;
             var per_seconds = (20 / delta)*3600;
