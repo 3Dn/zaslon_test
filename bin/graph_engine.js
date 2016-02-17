@@ -10,7 +10,7 @@ exports.killogram_per_hour = function(str){
 
     var ret_arr = [];
     var t_arr = [];
-    var sql = 'SELECT state, date from ' + str + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 1 DAY)';
+    var sql = 'SELECT state, date from ' + str + ' WHERE state=0 and date >= DATE_SUB(NOW(), INTERVAL 3 DAY)';
     local_conn.query(sql, function(err, rows, fields) {
         rows.forEach(function (item) {
             var obj = {};
