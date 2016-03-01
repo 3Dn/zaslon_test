@@ -54,11 +54,18 @@ $(function () {
                 }
             },
 
-            series: [{
-                type: 'area',
-                name: 'Кг/ч',
-                data: data.kgph
-            }]
+            series: [
+                {
+                    type: 'area',
+                    name: 'Кг/ч',
+                    data: data.scale_1
+                },
+                {
+                    type: 'area',
+                    name: 'Кг/ч',
+                    data: data.scale_2
+                }
+            ]
         });
     });
 });
