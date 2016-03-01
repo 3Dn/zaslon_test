@@ -14,7 +14,6 @@ function killogram_per_hour(db, callback) {
         rows.forEach(function (item) {
             t_arr.push(item.date);
         });
-        //console.log('Test: ', dateFormat(rows[i].date, "dd-mm-yyyy HH:MM:ss"));
 
         for(var i = 0; i < t_arr.length; i=i+2 ){
             var t_obj = {};
@@ -23,8 +22,6 @@ function killogram_per_hour(db, callback) {
             var delta = (t_arr[i+1]-t_arr[i])/1000;
             var per_seconds = (20 / delta)*3600;
             t_obj.state = per_seconds - (per_seconds%1); // (20 / dt) * 3600 <- (== 60*60) in hour
-            console.log(t_obj.state);
-            console.log(typeof t_obj.state);
             if (t_obj.state < 4000){
                 arr = [t_obj.date, t_obj.state];
                 ret_arr.push(arr);
