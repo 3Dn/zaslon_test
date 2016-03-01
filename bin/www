@@ -72,12 +72,13 @@ io.sockets.on('connection', function (socket) {
     console.log("Number of connections: " + connectionsArray.length);
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
-    var g_kgph = Graph_kph.killogram_per_hour('scale1_log');
+    //var g_kgph = Graph_kph.killogram_per_hour('scale1_log');
+    Graph_kph.killogram_per_hour('scale1_log', function(ret){
+        io.sockets.emit('kgph', {'kgph': ret});
+    });
 
     socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
     io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
-
-    io.sockets.emit('kgph', {'kgph': g_kgph});
 
     //socket.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
     //io.sockets.emit('sys_to_ligth_home_log_last_logs', {'data': last_log});
