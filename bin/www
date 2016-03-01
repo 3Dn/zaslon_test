@@ -56,6 +56,8 @@ var Graph_kph = require('./graph_engine');
 var io = require('socket.io')(server);
 
 var connectionsArray = [];
+var scale_1 = [];
+var scale_2 = [];
 
 var charts = require('./charts.js');
 
@@ -73,11 +75,13 @@ io.sockets.on('connection', function (socket) {
     var ID = (socket.id).toString();
     var time = (new Date).toLocaleTimeString();
     Graph_kph.killogram_per_hour('scale1_log', function(ret){
-        io.sockets.emit('kgph', {'scale_1': ret});
+        scale_1 = ret;
     });
     Graph_kph.killogram_per_hour('scale2_log', function(ret){
-        io.sockets.emit('kgph', {'scale_2': ret});
+        scale_2 = ret;
     });
+
+    io.sockets.emit('kgph', {'scale_1' : scale_1, 'scale_2' : scale_2});
 
     socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
     io.sockets.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});

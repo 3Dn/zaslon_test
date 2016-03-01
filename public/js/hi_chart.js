@@ -3,8 +3,8 @@
  */
 $(function () {
     //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
-    socket.on('kgph', function(data){
-        console.log(data);
+    socket.on('kgph', function(d){
+        console.log(d);
         $('#test_div').highcharts({
             chart: {
                 zoomType: 'x'
@@ -57,14 +57,14 @@ $(function () {
             series: [
                 {
                     type: 'area1',
-                    name: 'Кг/ч',
-                    data: data.scale_2
-                }/*,
+                    name: '2.4 Кг/ч',
+                    data: d.scale_1
+                },
                 {
                     type: 'area',
-                    name: 'Кг/ч',
-                    data: data.scale_2
-                }*/
+                    name: '3.5 Кг/ч',
+                    data: d.scale_2
+                }
             ]
         });
     });
