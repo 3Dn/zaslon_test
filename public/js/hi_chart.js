@@ -25,7 +25,7 @@ $(function () {
                 }
             },
             legend: {
-                enabled: false
+                enabled: true
             },
             plotOptions: {
                 area: {
@@ -58,13 +58,13 @@ $(function () {
                 {
                     type: 'area',
                     name: 'Кг/ч',
-                    data: data.scale_1
-                },
+                    data: data.scale_2
+                }/*,
                 {
                     type: 'area',
                     name: 'Кг/ч',
                     data: data.scale_2
-                }
+                }*/
             ]
         });
     });
