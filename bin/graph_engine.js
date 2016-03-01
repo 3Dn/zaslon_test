@@ -27,8 +27,8 @@ function killogram_per_hour(db, callback) {
             console.log(typeof t_obj.state);
             if (t_obj.state < 4000){
                 arr = [t_obj.date, t_obj.state];
+                ret_arr.push(arr);
             }
-            ret_arr.push(arr);
         }
         callback(ret_arr);
     });
