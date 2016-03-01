@@ -28,7 +28,7 @@ $(function () {
                 enabled: true
             },
             plotOptions: {
-                area: {
+                area1: {
                     fillColor: {
                         linearGradient: {
                             x1: 0,
@@ -56,7 +56,7 @@ $(function () {
 
             series: [
                 {
-                    type: 'area',
+                    type: 'area1',
                     name: 'Кг/ч',
                     data: data.scale_2
                 }/*,
