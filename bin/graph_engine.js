@@ -37,8 +37,10 @@ function all_history(db, callback) {
     local_conn.query(sql, function (err, rows, fields) {
         if (err) throw err;
         rows.forEach(function (item, i, rows) {
+            var t_arr = [];
             var t_obj_date = Date.UTC(dateFormat(item.date, "yyyy"), dateFormat(item.date, "m"), dateFormat(item.date, "dd"));
-            arr.push(t_obj_date, item.count);
+            t_arr = [t_obj_date, item.count];
+            arr.push(t_arr);
         });
         callback(arr);
     });
