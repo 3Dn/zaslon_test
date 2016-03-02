@@ -80,9 +80,9 @@ io.sockets.on('connection', function (socket) {
     Graph_kph.killogram_per_hour('scale2_log', function(ret){
         scale_2 = ret;
     });
-    Graph_kph.all_history('scale1_log', function(ret){
+/*    Graph_kph.all_history('scale1_log', function(ret){
         io.sockets.emit('all_history', {'all_history': ret});
-    });
+    });*/
 
     io.sockets.emit('kgph', {'scale_1' : scale_1, 'scale_2' : scale_2});
 
