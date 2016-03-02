@@ -2,8 +2,8 @@
  * Created by adm_korolev on 02.03.2016.
  */
 $(function () {
-    //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
-        socket.on('all_history', function(d){
+    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+       // socket.on('all_history', function(d){
             console.log(d);
         // Create the chart
         $('#hi_stock').highcharts('StockChart', {
@@ -19,7 +19,7 @@ $(function () {
 
             series : [{
                 name : 'AAPL Stock Price',
-                data : d.all_history,
+                data : data,
                 type : 'areaspline',
                 threshold : null,
                 tooltip : {
