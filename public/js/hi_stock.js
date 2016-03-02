@@ -14,11 +14,11 @@ $(function () {
             },
 
             title : {
-                text : 'AAPL Stock Price'
+                text : 'Данные по дням'
             },
 
             series : [{
-                name : 'AAPL Stock Price',
+                name : '3.5',
                 data : d.all_history,
                 type : 'areaspline',
                 threshold : null,
