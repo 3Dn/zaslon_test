@@ -40,7 +40,7 @@ function all_history(db, callback) {
         rows.forEach(function (item, i, rows) {
             var t_arr = [];
             var t_obj_date = Date.UTC(dateFormat(item.date, "yyyy"), dateFormat(item.date, "m"), dateFormat(item.date, "dd"));
-            t_arr = [t_obj_date, item.count];
+            t_arr = [t_obj_date, item.count*20];
             arr.push(t_arr);
         });
         callback(arr);
