@@ -31,7 +31,7 @@ function killogram_per_hour(db, callback) {
     });
 }
 
-function all_hystory(db, callback) {
+function all_history(db, callback) {
     var ret_count = 0;
     var sql = 'SELECT * FROM ' + db;
     local_conn.query(sql, function (err, rows, fields) {
@@ -47,4 +47,4 @@ function all_hystory(db, callback) {
 
 
 module.exports.killogram_per_hour = killogram_per_hour;
-module.exports.all_hystory = all_hystory;
+module.exports.all_history = all_history;
