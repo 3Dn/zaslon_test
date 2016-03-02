@@ -33,7 +33,7 @@ function killogram_per_hour(db, callback) {
 
 function all_history(db, callback) {
     var arr = [];
-    var sql = 'select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count from ' + db + ' where state="1" GROUP BY date(DATE)';
+    var sql = 'select date, count(*) as count from ' + db + ' where state="1" GROUP BY date(DATE)';
     local_conn.query(sql, function (err, rows, fields) {
         if (err) throw err;
         rows.forEach(function (item, i, rows) {
