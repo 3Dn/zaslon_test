@@ -39,7 +39,7 @@ $(function () {
                 }
             },
                 {
-                name : '2.5',
+                name : '2.5 ',
                 data : d.all_history,
                 type : 'areaspline',
                 threshold : null,
