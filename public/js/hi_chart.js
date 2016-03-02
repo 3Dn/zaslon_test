@@ -57,12 +57,12 @@ $(function () {
             series: [
                 {
                     type: 'area',
-                    name: '2.4 Кг/ч',
+                    name: '3.5 Кг/ч',
                     data: d.scale_1
                 },
                 {
                     type: 'area',
-                    name: '3.5 Кг/ч',
+                    name: '2.4 Кг/ч',
                     data: d.scale_2
                 }
             ]
