@@ -32,6 +32,7 @@ function killogram_per_hour(db, callback) {
 }
 
 function all_history(db, callback) {
+    var t_obj = {};
     var arr = [];
     var sql = 'select date, count(*) as count from ' + db + ' where state="1" GROUP BY date(DATE)';
     local_conn.query(sql, function (err, rows, fields) {
@@ -40,7 +41,7 @@ function all_history(db, callback) {
             var t_arr = [];
             var t_obj_date = Date.UTC(dateFormat(item.date, "yyyy"), dateFormat(item.date, "m"), dateFormat(item.date, "dd"));
             t_arr = [t_obj_date, item.count];
-            arr.push(t_arr);
+            arr.push(arr);
         });
         callback(arr);
     });
