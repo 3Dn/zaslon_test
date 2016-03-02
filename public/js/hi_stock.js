@@ -13,6 +13,10 @@ $(function () {
                 selected : 1
             },
 
+            legend: {
+                enabled: true
+            },
+
             title : {
                 text : 'Данные по дням'
             },
