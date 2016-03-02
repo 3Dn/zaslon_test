@@ -10,7 +10,7 @@ $(function () {
                 zoomType: 'x'
             },
             title: {
-                text: 'Данные по 3.5. График Кг/ч'
+                text: 'Данные за день. График Кг/ч'
             },
             subtitle: {
                 text: document.ontouchstart === undefined ?
