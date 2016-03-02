@@ -81,6 +81,7 @@ io.sockets.on('connection', function (socket) {
         scale_2 = ret;
     });
     Graph_kph.all_history('scale1_log', function(ret){
+        console.log(ret);
         io.sockets.emit('all_history', {'all_history': ret});
     });
 
