@@ -3,6 +3,13 @@ body {
 
 }
 
+#global_wrapper{
+    width:1215px;
+    height:auto;
+    display:block;
+    margin: 0 auto;
+}
+
 #logo {
     background: url('/images/header-logo_red.png') no-repeat;
     width: 92px;
