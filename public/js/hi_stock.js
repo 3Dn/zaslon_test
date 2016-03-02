@@ -4,6 +4,7 @@
 $(function () {
     //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
         socket.on('all_history', function(d){
+            console.log("HI: " + d.all_history);
         // Create the chart
         $('#hi_stock').highcharts('StockChart', {
 
