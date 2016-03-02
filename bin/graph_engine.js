@@ -33,7 +33,7 @@ function killogram_per_hour(db, callback) {
 
 function all_history(db, callback) {
     var ret_count = 0;
-    var sql = 'SELECT * FROM ' + db;
+    var sql = 'SELECT * FROM ' + db + 'WHERE 1';
     local_conn.query(sql, function (err, rows, fields) {
         if (err) throw err;
         rows.forEach(function (item, i, rows) {
