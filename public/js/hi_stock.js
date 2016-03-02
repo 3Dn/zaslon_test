@@ -19,7 +19,7 @@ $(function () {
 
             series : [{
                 name : '3.5',
-                data : d.all_history,
+                data : d.all_history_1,
                 type : 'areaspline',
                 threshold : null,
                 tooltip : {
@@ -40,7 +40,7 @@ $(function () {
             },
                 {
                 name : '2.5 ',
-                data : d.all_history,
+                data : d.all_history_2,
                 type : 'areaspline',
                 threshold : null,
                 tooltip : {

@@ -58,6 +58,8 @@ var io = require('socket.io')(server);
 var connectionsArray = [];
 var scale_1 = [];
 var scale_2 = [];
+var all_history_1 = [];
+var all_history_2 = [];
 
 var charts = require('./charts.js');
 
@@ -81,10 +83,13 @@ io.sockets.on('connection', function (socket) {
         scale_2 = ret;
     });
     Graph_kph.all_history('scale1_log', function(ret){
-        console.log(ret);
-        io.sockets.emit('all_history', {'all_history': ret});
+        all_history_1 = ret;
+    });
+    Graph_kph.all_history('scale2_log', function(ret){
+        all_history_2 = ret;
     });
 
+    io.sockets.emit('all_history', {'all_history_1': all_history_1, 'all_history_2': all_history_2});
     io.sockets.emit('kgph', {'scale_1' : scale_1, 'scale_2' : scale_2});
 
     socket.emit('sys_to_ligth_home_log_users_count', {'users_count': connectionsArray.length+1});
