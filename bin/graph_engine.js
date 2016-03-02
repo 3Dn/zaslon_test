@@ -31,4 +31,18 @@ function killogram_per_hour(db, callback) {
     });
 }
 
+function all_hystory(db, callback) {
+    var ret_count = 0;
+    var sql = 'SELECT * FROM ' + db;
+    local_conn.query(sql, function(err ,rows, fields){
+        if (err) throw err;
+            rows.forEach(function(item, i, rows){
+                if(item.state == 1){
+                    ret_count += 20;
+                }
+        };
+    return scale_2_log_day_count;
+};
+
+
 module.exports.killogram_per_hour = killogram_per_hour;
