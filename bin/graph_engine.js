@@ -32,17 +32,16 @@ function killogram_per_hour(db, callback) {
 }
 
 function all_history(db, callback) {
-    var ret_count = 0;
-    var sql = 'SELECT * FROM ' + db + ' WHERE 1=1';
+    var arr = [];
+    var sql = 'select CONCAT_WS('-',EXTRACT(DAY from date),EXTRACT(MONTH from date), EXTRACT(YEAR from date))as date, count(*) as count from ' + db + ' where state="1" GROUP BY date(DATE)';
     local_conn.query(sql, function (err, rows, fields) {
         if (err) throw err;
         rows.forEach(function (item, i, rows) {
-            if (item.state == 1) {
-                ret_count += 20;
-            }
+            var t_obj_date = Date.UTC(dateFormat(item.date, "yyyy"), dateFormat(item.date, "m"), dateFormat(item.date, "dd"));
+            arr.push(t_obj_date, item.count);
         });
     });
-    callback(ret_count);
+    callback(arr);
 }
 
 
