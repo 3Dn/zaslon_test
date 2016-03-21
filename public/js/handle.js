@@ -71,9 +71,11 @@ $(document).ready(function(){
         }else if(ws == '2'){
             $("#workspace_2").show();
             //init('myChart');
+            socket.emit("sensors");
+            console.log("EMIT SENSORS");
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
-            $("#from").val(lastWeek());
-            $("#to").val(today());
+            /*$("#from").val(lastWeek());
+            $("#to").val(today());*/
 
         }else if(ws == '3'){
             $("#workspace_3").show();
@@ -87,8 +89,7 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_5, #workspace_6").hide();
         }else if(ws == '5') {
             $("#workspace_5").show();
-            socket.emit("sensors");
-            console.log("EMIT SENSORS");
+
             /*
             socket.on("sensor_chunk", function(data){
                 console.log(JSON.parse(data));
