@@ -72,7 +72,8 @@ $(document).ready(function(){
             $("#workspace_2").show();
             //init('myChart');
             $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
-
+            $("#from").val(lastWeek());
+            $("#to").val(today());
 
         }else if(ws == '3'){
             $("#workspace_3").show();
@@ -88,7 +89,7 @@ $(document).ready(function(){
             $("#workspace_5").show();
             socket.emit("sensors");
             console.log("EMIT SENSORS");
-
+            /*
             socket.on("sensor_chunk", function(data){
                 console.log(JSON.parse(data));
                 var sensor = JSON.parse(data);
@@ -98,7 +99,7 @@ $(document).ready(function(){
                                         'Влажность: <span class="sensor_h"><b>'+sensor.h+'%</b></span><br/>'+
                                     '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>';
                 $("#sensors").empty().html(sebsor_tab);
-            });
+            });*/
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_6").hide();
 
         }else if(ws == '6'){
@@ -106,6 +107,72 @@ $(document).ready(function(){
             $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5").hide();
             socket.emit('daily_logs');
         }
+    });
+
+
+    $( "#from" ).datepicker({
+        //defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        dateFormat: "dd-mm-yy",
+        maxDate: new Date(),
+        closeText: 'Закрыть',
+        prevText: '&#x3c;Пред',
+        nextText: 'След&#x3e;',
+        currentText: 'Сегодня',
+        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
+            'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
+            'Июл','Авг','Сен','Окт','Ноя','Дек'],
+        dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+        dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+        //onClose: function( selectedDate ) {
+        //    $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        //}
+    });
+
+    $( "#to" ).datepicker({
+        //defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        dateFormat: "dd-mm-yy",
+        maxDate: new Date(),
+        closeText: 'Закрыть',
+        prevText: '&#x3c;Пред',
+        nextText: 'След&#x3e;',
+        currentText: 'Сегодня',
+        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
+            'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
+            'Июл','Авг','Сен','Окт','Ноя','Дек'],
+        dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+        dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
+        //onClose: function( selectedDate ) {
+        //    $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        //}
+    });
+
+    $("#refresh_chart").on("click", function(){
+        var from = $("#from").val(),
+            to = $("#to").val();
+        from = from.split("-")[2]+"-"+from.split("-")[1]+"-"+from.split("-")[0];
+        to = to.split("-")[2]+"-"+to.split("-")[1]+"-"+to.split("-")[0];
+        var obj = {};
+        obj.from = from;
+        obj.to = to;
+        console.log(obj);
+        socket.emit("chart_refresh", obj);
+
+        //from = Date.parse(from);
+        //to = Date.parse(to);
+        //
+        //var date = from;
+        //while(date <= to){
+        //    console.log(new Date(date));
+        //    date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
+        //}
     });
 
 
