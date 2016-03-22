@@ -21,7 +21,10 @@ $(function () {
             rangeSelector: {
                 allButtonsEnabled: true,
                 enabled: true,
-                selected: 1
+                selected: 2,
+                click: function(){
+                    alert("ХУЙХУЙХУЙ!");
+                }
             },
 
             series : [{
