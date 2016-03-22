@@ -9,9 +9,7 @@ $(function () {
         $('#hi_stock').highcharts('StockChart', {
 
 
-            rangeSelector : {
-                selected : 1
-            },
+
 
             legend: {
                 enabled: true
