@@ -1,6 +1,16 @@
 /**
  * Created by adm_korolev on 02.03.2016.
  */
+
+$.datepicker.setDefaults({
+    dateFormat: 'yy-mm-dd',
+    onSelect: function () {
+        this.onchange();
+        this.onblur();
+    }
+});
+
+
 $(function () {
     //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
         socket.on('all_history', function(d){
@@ -14,7 +24,6 @@ $(function () {
                 text : 'Данные по дням'
             },
             rangeSelector: {
-                allButtonsEnabled: true,
                 selected: 1
             },
 
@@ -60,9 +69,7 @@ $(function () {
                     ]
                 }
             }]
-        }, function (chart) {
-
-            // apply the date pickers
+        }, function(chart){
             setTimeout(function () {
                 $('input.highcharts-range-selector', $(chart.container).parent())
                     .datepicker();
