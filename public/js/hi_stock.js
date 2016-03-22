@@ -7,24 +7,14 @@ $(function () {
             console.log(d);
         // Create the chart
         $('#hi_stock').highcharts('StockChart', {
-
-
-
-
             legend: {
                 enabled: true
             },
-
             title : {
                 text : 'Данные по дням'
             },
             rangeSelector: {
-                allButtonsEnabled: true,
-                enabled: true,
-                selected: 2,
-                click: function(){
-                    alert("ХУЙХУЙХУЙ!");
-                }
+                selected: 1,
             },
 
             series : [{
@@ -69,6 +59,13 @@ $(function () {
                     ]
                 }
             }]
+        }, function (chart) {
+
+            // apply the date pickers
+            setTimeout(function () {
+                $('input.highcharts-range-selector', $(chart.container).parent())
+                    .datepicker();
+            }, 0);
         });
     });
 });
