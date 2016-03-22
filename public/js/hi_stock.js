@@ -14,7 +14,7 @@ $(function () {
             },
 
             legend: {
-                enabled: true
+                enabled: false
             },
 
             title : {
