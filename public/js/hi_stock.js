@@ -14,7 +14,8 @@ $(function () {
                 text : 'Данные по дням'
             },
             rangeSelector: {
-                selected: 1,
+                allButtonsEnabled: true,
+                selected: 1
             },
 
             series : [{
