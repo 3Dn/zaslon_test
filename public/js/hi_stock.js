@@ -20,6 +20,7 @@ $(function () {
             },
             rangeSelector: {
                 allButtonsEnabled: true,
+                enabled: true,
                 selected: 2
             },
 
