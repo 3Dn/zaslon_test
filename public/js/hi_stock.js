@@ -18,6 +18,10 @@ $(function () {
             title : {
                 text : 'Данные по дням'
             },
+            rangeSelector: {
+                allButtonsEnabled: true,
+                selected: 2
+            },
 
             series : [{
                 name : '3.5',
