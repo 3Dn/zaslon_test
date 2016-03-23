@@ -17,11 +17,8 @@ $.datepicker.setDefaults({
         'Июл','Авг','Сен','Окт','Ноя','Дек'],
     dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
     dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-    dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-    onSelect: function () {
-        this.onchange();
-        this.onblur();
-    }
+    dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
+
 });
 
 
@@ -86,8 +83,7 @@ $(function () {
             }]
         }, function(chart){
             setTimeout(function () {
-                $('input.highcharts-range-selector', $(chart.container).parent())
-                    .datepicker();
+                $('input.highcharts-range-selector', $(chart.container).parent()).datepicker();
             }, 0);
         });
     });

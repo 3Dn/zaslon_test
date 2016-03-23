@@ -320,3 +320,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 4px;
     margin: 5px 15px 15px
 }
+
+#modal_chart{
+    display:none;
+}
