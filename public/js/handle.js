@@ -158,6 +158,7 @@ $(document).ready(function(){
         //}
     });
 
+/*
     $("#refresh_chart").on("click", function(){
         var from = $("#from").val(),
             to = $("#to").val();
@@ -178,6 +179,7 @@ $(document).ready(function(){
         //    date = date + (60*60*24*1000); //добавляем сутки в милисекундах;
         //}
     });
+*/
 
 
 
