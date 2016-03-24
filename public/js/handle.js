@@ -67,26 +67,20 @@ $(document).ready(function(){
        var ws = $(this).attr("ws");
         if(ws == '1'){
             $("#workspace_1").show();
-            $("#workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
+            $("#workspace_2, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
         }else if(ws == '2'){
             $("#workspace_2").show();
             //init('myChart');
             socket.emit("sensors");
             console.log("EMIT SENSORS");
-            $("#workspace_1, #workspace_3, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
+            $("#workspace_1, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
             /*$("#from").val(lastWeek());
             $("#to").val(today());*/
 
-        }else if(ws == '3'){
-            $("#workspace_3").show();
-            // Setup the WebSocket connection and start the player
-            //var client = new WebSocket( 'ws://192.168.1.29:9999/' );
-            //var canvas = document.getElementById('videoCanvas');
-            //var player = new jsmpeg(client, {canvas:canvas});
-            $("#workspace_1, #workspace_2, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
+
         }else if(ws == '4'){
             $("#workspace_4").show();
-            $("#workspace_1, #workspace_2, #workspace_3, #workspace_5, #workspace_6, #workspace_7").hide();
+            $("#workspace_1, #workspace_2, #workspace_5, #workspace_6, #workspace_7").hide();
         }else if(ws == '5') {
             $("#workspace_5").show();
 
@@ -101,15 +95,15 @@ $(document).ready(function(){
                                     '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>';
                 $("#sensors").empty().html(sebsor_tab);
             });*/
-            $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_6").hide();
+            $("#workspace_1, #workspace_2,  #workspace_4, #workspace_6").hide();
 
         }else if(ws == '6'){
             $("#workspace_6").show();
-            $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_7").hide();
+            $("#workspace_1, #workspace_2, #workspace_4, #workspace_5, #workspace_7").hide();
             socket.emit('daily_logs');
         }else if(ws == '7'){
             $("#workspace_7").show();
-            $("#workspace_1, #workspace_2, #workspace_3, #workspace_4, #workspace_5, #workspace_6").hide();
+            $("#workspace_1, #workspace_2, #workspace_4, #workspace_5, #workspace_6").hide();
         }
     });
 
