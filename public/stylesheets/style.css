@@ -217,11 +217,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_home{
     background:url('/images/icon_house.png') no-repeat center center;
 }
-#button_camera{
-    background:url('/images/icon_camera.png') no-repeat center center;
-}
 #button_weight{
-    background:url('/images/icon_weight.png') no-repeat center center;
+    background:url('/images/icon_chart.png') no-repeat center center;
 }
 #button_sensor{
     background:url('/images/icon_sensor.png') no-repeat center center;
@@ -229,6 +226,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 #button_logs{
     background:url('/images/icon_logs.png') no-repeat center center;
 }
+#button_map{
+    background:url('/images/icon_weight.png') no-repeat center center;
+}
+
 #logs, #charts, #videos, #linemap, #sensors, #scales, #map {
     margin: 5%;
     padding: 2%;
@@ -320,7 +321,6 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 4px;
     margin: 5px 15px 15px
 }
-
 #modal_chart{
     display:none;
 }
