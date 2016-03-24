@@ -18,6 +18,7 @@ $(function () {
             },
             rangeSelector: {
                 selected: 1,
+                inputEnabled:true
             },
 
             series : [{
