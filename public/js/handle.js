@@ -66,22 +66,25 @@ $(document).ready(function(){
     $(".u_button").on("click", function(){
        var ws = $(this).attr("ws");
         if(ws == '1'){
+            $(".main_area").hide();
             $("#workspace_1").show();
-            $("#workspace_2, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
+
         }else if(ws == '2'){
+            $(".main_area").hide();
             $("#workspace_2").show();
             //init('myChart');
             socket.emit("sensors");
             console.log("EMIT SENSORS");
-            $("#workspace_1, #workspace_4, #workspace_5, #workspace_6, #workspace_7").hide();
+
             /*$("#from").val(lastWeek());
             $("#to").val(today());*/
 
 
         }else if(ws == '4'){
+            $(".main_area").hide();
             $("#workspace_4").show();
-            $("#workspace_1, #workspace_2, #workspace_5, #workspace_6, #workspace_7").hide();
         }else if(ws == '5') {
+            $(".main_area").hide();
             $("#workspace_5").show();
 
             /*
@@ -95,15 +98,14 @@ $(document).ready(function(){
                                     '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>';
                 $("#sensors").empty().html(sebsor_tab);
             });*/
-            $("#workspace_1, #workspace_2,  #workspace_4, #workspace_6, #workspace_7").hide();
 
         }else if(ws == '6'){
+            $(".main_area").hide();
             $("#workspace_6").show();
-            $("#workspace_1, #workspace_2, #workspace_4, #workspace_5, #workspace_7").hide();
             socket.emit('daily_logs');
         }else if(ws == '7'){
+            $(".main_area").hide();
             $("#workspace_7").show();
-            $("#workspace_1, #workspace_2, #workspace_4, #workspace_5, #workspace_6").hide();
         }
     });
 
