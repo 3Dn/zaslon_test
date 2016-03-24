@@ -16,6 +16,23 @@ $(function () {
             title : {
                 text : 'Данные по дням'
             },
+            buttons: [{
+                type: 'month',
+                count: 1,
+                text: '1m'
+            }, {
+                type: 'month',
+                count: 3,
+                text: '3m'
+            }, {
+                type: 'month',
+                count: 6,
+                text: '6m'
+            }, {
+                type: 'year',
+                count: 1,
+                text: '1y'
+            }],
             rangeSelector: {
                 //allButtonsEnabled: true,
                 selected: 0
