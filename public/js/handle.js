@@ -95,7 +95,7 @@ $(document).ready(function(){
                                     '</div><div class="sensor_tab"></div><div class="sensor_tab"></div>';
                 $("#sensors").empty().html(sebsor_tab);
             });*/
-            $("#workspace_1, #workspace_2,  #workspace_4, #workspace_6").hide();
+            $("#workspace_1, #workspace_2,  #workspace_4, #workspace_6, #workspace_7").hide();
 
         }else if(ws == '6'){
             $("#workspace_6").show();
