@@ -327,3 +327,32 @@ input.cmn-toggle-round-flat:checked + label:after {
 #modal_chart{
     display:none;
 }
+.line_wrapper{
+    width:100px;
+    height:26px;
+    position:absolute;
+}
+.line_info{
+    width: 70px;
+    height: 26px;
+    border: 2px solid #606060;
+    display: inline-block;
+    float: left;
+    margin-right: 4px;
+}
+.line_settings{
+    display:inline-block;
+    float: left;
+    width:26px;
+    height:26px;
+    background: url('/images/gear.png') no-repeat center center;
+    cursor: pointer;
+}
+.line_green{
+    background: #8ce196;
+    color:#000;
+}
+.line_red{
+    background: #c90c0f;
+    color:#fff;
+}
