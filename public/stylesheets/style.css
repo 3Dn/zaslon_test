@@ -240,6 +240,9 @@ input.cmn-toggle-round-flat:checked + label:after {
     font-family: Consolas, sans-serif;
     overflow: auto;
 }
+#map{
+    background: url('/images/linemap.png') no-repeat center center;
+}
 #myChart{
     display:block;
     margin: 25px auto;
