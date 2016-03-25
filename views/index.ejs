@@ -118,10 +118,15 @@
       </div>
       <div id="workspace_7" class="work_style main_area">
         <div id="map">
-          <div class="line_wrapper">
-            <div class="line_info"></div>
-            <div class="line_settings"></div>
-          </div>
+          <%
+            var elements = ["trans_1", "bunker", "trans_2", "syclone", "trans_3", "knives", "vibro", "line_scales"];
+            for(var i = 0; i < 9; i++){
+          %>
+            <div class="line_wrapper" id="<%=elements[i]%>">
+              <div class="line_info"></div>
+              <div class="line_settings"></div>
+            </div>
+          <%}%>
           <div id="modal_chart"></div>
         </div>
       </div>

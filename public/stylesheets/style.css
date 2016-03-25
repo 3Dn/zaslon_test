@@ -329,11 +329,11 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 .line_wrapper{
     width:100px;
-    height:26px;
+    height:30px;
     position:absolute;
 }
 .line_info{
-    width: 70px;
+    width: 65px;
     height: 26px;
     border: 2px solid #606060;
     display: inline-block;
@@ -355,4 +355,37 @@ input.cmn-toggle-round-flat:checked + label:after {
 .line_red{
     background: #c90c0f;
     color:#fff;
+}
+/*["trans_1", "bunker", "trans_2", "syclone", "trans_3", "knives", "vibro", "line_scales"]*/
+#trans_1{
+    top:120px;
+    left:100px;
+}
+#bunker{
+    top:220px;
+    left:200px;
+}
+#trans_2{
+    top:205px;
+    left:320px;
+}
+#syclone{
+    top:205px;
+    left:460px;
+}
+#trans_3{
+    top:250px;
+    left:497px;
+}
+#knives{
+    top:300px;
+    left:575px;
+}
+#vibro{
+    top:440px;
+    left:530px;
+}
+#line_scales{
+    top:420px;
+    left:690px;
 }
