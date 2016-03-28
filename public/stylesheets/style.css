@@ -358,31 +358,31 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 /*["trans_1", "bunker", "trans_2", "syclone", "trans_3", "knives", "vibro", "line_scales"]*/
 #trans_1{
-    top:397px;
-    left:282px;
+    top:438px;
+    left:285px;
 }
 #bunker{
-    top:500px;
-    left:327px;
+    top:515px;
+    left:330px;
 }
 #trans_2{
-    top:485px;
-    left:450px;
+    top:467px;
+    left:452px;
 }
 #syclone{
-    top:485px;
+    top:438px;
     left:575px;
 }
 #trans_3{
-    top:531px;
-    left:624px;
+    top:452px;
+    left:627px;
 }
 #knives{
-    top:632px;
-    left:735px;
+    top:470px;
+    left:700px;
 }
 #vibro{
-    top:720px;
+    top:578px;
     left:650px;
 }
 #line_scales{
