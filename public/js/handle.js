@@ -108,6 +108,32 @@ $(document).ready(function(){
             $("#workspace_7").show();
         }
     });
+    
+    $("#modal_chart").dialog({
+        modal:true,
+        autoOpen:false,
+        width:720,
+        height:600,
+        buttons: [
+            {
+                text:"Сохранить",
+                click:function() {
+                    $("#modal_chart").dialog("close");
+                }
+            },
+            {
+                text:"Отмена",
+                click:function(){
+                    $("#modal_chart").dialog("close");
+                }
+
+            }
+        ]
+    });
+
+    $(".line_settings").on("click", function(){
+        $("#modal_chart").dialog("open");
+    });
 
 
     $( "#from" ).datepicker({
