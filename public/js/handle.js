@@ -143,6 +143,8 @@ $(document).ready(function(){
         $("#modal_chart").dialog("option", "title", title).dialog("open");
         if(title == 'line_scales') {
             $("#modal_canvas").show();
+        }else{
+            $("#modal_canvas").hide();
         }
 
 
