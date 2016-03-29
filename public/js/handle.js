@@ -114,6 +114,10 @@ $(document).ready(function(){
         autoOpen:false,
         width:720,
         height:600,
+        show: {
+            effect: "fold",
+            duration: 200
+        },
         buttons: [
             {
                 text:"Сохранить",
@@ -132,7 +136,8 @@ $(document).ready(function(){
     });
 
     $(".line_settings").on("click", function(){
-        $("#modal_chart").dialog("open");
+        var title = $(this).parents(".line_wrapper").attr("id");
+        $("#modal_chart").dialog("option", "title", title).dialog("open");
     });
 
 
