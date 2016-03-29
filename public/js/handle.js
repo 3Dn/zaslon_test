@@ -136,8 +136,71 @@ $(document).ready(function(){
     });
 
     $(".line_settings").on("click", function(){
+        socket.emit("sensors");
+
         var title = $(this).parents(".line_wrapper").attr("id");
         $("#modal_chart").dialog("option", "title", title).dialog("open");
+
+        socket.on('all_history', function(d){
+            console.log(d);
+            // Create the chart
+            $('#modal_chart').highcharts('StockChart', {
+                legend: {
+                    enabled: true
+                },
+                title : {
+                    text : 'Данные по дням'
+                },
+                buttons: [{
+                    type: 'month',
+                    count: 1,
+                    text: '1m'
+                }, {
+                    type: 'month',
+                    count: 3,
+                    text: '3m'
+                }, {
+                    type: 'month',
+                    count: 6,
+                    text: '6m'
+                }, {
+                    type: 'year',
+                    count: 1,
+                    text: '1y'
+                }],
+                rangeSelector: {
+                    //allButtonsEnabled: true,
+                    selected: 0
+
+                },
+
+                series : [{
+                    name : '3.5',
+                    data : d.all_history_1,
+                    type : 'areaspline',
+                    threshold : null,
+                    tooltip : {
+                        valueDecimals : 2
+                    },
+                    fillColor : {
+                        linearGradient : {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops : [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    }
+                }]
+            }, function(chart){
+                setTimeout(function () {
+                    $('input.highcharts-range-selector', $(chart.container).parent()).datepicker();
+                }, 0);
+            });
+        });
     });
 
 
