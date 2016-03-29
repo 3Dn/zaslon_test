@@ -112,8 +112,8 @@ $(document).ready(function(){
     $("#modal_chart").dialog({
         modal:true,
         autoOpen:false,
-        width:720,
-        height:600,
+        width:800,
+        height:650,
         show: {
             effect: "fold",
             duration: 200
@@ -139,6 +139,9 @@ $(document).ready(function(){
         socket.emit("sensors");
 
         var title = $(this).parents(".line_wrapper").attr("id");
+        if(title == 'line_scales') {
+            $("#modal_chart").append(' <div id="modal_canvas" style="width: 95%; height: 95%; margin: 0 auto; max-height: 600px; max-width: 720px"></div>');
+        }
         $("#modal_chart").dialog("option", "title", title).dialog("open");
 
 
@@ -146,13 +149,13 @@ $(document).ready(function(){
     socket.on('all_history', function(d){
         console.log(d);
         // Create the chart
-        $("#modal_chart").append(' <div id="modal_canvas" style="width: 95%; height: 95%; margin: 0 auto; max-height: 600px; max-width: 720px"></div>');
+
         $('#modal_canvas').highcharts('StockChart', {
             legend: {
                 enabled: true
             },
             title : {
-                text : 'Данные по дням'
+                text : 'Весы 3.5'
             },
             buttons: [{
                 type: 'month',
