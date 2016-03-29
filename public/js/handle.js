@@ -113,7 +113,7 @@ $(document).ready(function(){
         modal:true,
         autoOpen:false,
         width:800,
-        height:650,
+        height:750,
         show: {
             effect: "fold",
             duration: 200
