@@ -139,10 +139,11 @@ $(document).ready(function(){
         socket.emit("sensors");
 
         var title = $(this).parents(".line_wrapper").attr("id");
-        if(title == 'line_scales') {
-            $("#modal_chart").append(' <div id="modal_canvas" style="width: 95%; height: 95%; margin: 0 auto; max-height: 600px; max-width: 720px"></div>');
-        }
+
         $("#modal_chart").dialog("option", "title", title).dialog("open");
+        if(title == 'line_scales') {
+            $("#modal_chart").show();
+        }
 
 
     });

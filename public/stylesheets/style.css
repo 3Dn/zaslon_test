@@ -389,3 +389,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     top:704px;
     left:805px;
 }
+
+#modal_canvas{
+    display: none;
+}
