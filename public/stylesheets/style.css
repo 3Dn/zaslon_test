@@ -245,6 +245,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     border-radius: 10px;
     font-family: Consolas, sans-serif;
     overflow: auto;
+    position: inherit;
 }
 #map{
     background: url('/images/linemap.png') no-repeat center center;
