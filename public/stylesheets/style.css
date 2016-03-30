@@ -15,6 +15,8 @@ body {
     background: url('/images/header-logo_red.png') no-repeat;
     width: 92px;
     height: 85px;
+    position: relative;
+    left: 5%;
 }
 
 #u_menu {
