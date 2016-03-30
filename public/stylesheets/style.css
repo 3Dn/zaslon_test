@@ -4,10 +4,11 @@ body {
 }
 
 #global_wrapper{
-    width:1225px;
+    width:100%;
     height:auto;
     display:block;
     margin: 0 auto;
+    position: absolute;
 }
 
 #logo {
@@ -17,16 +18,17 @@ body {
 }
 
 #u_menu {
-    margin-top: 10px;
+    margin: 10px auto 0;
     height: 100px;
-    width: 1212px;
+    width: 95%;
     clear: both;
 }
 
 #wrapper{
-    width:100%;
+    width:95%;
     height:auto;
     display:block;
+    margin: 10px auto 0;
 }
 
 #workspace_1, #workspace_2,
@@ -34,7 +36,7 @@ body {
 #workspace_5, #workspace_6,
 #workspace_7{
     height: 727px;
-    width: 900px;
+    width: 73%;
     margin-top: 10px;
     float: left;
     display: inline-block;
@@ -48,10 +50,12 @@ body {
 
 #io-status-box {
     height: auto;
-    width: 300px;
+    width: 25%;
     margin: 10px;
-    float: left;
+    float: right;
     display: inline-block;
+    position: absolute;
+
 }
 
 #window {
@@ -231,10 +235,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 }
 
 #logs, #charts, #videos, #linemap, #sensors, #scales, #map {
-    margin: 5%;
+    margin: 2%;
     padding: 2%;
     height: 86%;
-    width: 86%;
+    width: 92%;
     border: 1px dashed #606060;
     border-radius: 10px;
     font-family: Consolas, sans-serif;
