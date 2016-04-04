@@ -236,7 +236,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     background:url('/images/icon_weight.png') no-repeat center center;
 }
 
-#logs, #charts, #videos, #linemap, #sensors, #scales, #map {
+#logs, #charts, #videos, #linemap, #sensors, #scales, #map, #templates {
     margin: 2%;
     padding: 2%;
     height: 86%;
@@ -246,6 +246,10 @@ input.cmn-toggle-round-flat:checked + label:after {
     font-family: Consolas, sans-serif;
     overflow: auto;
     position: inherit;
+}
+#templates{
+    display: none;
+
 }
 #map{
     background: url('/images/linemap.png') no-repeat center center;
@@ -399,4 +403,11 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #modal_canvas{
     display: none;
+}
+
+#show_templates{
+    display: block;
+    width: 15px;
+    height: 80px;
+    position: absolute;
 }

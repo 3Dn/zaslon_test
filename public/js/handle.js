@@ -52,6 +52,7 @@ $(document).ready(function(){
 
 
     $("input[type='button'], button").button().tooltip();
+    $("#show_templates").tooltip();
 
     $(".cmn-toggle").on("click", function(){ //включаем-выключаем лампочки
         var state = $(this).prop("checked"),
