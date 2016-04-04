@@ -283,8 +283,9 @@ $(document).ready(function(){
     $("#show_templates").on("click",  function(){
         var state = $(this).attr("state");
         if(state == '0'){
-            $("#templates").show("slide", { direction: "right" }, 500);
             $("#map").hide();
+            $("#templates").show("slide", { direction: "right" }, 500);
+
             $(this).attr("state", '1');
             $(this).html("&#10097");
         }else{
