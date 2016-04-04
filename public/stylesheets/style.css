@@ -407,7 +407,13 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #show_templates{
     display: block;
+    float: right;
+    z-index: 10;
     width: 15px;
-    height: 80px;
-    position: absolute;
+    height: 100px;
+    position: relative;
+    border: 1px solid #606060;
+    cursor: pointer;
+    margin-top: 300px;
+    border-radius: 5px 0 0 5px;
 }
