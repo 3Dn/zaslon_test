@@ -236,7 +236,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     background:url('/images/icon_weight.png') no-repeat center center;
 }
 
-#logs, #charts, #videos, #linemap, #sensors, #scales, #map, #templates {
+#logs, #charts, #videos, #linemap, #sensors, #scales, #map{
     margin: 2%;
     padding: 2%;
     height: 86%;
@@ -247,12 +247,12 @@ input.cmn-toggle-round-flat:checked + label:after {
     overflow: auto;
     position: inherit;
 }
-#templates{
-    display: none;
-    background: #f3f3f3 none repeat scroll 0 0;
-}
+
 #map{
     background: url('/images/linemap.png') no-repeat center center;
+}
+#templates{
+    display: none;
 }
 #myChart{
     display:block;
