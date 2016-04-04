@@ -284,7 +284,7 @@ $(document).ready(function(){
         var state = $(this).attr("state");
         if(state == '0'){
             $("#map").hide();
-            $("#templates").show("slide", { direction: "right" }, 200);
+            $("#templates").show();
             $(this).attr("state", '1');
             $(this).html("&#10097");
         }else{
