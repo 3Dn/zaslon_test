@@ -351,7 +351,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     float: left;
     margin-right: 4px;
 }
-.line_settings, #show_templates{
+.line_settings{
     display:inline-block;
     float: left;
     width:26px;
@@ -403,4 +403,10 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #modal_canvas{
     display: none;
+}
+#show_templates{
+    background: url('/images/gear.png') no-repeat center center;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
 }
