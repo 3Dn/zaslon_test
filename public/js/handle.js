@@ -284,12 +284,12 @@ $(document).ready(function(){
         var state = $(this).attr("state");
         if(state == '0'){
             $("#map").hide();
-            $("#templates").show("slide", { direction: "right" }, 500);
+            $("#templates").show("slide", { direction: "right" }, 200);
 
             $(this).attr("state", '1');
             $(this).html("&#10097");
         }else{
-            $("#templates").hide("slide", { direction: "left" }, 500);
+            $("#templates").hide("slide", { direction: "right" }, 100);
             $("#map").show();
             $(this).attr("state", '0');
             $(this).html("&#10096");
