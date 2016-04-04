@@ -351,7 +351,7 @@ input.cmn-toggle-round-flat:checked + label:after {
     float: left;
     margin-right: 4px;
 }
-.line_settings{
+.line_settings, #show_templates{
     display:inline-block;
     float: left;
     width:26px;
@@ -403,17 +403,4 @@ input.cmn-toggle-round-flat:checked + label:after {
 
 #modal_canvas{
     display: none;
-}
-
-#show_templates{
-    display: block;
-    float: right;
-    z-index: 10;
-    width: 15px;
-    height: 100px;
-    position: relative;
-    border: 1px solid #606060;
-    cursor: pointer;
-    margin-top: 300px;
-    border-radius: 5px 0 0 5px;
 }

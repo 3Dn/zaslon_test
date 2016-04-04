@@ -281,18 +281,34 @@ $(document).ready(function(){
 */
 
     $("#show_templates").on("click",  function(){
-        var state = $(this).attr("state");
-        if(state == '0'){
-            $("#map").hide();
-            $("#templates").show();
-            $(this).attr("state", '1');
-            $(this).html("&#10097");
-        }else{
-            $("#map").show();
-            $("#templates").hide();
-            $(this).attr("state", '0');
-            $(this).html("&#10096");
-        }
+        $("#templates").dialog("open");
+    });
+
+    $("#templates").dialog({
+        title: "Редактор шаблонов",
+        modal:true,
+        autoOpen:false,
+        width:1000,
+        height:750,
+        show: {
+            effect: "fold",
+            duration: 200
+        },
+        buttons: [
+            {
+                text:"Сохранить",
+                click:function() {
+                    $("#templates").dialog("close");
+                }
+            },
+            {
+                text:"Отмена",
+                click:function(){
+                    $("#templates").dialog("close");
+                }
+
+            }
+        ]
     });
 
 
