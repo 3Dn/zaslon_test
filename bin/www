@@ -113,6 +113,8 @@ io.sockets.on('connection', function (socket) {
         socket.emit('scale_log', daily);
     });
 
+
+
     socket.on('chart_refresh', function(data){
         var chart_data =  Logs.chart_log(data.from, data.to);
         console.log(chart_data );
@@ -142,6 +144,10 @@ io.sockets.on('connection', function (socket) {
         }, 1);
         log_getter.unref();
     }
+
+    socket.on("save_new_template",  function(data){
+        console.log(data);
+    });
 
   /*  socket.on("sensors", function(){
         //setImmediate(function(){

@@ -296,6 +296,17 @@ $(document).ready(function(){
             {
                 text:"Сохранить",
                 click:function() {
+                    var name = $("#template_name").val(),
+                        nor_1 = $("#nor_1_low").val() + "_" + $("#nor_1_up").val(),
+                        nor_2 = $("#nor_2_low").val() + "_" + $("#nor_2_up").val(),
+                        nor_3 = $("#nor_3_low").val() + "_" + $("#nor_3_up").val(),
+                        blansh = $("#blansh_low").val() + "_" + $("#bansh_up").val(),
+                        knives = $("#knives_low").val() + "_" + $("#knives_up").val(),
+                        vibro = $("#vibro_low").val() + "_" + $("#vibro_up").val();
+
+                    var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
+                    var obj = {name:name, template:template};
+                    socket.emit("save_new_template", obj);
                     $("#templates").dialog("close");
                 }
             },
