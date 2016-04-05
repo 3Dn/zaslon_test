@@ -413,3 +413,8 @@ input.cmn-toggle-round-flat:checked + label:after {
 #templates input{
     width:50px;
 }
+#templates label{
+    width:80px;
+    margin: 10px 0;
+    display: inline-block;
+}

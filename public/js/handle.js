@@ -288,8 +288,6 @@ $(document).ready(function(){
         title: "Редактор шаблонов",
         modal:true,
         autoOpen:false,
-        width:1000,
-        height:750,
         show: {
             effect: "fold",
             duration: 200
