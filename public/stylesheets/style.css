@@ -418,3 +418,6 @@ input.cmn-toggle-round-flat:checked + label:after {
     margin: 10px 0;
     display: inline-block;
 }
+#template_name{
+    width:150px;
+}
