@@ -8,6 +8,9 @@ var app = require('../app');
 var debug = require('debug')('zaslon_test:server');
 var http = require('http');
 var us = require('underscore');
+var db  = require('./db_engine');
+var local_conn = db.connection();
+
 
 //var request = require('request');
 
@@ -146,7 +149,10 @@ io.sockets.on('connection', function (socket) {
     }
 
     socket.on("save_new_template",  function(data){
-        console.log(data);
+        // console.log(data);
+        console.log(data.name);
+        console.log(data.template);
+        // local_conn.query("INSERT INTO templates SET ");
     });
 
   /*  socket.on("sensors", function(){
