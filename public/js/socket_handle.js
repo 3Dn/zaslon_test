@@ -99,7 +99,9 @@ socket.on("load_template_list", function(data){
 
 
 socket.on("load_template_info", function(data){
-    console.log(JSON.parse(data));
+    var info = JSON.parse(data);
+    
+    $("#edit_template_dialog").dialog("option", "title", "Редактирование шаблона &laquo;"+info.name+"&raquo;").dialog("open");
 });
 
 

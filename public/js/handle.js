@@ -329,7 +329,6 @@ $(document).ready(function(){
     });
 
     $("#edit_template_dialog").dialog({
-        title: "Редактирование шаблона",
         modal:true,
         autoOpen:false,
         show: {
