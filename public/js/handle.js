@@ -291,7 +291,7 @@ $(document).ready(function(){
 
 
     $("#new_template_dialog").dialog({
-        title: "Редактор шаблонов",
+        title: "Новый шааблон",
         modal:true,
         autoOpen:false,
         show: {
@@ -314,6 +314,7 @@ $(document).ready(function(){
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {name:name, template:template, action:"save_new"};
                     socket.emit("save_new_template", obj);
+                    socket.emit("get_template_list");
                     $("#new_template_dialog").dialog("close");
                 }
             },
