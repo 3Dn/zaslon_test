@@ -149,10 +149,13 @@ io.sockets.on('connection', function (socket) {
     }
 
     socket.on("save_new_template",  function(data){
-        // console.log(data);
-        console.log(data.name);
-        console.log(data.template);
-        // local_conn.query("INSERT INTO templates SET ");
+        if(data.action == "save_new"){
+            local_conn.query("INSERT INTO templates SET name='"+data.name+"', template='"+data.template+"'");
+        }else if(data.action == "edit") {
+            local_conn.query("UPDATE templates SET name='"+data.name+"', template='"+data.template+"' WHERE id='"+data.id+"'");
+        }else if(data.action == "delete"){
+            local_conn.query("DELETE FROM templates WHERE id='"+data.id+"'");
+        }
     });
 
   /*  socket.on("sensors", function(){
