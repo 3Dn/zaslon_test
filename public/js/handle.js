@@ -339,20 +339,20 @@ $(document).ready(function(){
             {
                 text:"Сохранить",
                 click:function() {
-                    var dialog = $("edit_template_dialog");
+                    var dialog = $("#edit_template_dialog");
                     var name = dialog.find("#template_name").val(),
                         nor_1 = (dialog.find("#edit_nor_1_low").val() || '0') + "_" + (dialog.find("#edit_nor_1_up").val() || '0'),
                         nor_2 = (dialog.find("#edit_nor_2_low").val() || '0') + "_" + (dialog.find("#edit_nor_2_up").val() || '0'),
                         nor_3 = (dialog.find("#edit_nor_3_low").val() || '0') + "_" + (dialog.find("#edit_nor_3_up").val() || '0'),
                         blansh = (dialog.find("#edit_blansh_low").val() || '0') + "_" + (dialog.find("#edit_blansh_up").val() || '0'),
                         knives = (dialog.find("#edit_knives_low").val() || '0') + "_" + (dialog.find("#edit_knives_up").val() || '0'),
-                        vibro = (dialog.find("#edit_vibro_low").val() || '0') + "_" + (dialog.find("#edit_vibro_up").val() || '0'),
-                        id = dialog.find("#template_edit_id").val();
+                        vibro = (dialog.find("#edit_vibro_low").val() || '0') + "_" + (dialog.find("#edit_vibro_up").val() || '0');
+                    var id = dialog.find("#template_edit_id").val();
 
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {id:id, name:name, template:template, action:"edit"};
                     socket.emit("save_template", obj);
-                    console.log(obj); 
+                    console.log(obj);
                     socket.emit("get_template_list");
                     $("#edit_template_dialog").dialog("close");
                 }
