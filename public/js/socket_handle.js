@@ -80,13 +80,12 @@ socket.on("chart_refresh_data", function(data){
 
 });
 $(document).ready(function(){
-    socket.emit("get_templates");
+    socket.emit("get_template_list");
 });
 
 
-socket.on("load_templates", function(data){
+socket.on("load_template_list", function(data){
     console.log(data);
-    
 });
 
 

@@ -158,6 +158,22 @@ io.sockets.on('connection', function (socket) {
         }
     });
 
+    socket.on("get_template_list", function(){
+        var templates = [];
+        var sql = 'SELECT id, name, current FROM templates';
+        local_conn.query(sql, function (err, rows, fields) {
+            if (err) throw err;
+            rows.forEach(function (item) {
+                var t_obj = {};
+                t_obj.id = item.id;
+                t_obj.name = item.name;
+                t_obj.current = item.current;
+                templates.push(t_obj);
+            });
+            socket.emit("load_template_list", JSON.stringify(templates));
+        });
+    });
+
   /*  socket.on("sensors", function(){
         //setImmediate(function(){
             console.log("___________________ EMIT SENSORS ______________________");
