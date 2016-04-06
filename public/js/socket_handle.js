@@ -117,7 +117,8 @@ socket.on("load_template_info", function(data){
         '<input type="text" value="'+templates[4].split("_")[0]+'" id="knives_low"> - <input type="text" value="'+templates[4].split("_")[1]+'" id="knives_up"><br>'+
         '<label for="vibro_low">Сетки:</label>'+
         '<input type="text" value="'+templates[5].split("_")[0]+'" id="vibro_low"> - <input type="text" value="'+templates[5].split("_")[1]+'" id="vibro_up">';
-    $("#edit_template_dialog").html(qwe).dialog("option", "title", "Редактирование шаблона "+info.name).dialog("open");
+    $("#edit_template_dialog").html(qwe);
+    $("#edit_template_dialog").dialog("option", "title", "Редактирование шаблона "+info.name).dialog("open");
 });
 
 
