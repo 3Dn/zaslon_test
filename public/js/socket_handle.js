@@ -95,7 +95,6 @@ socket.on("load_template_list", function(data){
         list += '<option value="'+v.id+'" '+sel+'>'+v.name+'</option>';
     });
     $("#template_list").html(list);
-
 });
 
 

@@ -323,6 +323,11 @@ $(document).ready(function(){
         ]
     });
 
+    $("#set_templates").on("click",  function(){
+        var curr = $("#template_list").val();
+        socket.emit("set_template", curr);
+    });
+
 
 });
 
