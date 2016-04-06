@@ -404,16 +404,11 @@ input.cmn-toggle-round-flat:checked + label:after {
 #modal_canvas{
     display: none;
 }
-#show_templates{
-    background: url('/images/gear.png') no-repeat center center;
-    width: 26px;
-    height: 26px;
-    display: inline-block;
-}
-#templates input{
+
+#new_template_dialog input{
     width:50px;
 }
-#templates label{
+#new_template_dialog label{
     width:80px;
     margin: 10px 0;
     display: inline-block;

@@ -118,7 +118,17 @@
       </div>
       <div id="workspace_7" class="work_style main_area">
         <div id="map">
-          <div id="templates">
+          <select id="template_list">
+            <!--<option value="1">Арахис 1</option>
+            <option value="2">Арахис 2</option>
+            <option value="3">Арахис 3</option>
+            <option value="4">Кешью 1</option>
+            <option value="5">Кешью 2</option>-->
+          </select>
+          <button id="show_templates" disabled="disabled">Редактировать шаблон</button>
+          <button id="new_template">Новый шаблон</button>
+
+          <div id="new_template_dialog">
             <label for="template_name">Название:</label>
             <input type="text" id="template_name" style="width:125px;"><br>
             <label for="nor_1_low">Нория 1:</label>
@@ -134,15 +144,8 @@
             <label for="vibro_low">Сетки:</label>
             <input type="text" id="vibro_low"> - <input type="text" id="vibro_up">
           </div>
-          <select id="template_list">
-            <option value="1">Арахис 1</option>
-            <option value="2">Арахис 2</option>
-            <option value="3">Арахис 3</option>
-            <option value="4">Кешью 1</option>
-            <option value="5">Кешью 2</option>
-          </select>
 
-          <span id="show_templates"></span>
+
           <%
             var elements = ["trans_1", "bunker", "trans_2", "syclone", "trans_3", "knives", "vibro", "line_scales"];
             for(var i = 0; i < 8; i++){

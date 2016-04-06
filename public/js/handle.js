@@ -280,11 +280,11 @@ $(document).ready(function(){
     });
 */
 
-    $("#show_templates").on("click",  function(){
-        $("#templates").dialog("open");
+    $("#new_template").on("click",  function(){
+        $("#new_template_dialog").dialog("open");
     });
 
-    $("#templates").dialog({
+    $("#new_template_dialog").dialog({
         title: "Редактор шаблонов",
         modal:true,
         autoOpen:false,
@@ -296,6 +296,7 @@ $(document).ready(function(){
             {
                 text:"Сохранить",
                 click:function() {
+
                     var name = $("#template_name").val(),
                         nor_1 = $("#nor_1_low").val() + "_" + $("#nor_1_up").val(),
                         nor_2 = $("#nor_2_low").val() + "_" + $("#nor_2_up").val(),
