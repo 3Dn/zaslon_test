@@ -175,7 +175,8 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on("set_template", function(id){
-        local_conn.query("UPDATE templates SET current='0' WHERE 1=1; UPDATE templates SET current='1' WHERE id='"+id+"'");
+
+        local_conn.query("UPDATE templates SET current='0' WHERE 1=1; UPDATE templates SET current='1' WHERE id='"+id+"' ");
     });
 
   /*  socket.on("sensors", function(){
