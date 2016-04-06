@@ -313,7 +313,7 @@ $(document).ready(function(){
 
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {name:name, template:template, action:"save_new"};
-                    socket.emit("save_new_template", obj);
+                    socket.emit("save_template", obj);
                     socket.emit("get_template_list");
                     $("#new_template_dialog").dialog("close");
                 }
@@ -328,10 +328,55 @@ $(document).ready(function(){
         ]
     });
 
+    $("#edit_template_dialog").dialog({
+        title: "Редактирование шаблона",
+        modal:true,
+        autoOpen:false,
+        show: {
+            effect: "fold",
+            duration: 200
+        },
+        buttons: [
+            {
+                text:"Сохранить",
+                click:function() {
+
+                    var name = $("#template_name").val(),
+                        nor_1 = ($("#nor_1_low").val() || '0') + "_" + ($("#nor_1_up").val() || '0'),
+                        nor_2 = ($("#nor_2_low").val() || '0') + "_" + ($("#nor_2_up").val() || '0'),
+                        nor_3 = ($("#nor_3_low").val() || '0') + "_" + ($("#nor_3_up").val() || '0'),
+                        blansh = ($("#blansh_low").val() || '0') + "_" + ($("#blansh_up").val() || '0'),
+                        knives = ($("#knives_low").val() || '0') + "_" + ($("#knives_up").val() || '0'),
+                        vibro = ($("#vibro_low").val() || '0') + "_" + ($("#vibro_up").val() || '0');
+
+                    var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
+                    var obj = {name:name, template:template, action:"edit"};
+                    socket.emit("save_template", obj);
+                    socket.emit("get_template_list");
+                    $("#edit_template_dialog").dialog("close");
+                }
+            },
+            {
+                text:"Отмена",
+                click:function(){
+                    $("#edit_template_dialog").dialog("close");
+                }
+
+            }
+        ]
+    });
+
     $("#set_templates").on("click",  function(){
         var curr = $("#template_list").val();
         socket.emit("set_template", curr);
     });
+
+    $("#edit_template").on("click", function(){
+        var id = $("#template_list").val();
+        socket.emit("get_template_info",  id);
+    });
+    
+    
 
 
 });

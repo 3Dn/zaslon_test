@@ -148,7 +148,7 @@ io.sockets.on('connection', function (socket) {
         log_getter.unref();
     }
 
-    socket.on("save_new_template",  function(data){
+    socket.on("save_template",  function(data){
         if(data.action == "save_new"){
             local_conn.query("INSERT INTO templates SET name='"+data.name+"', template='"+data.template+"'");
         }else if(data.action == "edit") {
@@ -178,6 +178,20 @@ io.sockets.on('connection', function (socket) {
 
         local_conn.query("UPDATE templates SET current='0' WHERE 1=1");
         local_conn.query("UPDATE templates SET current='1' WHERE id='"+id+"'");
+    });
+
+    socket.on("get_template_info", function(id){
+        var sql = "SELECT id, name, template FROM templates WHERE id='"+id+"'";
+        local_conn.query(sql, function (err, rows, fields) {
+            var obj = {};
+            if (err) throw err;
+            rows.forEach(function (item) {
+                obj.id = item.id;
+                obj.name = item.name;
+                obj.template = item.template;
+            });
+            socket.emit("load_template_info", JSON.stringify(obj));
+        });
     });
 
   /*  socket.on("sensors", function(){

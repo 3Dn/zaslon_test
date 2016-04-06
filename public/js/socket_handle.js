@@ -98,6 +98,10 @@ socket.on("load_template_list", function(data){
 });
 
 
+socket.on("load_template_info", function(data){
+    console.log(JSON.parse(data));
+});
+
 
 function arr_clean() {
     dates.length = 0;
