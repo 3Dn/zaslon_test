@@ -97,11 +97,11 @@ socket.on("load_template_list", function(data){
     $("#template_list").html(list);
 });
 
-//1_1 && 2_2 && 3_3 && 4_4 && 5_5 && 6_6
 socket.on("load_template_info", function(data){
     var info = JSON.parse(data);
     var template = info.template;
-    template = template.split("&&");
+    var templates = template.split("&&");
+    console.log()
     var qwe = '<input type="hidden" value="'+info.id+'" id="template_edit_id">'+
         '<label for="template_name">Название:</label>'+
         '<input type="text" value="'+info.name+'" id="template_name" style="width:125px;"><br>'+
