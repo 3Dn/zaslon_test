@@ -85,7 +85,17 @@ $(document).ready(function(){
 
 
 socket.on("load_template_list", function(data){
-    console.log(JSON.parse(data));
+    var templates = JSON.parse(data);
+    var list = '';
+    $.each(templates, function(k, v){
+        var sel = '';
+        if(v.current == '1'){
+            sel = 'selected="selected"';
+        }
+        list += '<option value="'+v.id+'" '+sel+'>'+v.name+'</option>';
+    });
+    $("#template_list").html(list);
+
 });
 
 
