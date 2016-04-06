@@ -279,13 +279,16 @@ $(document).ready(function(){
         //}
     });
 */
-    
+
+    $("#new_template_dialog").find("input").inputmask({ "mask": "9", "repeat": 5 });
     
 
     $("#new_template").on("click",  function(){
         var fields =  $("#new_template_dialog").find("input").val('');
         $("#new_template_dialog").dialog("open");
     });
+
+
 
     $("#new_template_dialog").dialog({
         title: "Редактор шаблонов",
