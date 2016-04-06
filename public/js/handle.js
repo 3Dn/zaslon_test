@@ -346,10 +346,11 @@ $(document).ready(function(){
                         nor_3 = (dialog.find("#edit_nor_3_low").val() || '0') + "_" + (dialog.find("#edit_nor_3_up").val() || '0'),
                         blansh = (dialog.find("#edit_blansh_low").val() || '0') + "_" + (dialog.find("#edit_blansh_up").val() || '0'),
                         knives = (dialog.find("#edit_knives_low").val() || '0') + "_" + (dialog.find("#edit_knives_up").val() || '0'),
-                        vibro = (dialog.find("#edit_vibro_low").val() || '0') + "_" + (dialog.find("#edit_vibro_up").val() || '0');
+                        vibro = (dialog.find("#edit_vibro_low").val() || '0') + "_" + (dialog.find("#edit_vibro_up").val() || '0'),
+                        id = dialog.find("#template_edit_id").val();
 
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
-                    var obj = {name:name, template:template, action:"edit"};
+                    var obj = {id:id, name:name, template:template, action:"edit"};
                     socket.emit("save_template", obj);
                     socket.emit("get_template_list");
                     $("#edit_template_dialog").dialog("close");
