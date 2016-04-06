@@ -85,7 +85,7 @@ $(document).ready(function(){
 
 
 socket.on("load_template_list", function(data){
-    console.log(data);
+    console.log(JSON.parse(data));
 });
 
 
