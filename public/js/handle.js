@@ -280,7 +280,7 @@ $(document).ready(function(){
     });
 */
 
-    $("#new_template_dialog").find("input").inputmask({ "mask": "9", "repeat": 5 });
+
     
 
     $("#new_template").on("click",  function(){
