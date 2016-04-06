@@ -103,20 +103,20 @@ socket.on("load_template_info", function(data){
     var templates = template.split("&&");
     console.log()
     var qwe = '<input type="hidden" value="'+info.id+'" id="template_edit_id">'+
-        '<label for="template_name">Название:</label>'+
+        '<label for="edit_template_name">Название:</label>'+
         '<input type="text" value="'+info.name+'" id="template_name" style="width:125px;"><br>'+
         '<label for="nor_1_low">Нория 1:</label>'+
-        '<input type="text" value="'+templates[0].split("_")[0]+'" id="nor_1_low"> - <input type="text" value="'+templates[0].split("_")[1]+'" id="nor_1_up"><br>'+
+        '<input type="text" value="'+templates[0].split("_")[0]+'" id="edit_nor_1_low"> - <input type="text" value="'+templates[0].split("_")[1]+'" id="edit_nor_1_up"><br>'+
         '<label for="nor_2_low">Нория 2:</label>'+
-        '<input type="text" value="'+templates[1].split("_")[0]+'" id="nor_2_low"> - <input type="text" value="'+templates[1].split("_")[1]+'" id="nor_2_up"><br>'+
+        '<input type="text" value="'+templates[1].split("_")[0]+'" id="edit_nor_2_low"> - <input type="text" value="'+templates[1].split("_")[1]+'" id=edit_"nor_2_up"><br>'+
         '<label for="nor_3_low">Нория 3:</label>'+
-        '<input type="text" value="'+templates[2].split("_")[0]+'" id="nor_3_low"> - <input type="text" value="'+templates[2].split("_")[1]+'" id="nor_3_up"><br>'+
+        '<input type="text" value="'+templates[2].split("_")[0]+'" id="edit_nor_3_low"> - <input type="text" value="'+templates[2].split("_")[1]+'" id="edit_nor_3_up"><br>'+
         '<label for="blansh_low">Бланшир:</label>'+
-        '<input type="text" value="'+templates[3].split("_")[0]+'" id="blansh_low"> - <input type="text" value="'+templates[3].split("_")[1]+'" id="blansh_up"><br>'+
+        '<input type="text" value="'+templates[3].split("_")[0]+'" id="edit_blansh_low"> - <input type="text" value="'+templates[3].split("_")[1]+'" id="edit_blansh_up"><br>'+
         '<label for="knives_low">Ножи:</label>'+
-        '<input type="text" value="'+templates[4].split("_")[0]+'" id="knives_low"> - <input type="text" value="'+templates[4].split("_")[1]+'" id="knives_up"><br>'+
+        '<input type="text" value="'+templates[4].split("_")[0]+'" id="edit_knives_low"> - <input type="text" value="'+templates[4].split("_")[1]+'" id="edit_knives_up"><br>'+
         '<label for="vibro_low">Сетки:</label>'+
-        '<input type="text" value="'+templates[5].split("_")[0]+'" id="vibro_low"> - <input type="text" value="'+templates[5].split("_")[1]+'" id="vibro_up">';
+        '<input type="text" value="'+templates[5].split("_")[0]+'" id="edit_vibro_low"> - <input type="text" value="'+templates[5].split("_")[1]+'" id="edit_vibro_up">';
     $("#edit_template_dialog").html(qwe);
     $("#edit_template_dialog").dialog("option", "title", "Редактирование шаблона "+info.name).dialog("open");
 });

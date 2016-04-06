@@ -404,15 +404,16 @@ input.cmn-toggle-round-flat:checked + label:after {
 #modal_canvas{
     display: none;
 }
-
+#edit_template_dialog input,
 #new_template_dialog input{
     width:50px;
 }
+#edit_template_dialog label,
 #new_template_dialog label{
     width:80px;
     margin: 10px 0;
     display: inline-block;
 }
-#template_name{
+#new_template_name, #edit_template_name{
     width:150px;
 }
