@@ -352,6 +352,7 @@ $(document).ready(function(){
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {id:id, name:name, template:template, action:"edit"};
                     socket.emit("save_template", obj);
+                    console.log(obj);
                     socket.emit("get_template_list");
                     $("#edit_template_dialog").dialog("close");
                 }
