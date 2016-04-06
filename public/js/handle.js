@@ -339,7 +339,7 @@ $(document).ready(function(){
             {
                 text:"Сохранить",
                 click:function() {
-
+/*
                     var name = $("#template_name").val(),
                         nor_1 = ($("#nor_1_low").val() || '0') + "_" + ($("#nor_1_up").val() || '0'),
                         nor_2 = ($("#nor_2_low").val() || '0') + "_" + ($("#nor_2_up").val() || '0'),
@@ -351,7 +351,7 @@ $(document).ready(function(){
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {name:name, template:template, action:"edit"};
                     socket.emit("save_template", obj);
-                    socket.emit("get_template_list");
+                    socket.emit("get_template_list");*/
                     $("#edit_template_dialog").dialog("close");
                 }
             },
