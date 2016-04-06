@@ -79,6 +79,15 @@ socket.on("chart_refresh_data", function(data){
     scale_chart('myChart', data);
 
 });
+$(document).ready(function(){
+    socket.emit("get_templates");
+});
+
+
+socket.on("load_templates", function(data){
+    console.log(data);
+    
+});
 
 
 
