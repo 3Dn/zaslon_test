@@ -304,12 +304,12 @@ $(document).ready(function(){
                 click:function() {
 
                     var name = $("#template_name").val(),
-                        nor_1 = $("#nor_1_low").val() + "_" + $("#nor_1_up").val(),
-                        nor_2 = $("#nor_2_low").val() + "_" + $("#nor_2_up").val(),
-                        nor_3 = $("#nor_3_low").val() + "_" + $("#nor_3_up").val(),
-                        blansh = $("#blansh_low").val() + "_" + $("#blansh_up").val(),
-                        knives = $("#knives_low").val() + "_" + $("#knives_up").val(),
-                        vibro = $("#vibro_low").val() + "_" + $("#vibro_up").val();
+                        nor_1 = ($("#nor_1_low").val() || '0') + "_" + ($("#nor_1_up").val() || '0'),
+                        nor_2 = ($("#nor_2_low").val() || '0') + "_" + ($("#nor_2_up").val() || '0'),
+                        nor_3 = ($("#nor_3_low").val() || '0') + "_" + ($("#nor_3_up").val() || '0'),
+                        blansh = ($("#blansh_low").val() || '0') + "_" + ($("#blansh_up").val() || '0'),
+                        knives = ($("#knives_low").val() || '0') + "_" + ($("#knives_up").val() || '0'),
+                        vibro = ($("#vibro_low").val() || '0') + "_" + ($("#vibro_up").val() || '0');
 
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
                     var obj = {name:name, template:template, action:"save_new"};
