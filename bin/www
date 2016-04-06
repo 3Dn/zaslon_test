@@ -180,8 +180,8 @@ io.sockets.on('connection', function (socket) {
         local_conn.query("UPDATE templates SET current='1' WHERE id='"+id+"'");
     });
 
-    socket.on("get_template_info", function(id){
-        var sql = "SELECT id, name, template FROM templates WHERE id='"+id+"'";
+    socket.on("get_template_info", function(temp_id){
+        var sql = "SELECT id, name, template FROM templates WHERE id='"+temp_id+"'";
         local_conn.query(sql, function (err, rows, fields) {
             var obj = {};
             if (err) throw err;

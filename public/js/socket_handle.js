@@ -101,7 +101,7 @@ socket.on("load_template_info", function(data){
     var info = JSON.parse(data);
     var template = info.template;
     var templates = template.split("&&");
-    console.log()
+    console.log(info);
     var qwe = '<input type="hidden" value="'+info.id+'" id="template_edit_id">'+
         '<label for="edit_template_name">Название:</label>'+
         '<input type="text" value="'+info.name+'" id="template_name" style="width:125px;"><br>'+
