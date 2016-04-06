@@ -283,6 +283,7 @@ $(document).ready(function(){
     
 
     $("#new_template").on("click",  function(){
+        var fields =  $("#new_template_dialog").find("input").val('');
         $("#new_template_dialog").dialog("open");
     });
 
