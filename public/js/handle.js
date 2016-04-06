@@ -305,7 +305,7 @@ $(document).ready(function(){
                         vibro = $("#vibro_low").val() + "_" + $("#vibro_up").val();
 
                     var template = nor_1+"&&"+nor_2+"&&"+nor_3+"&&"+blansh+"&&"+knives+"&&"+vibro;
-                    var obj = {name:name, template:template};
+                    var obj = {name:name, template:template, action:"save_new"};
                     socket.emit("save_new_template", obj);
                     $("#templates").dialog("close");
                 }
