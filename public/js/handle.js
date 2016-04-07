@@ -48,12 +48,6 @@ $(document).ready(function(){
         snap: '#workspace_1'
     });*/
 
-
-    $("#nor_1_low, #nor_1_up").inputmask({"mask": "(999) 999-9999"});
-
-
-
-
     $("input[type='button'], button").button().tooltip();
     $("#show_templates").tooltip();
 
