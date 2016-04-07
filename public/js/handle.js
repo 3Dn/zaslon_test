@@ -49,7 +49,7 @@ $(document).ready(function(){
     });*/
 
 
-    $("#nor_1_low, #nor_1_up").inputmask("9");
+    $("#nor_1_low, #nor_1_up").inputmask({"mask": "(999) 999-9999"});
 
 
 
