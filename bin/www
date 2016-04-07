@@ -194,6 +194,10 @@ io.sockets.on('connection', function (socket) {
         });
     });
 
+    socket.on("delete_template",  function(temp_id){
+        local_conn.query("DELETE FROM templates WHERE id='"+temp_id+"'");
+    });
+
   /*  socket.on("sensors", function(){
         //setImmediate(function(){
             console.log("___________________ EMIT SENSORS ______________________");

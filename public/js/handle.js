@@ -389,6 +389,9 @@ $(document).ready(function(){
             {
                 text:"Удалить",
                 click:function(){
+                    var id = $("#template_list").val();
+                    socket.emit("delete_template", id);
+                    socket.emit("get_template_list");
                     $("#del_template_dialog").dialog("close");
                 }
             },
@@ -403,10 +406,9 @@ $(document).ready(function(){
     });
 
     $("#del_template").on("click",  function(){
-        var id = $("#template_list").val(),
-            name = $("#template_list").find(":selected").text();
-        console.log(id, name);
-
+        var name = $("#template_list").find(":selected").text();
+        var confirm = 'Удалить шаблон "'+name+'" ?';
+        $("#del_template_dialog").html(confirm).dialog("open");
     });
     
     
