@@ -291,7 +291,7 @@ $(document).ready(function(){
 
 
     $("#new_template_dialog").dialog({
-        title: "Новый шааблон",
+        title: "Новый шаблон",
         modal:true,
         autoOpen:false,
         show: {
