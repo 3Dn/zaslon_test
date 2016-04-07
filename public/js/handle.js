@@ -376,6 +376,38 @@ $(document).ready(function(){
         var id = $("#template_list").val();
         socket.emit("get_template_info",  id);
     });
+
+
+    $("#del_template_dialog").dialog({
+        modal:true,
+        autoOpen:false,
+        show: {
+            effect: "fold",
+            duration: 200
+        },
+        buttons: [
+            {
+                text:"Удалить",
+                click:function(){
+                    $("#del_template_dialog").dialog("close");
+                }
+            },
+            {
+                text:"Отмена",
+                click:function(){
+                    $("#del_template_dialog").dialog("close");
+                }
+
+            }
+        ]
+    });
+
+    $("#del_template").on("click",  function(){
+        var id = $("#template_list").val(),
+            name = $("#template_list").find(":selected").text();
+        console.log(id, name);
+
+    });
     
     
 

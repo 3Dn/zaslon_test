@@ -417,3 +417,6 @@ input.cmn-toggle-round-flat:checked + label:after {
 #new_template_name, #edit_template_name{
     width:150px;
 }
+#del_template_dialog{
+    display: none;
+}
