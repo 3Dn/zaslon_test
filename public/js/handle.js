@@ -381,10 +381,7 @@ $(document).ready(function(){
     $("#del_template_dialog").dialog({
         modal:true,
         autoOpen:false,
-        show: {
-            effect: "fold",
-            duration: 200
-        },
+        title: "Удаление шаблона",
         buttons: [
             {
                 text:"Удалить",
