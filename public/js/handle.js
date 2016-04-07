@@ -49,6 +49,9 @@ $(document).ready(function(){
     });*/
 
 
+    $("#nor_1_low, #nor_1_up").inputmask("9");
+
+
 
 
     $("input[type='button'], button").button().tooltip();
