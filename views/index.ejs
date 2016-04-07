@@ -31,6 +31,8 @@
     <script src="/js/mousewheel.js"></script>
     <script src="/js/scroll.js"></script>
 
+    <script src="/js/inputmask.js"></script>
+
     <link rel='stylesheet' href='/stylesheets/scroll.css' />
   </head>
 
@@ -134,17 +136,23 @@
             <label for="template_name">Название:</label>
             <input type="text" id="template_name" style="width:125px;"><br>
             <label for="nor_1_low">Нория 1:</label>
-            <input type="text" id="nor_1_low"> - <input type="text" id="nor_1_up"><br>
+            <input type="text" id="nor_1_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="nor_1_up" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false"><br>
             <label for="nor_2_low">Нория 2:</label>
-            <input type="text" id="nor_2_low"> - <input type="text" id="nor_2_up"><br>
+            <input type="text" id="nor_2_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="nor_2_up" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false"><br>
             <label for="nor_3_low">Нория 3:</label>
-            <input type="text" id="nor_3_low"> - <input type="text" id="nor_3_up"><br>
+            <input type="text" id="nor_3_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="nor_3_up" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false"><br>
             <label for="blansh_low">Бланшир:</label>
-            <input type="text" id="blansh_low"> - <input type="text" id="blansh_up"><br>
+            <input type="text" id="blansh_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="blansh_up" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false"><br>
             <label for="knives_low">Ножи:</label>
-            <input type="text" id="knives_low"> - <input type="text" id="knives_up"><br>
+            <input type="text" id="knives_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="knives_up data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false""><br>
             <label for="vibro_low">Сетки:</label>
-            <input type="text" id="vibro_low"> - <input type="text" id="vibro_up">
+            <input type="text" id="vibro_low" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
+            - <input type="text" id="vibro_up" data-inputmask="'mask': '9', 'repeat': 10, 'greedy' : false">
           </div>
 
           <div id="edit_template_dialog"></div>
